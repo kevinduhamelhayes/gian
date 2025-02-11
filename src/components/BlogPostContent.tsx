@@ -7,6 +7,7 @@ export const PostContent = ({ content }: { content: string }) => {
   const sanitizedContent = sanitize(content, {
     allowedTags: [
       "b",
+      "br",
       "i",
       "em",
       "strong",
