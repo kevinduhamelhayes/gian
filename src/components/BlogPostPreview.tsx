@@ -1,13 +1,13 @@
 "use client";
 import { cn } from "@/lib/utils";
-import { GetPostsResult } from "@/lib/wisp";
+import { LocalPost } from "@/lib/local-posts";
 import { formatDate } from "date-fns";
 import Image from "next/image";
 import Link from "next/link";
 import { FunctionComponent } from "react";
 
 export const BlogPostPreview: FunctionComponent<{
-  post: GetPostsResult["posts"][0];
+  post: LocalPost;
 }> = ({ post }) => {
   return (
     <div className="break-words group">
@@ -27,7 +27,7 @@ export const BlogPostPreview: FunctionComponent<{
           <Link href={`/blog/${post.slug}`} className="hover:text-bronze-600 transition-colors">{post.title}</Link>
         </h2>
         <div className="font-handwritten italic tracking-tighter text-bronze-500">
-          {formatDate(post.publishedAt || post.updatedAt, "dd MMMM yyyy")}
+          {formatDate(new Date(post.publishedAt), "dd MMMM yyyy")}
         </div>
         <div className="leading-relaxed md:text-lg line-clamp-4 text-bronze-700 font-sans">
           {post.description}
@@ -45,7 +45,7 @@ export const BlogPostPreview: FunctionComponent<{
 };
 
 export const BlogPostsPreview: FunctionComponent<{
-  posts: GetPostsResult["posts"];
+  posts: LocalPost[];
   className?: string;
 }> = ({ posts, className }) => {
   return (

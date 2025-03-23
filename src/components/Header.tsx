@@ -24,7 +24,6 @@ const menuItems: MenuItem[] = [
   { name: "Sobre Mí", href: "/sobre-mi" },
   { name: "Sobre Ti", href: "/sobre-ti" },
   { name: "Nuestro Amor", href: "/nuestro-amor" },
-  { name: "Nosotros", href: "/about" },
 ];
 
 export const Navigation: FunctionComponent = () => {

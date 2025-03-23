@@ -1,5 +1,5 @@
 "use client";
-import { GetPostResult } from "@/lib/wisp";
+import { LocalPost } from "@/lib/local-posts";
 import Link from "next/link";
 import sanitize, { defaults } from "sanitize-html";
 
@@ -50,9 +50,9 @@ export const PostContent = ({ content }: { content: string }) => {
   );
 };
 
-export const BlogPostContent = ({ post }: { post: GetPostResult["post"] }) => {
+export const BlogPostContent = ({ post }: { post: LocalPost }) => {
   if (!post) return null;
-  const { title, publishedAt, createdAt, content, tags } = post;
+  const { title, publishedAt, content, tags } = post;
   return (
     <div>
       <div className="prose lg:prose-xl dark:prose-invert mx-auto lg:prose-h1:text-4xl mb-10 lg:mt-20 break-words">
@@ -72,7 +72,7 @@ export const BlogPostContent = ({ post }: { post: GetPostResult["post"] }) => {
         </div>
         <div className="text-sm opacity-40 mt-4">
           {Intl.DateTimeFormat("en-US").format(
-            new Date(publishedAt || createdAt)
+            new Date(publishedAt)
           )}
         </div>
       </div>
