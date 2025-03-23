@@ -1,13 +1,13 @@
 "use client";
 
 import { AspectRatio } from "@radix-ui/react-aspect-ratio";
-import type { GetRelatedPostsResult } from "@wisp-cms/client";
+import { LocalPost } from "@/lib/local-posts";
 import Image from "next/image";
 import Link from "next/link";
 import type { FunctionComponent } from "react";
 
 export const RelatedPosts: FunctionComponent<{
-  posts: GetRelatedPostsResult["posts"];
+  posts: LocalPost[];
 }> = ({ posts }) => {
   if (posts.length === 0) {
     return null;

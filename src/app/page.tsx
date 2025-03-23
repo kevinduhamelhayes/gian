@@ -4,7 +4,7 @@ import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { Button } from "@/components/ui/button";
 import { config } from "@/config";
-import { wisp } from "@/lib/wisp";
+import { localPostsApi } from "@/lib/local-posts";
 import Link from "next/link";
 
 const Page = async (
@@ -14,7 +14,7 @@ const Page = async (
 ) => {
   const searchParams = await props.searchParams;
   const page = searchParams.page ? parseInt(searchParams.page as string) : 1;
-  const result = await wisp.getPosts({ limit: 6, page });
+  const result = await localPostsApi.getPosts({ limit: 6, page });
   
   return (
     <div className="container mx-auto px-5 mb-10">
@@ -42,11 +42,6 @@ const Page = async (
               Nuestro Amor
             </Button>
           </Link>
-          <Link href="/about">
-            <Button variant="outline" className="border-bronze-300 text-bronze-600 hover:bg-bronze-100 font-handwritten">
-              Nosotros
-            </Button>
-          </Link>
         </div>
       </div>
       
@@ -58,7 +53,7 @@ const Page = async (
         <p className="mt-4 font-handwritten text-bronze-600">— Antoine de Saint-Exupéry</p>
       </div>
       
-      <h3 className="text-2xl md:text-3xl font-script text-bronze-700 mb-8 text-center">Últimas Historias</h3>
+      <h3 className="text-2xl md:text-3xl font-script text-bronze-700 mb-8 text-center">Nuestras Historias</h3>
       <BlogPostsPreview posts={result.posts} />
       <BlogPostsPagination pagination={result.pagination} />
       <Footer />

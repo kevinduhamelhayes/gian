@@ -17,18 +17,20 @@ export const BlogPostsPagination = ({
   numSiblingPages?: number;
   pagination: {
     page: number;
-    limit: number | "all";
+    limit: number;
     totalPages: number;
-    nextPage: number | null;
-    prevPage: number | null;
+    totalPosts: number;
   };
 }) => {
+  const prevPage = pagination.page > 1 ? pagination.page - 1 : null;
+  const nextPage = pagination.page < pagination.totalPages ? pagination.page + 1 : null;
+
   return (
     <Pagination>
       <PaginationContent>
-        {pagination.prevPage && (
+        {prevPage && (
           <PaginationItem>
-            <PaginationPrevious href={`${basePath}${pagination.prevPage}`} />
+            <PaginationPrevious href={`${basePath}${prevPage}`} />
           </PaginationItem>
         )}
         {pagination.page > 3 && (
@@ -64,9 +66,9 @@ export const BlogPostsPagination = ({
             </PaginationItem>
           </>
         )}
-        {pagination.nextPage && (
+        {nextPage && (
           <PaginationItem>
-            <PaginationNext href={`${basePath}${pagination.nextPage}`} />
+            <PaginationNext href={`${basePath}${nextPage}`} />
           </PaginationItem>
         )}
       </PaginationContent>
