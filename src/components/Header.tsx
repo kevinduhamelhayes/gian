@@ -12,15 +12,21 @@ import { Menu } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { FunctionComponent } from "react";
+
 interface MenuItem {
   name: string;
   href: string;
   openInNewTab?: boolean;
 }
+
 const menuItems: MenuItem[] = [
   { name: "Blog", href: "/" },
-  { name: "About", href: "/about" },
+  { name: "Sobre Mí", href: "/sobre-mi" },
+  { name: "Sobre Ti", href: "/sobre-ti" },
+  { name: "Nuestro Amor", href: "/nuestro-amor" },
+  { name: "Nosotros", href: "/about" },
 ];
+
 export const Navigation: FunctionComponent = () => {
   const pathname = usePathname();
 
@@ -33,8 +39,8 @@ export const Navigation: FunctionComponent = () => {
               href={item.href}
               target={item.openInNewTab ? "_blank" : "_self"}
               className={cn(
-                "hover:text-gray-900",
-                pathname === item.href && "font-semibold"
+                "hover:text-bronze-600 text-bronze-700 font-handwritten text-lg",
+                pathname === item.href && "font-bold text-bronze-800"
               )}
             >
               {item.name}
@@ -45,7 +51,7 @@ export const Navigation: FunctionComponent = () => {
       <div className="md:hidden">
         <Sheet>
           <SheetTrigger>
-            <Menu size="24" />
+            <Menu size="24" className="text-bronze-700" />
           </SheetTrigger>
           <SheetContent>
             <SheetHeader>
@@ -56,8 +62,8 @@ export const Navigation: FunctionComponent = () => {
                     href={item.href}
                     target={item.openInNewTab ? "_blank" : "_self"}
                     className={cn(
-                      "block py-2",
-                      pathname === item.href && "font-semibold"
+                      "block py-2 font-handwritten text-xl text-bronze-700",
+                      pathname === item.href && "font-bold text-bronze-800"
                     )}
                   >
                     {item.name}
@@ -74,9 +80,9 @@ export const Navigation: FunctionComponent = () => {
 
 export const Header: FunctionComponent = () => {
   return (
-    <section className="flex items-center justify-between mt-8 md:mt-16 mb-12">
+    <section className="flex items-center justify-between mt-8 md:mt-16 mb-12 border-b border-bronze-300 pb-4">
       <Link href="/">
-        <h1 className="text-4xl md:text-6xl font-bold tracking-tighter leading-tight">
+        <h1 className="text-4xl md:text-6xl font-bold tracking-tighter leading-tight font-script text-bronze-700 hover:text-bronze-600 transition-colors">
           {config.blog.name}
         </h1>
       </Link>

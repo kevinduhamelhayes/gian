@@ -2,11 +2,13 @@ import { config } from "@/config";
 import { signOgImageUrl } from "@/lib/og-image";
 import { cn } from "@/lib/utils";
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Dancing_Script, Indie_Flower, Inter } from "next/font/google";
 import "./globals.css";
 import { Providers } from "./providers";
 
 const fontSans = Inter({ subsets: ["latin"], variable: "--font-sans" });
+const fontScript = Dancing_Script({ subsets: ["latin"], variable: "--font-script" });
+const fontHandwritten = Indie_Flower({ weight: "400", subsets: ["latin"], variable: "--font-handwritten" });
 
 export const metadata: Metadata = {
   title: {
@@ -32,11 +34,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="es">
       <body
         className={cn(
           "min-h-screen bg-background font-sans antialiased max-w-6xl m-auto",
-          fontSans.variable
+          fontSans.variable,
+          fontScript.variable,
+          fontHandwritten.variable
         )}
       >
         <Providers>

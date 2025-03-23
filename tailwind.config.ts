@@ -25,6 +25,17 @@ const config = {
         ring: "hsl(var(--ring))",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
+        bronze: {
+          100: "#f5eee6",
+          200: "#e5d6c5",
+          300: "#d4bfa3",
+          400: "#c4a782",
+          500: "#b39060",
+          600: "#8f734d",
+          700: "#6b563a",
+          800: "#483826",
+          900: "#241b13",
+        },
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
@@ -75,6 +86,8 @@ const config = {
       },
       fontFamily: {
         sans: ["var(--font-sans)", ...fontFamily.sans],
+        script: ["var(--font-script)", ...fontFamily.serif],
+        handwritten: ["var(--font-handwritten)", ...fontFamily.mono],
       },
     },
   },
