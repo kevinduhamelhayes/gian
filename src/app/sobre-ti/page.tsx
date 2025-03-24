@@ -8,21 +8,23 @@ const content = `# Sobre Ti
 
 ![Gianina](https://placehold.co/800x400/f5eee6/6b563a?text=Tu+Foto)
 
-Gianina, desde la primera vez que te vi, supe que había algo especial en ti. Tu sonrisa ilumina cualquier habitación, y tu risa es como música para mis oídos.
+Giani, te encontre llena de miedos e inseguridades, nunca pense que tendrias en mi vida la importancia que tenes hoy que al darle sentido a tu vida al enseñarte al sacarte miedos tambien me estaba ablandando y enseñandfo a mi mismo viendo a travez de tus ojos como ser mejor.
 
-Eres un alma libre, apasionada y llena de luz. Tu manera de ver el mundo me ha enseñado a apreciar las cosas desde otra perspectiva. Tu energía es contagiosa, y tu determinación inspiradora.
+Tus valores tu forma de amar tu velocidad para aprender y la forma de entendernos. Fue de lo primero que note unico y nos llevo hasta adonde estasmos.
 
-Admiro tu fuerza interior y tu capacidad para superar cualquier obstáculo que se presenta en tu camino. Eres una persona que no se rinde fácilmente, y eso es algo que siempre me ha fascinado de ti.
+Admiro tu fuerza interior y tu capacidad para superar cualquier obstáculo que se presenta en tu camino. Entendes muy bien de sacrificio de valores sos tenis sos familia sos valores sos  amigos sos tu carrera y un poco vas a ser lo que pude dejarte en ti y yo sere un poco lo que me enseñaste a ser.
 
 ![Tu esencia](https://placehold.co/800x400/f5eee6/6b563a?text=Tu+Esencia)
 
-Lo que más me cautiva de ti es tu autenticidad. Nunca pretendes ser alguien que no eres. Eres genuina en cada palabra, en cada gesto, en cada mirada. Tu honestidad es refrescante en un mundo donde muchas personas se esconden detrás de máscaras.
+Entiendo tus peleas por estar en todos lados pero nunca pierdas el foco de lo que realmente importa llegara el tiempo de ir achicando lo que abarcas quizas pronto tu carrera te deje de apretar pero tu alma es joven y arde fuerte asi que buscaras algo quizas para seguir manteniendo el nivel de exigencia. No pretendas ser alquien que no eres ni asi sea por otro solo hacelo si es por vos el cambio a mi me gustabas aun con esas diferencias.
 
-Tu corazón es inmenso. Tienes una capacidad única para empatizar con los demás, para ponerte en el lugar del otro y entender sus sentimientos. Eres generosa con tu tiempo, con tus palabras y con tu afecto.
+Tu corazón es inmenso. Tienes una capacidad única para empatizar con los demás, para ponerte en el lugar del otro y entender sus sentimientos pudiste hacerme sentir como si fuera el unico en el mundo y desarmarme con tus brazos. Me diste tu tiempo y tu afecto en mis momentos de debilidad y me enseñaste a amarme a mi mismo y que todo esconde un cierto aprendisaje.
 
-Esta página es mi tributo a ti, a todo lo que eres y a todo lo que representas en mi vida. Es mi forma de celebrar tu existencia y de agradecerte por ser exactamente como eres.
+Esta página es mi tributo a ti, a todo lo que eres y a todo lo que representas en mi vida. Es mi forma de celebrar tu existencia y de agradecerte por ser lo que sos y por haber crecido tanto en este corto tiempo.
 
-Cada día me maravillo al pensar en la suerte que tuve al encontrarte. Eres un regalo que nunca dejaré de valorar.
+la niña asustada que encontre con sus complejos, que no disfrutaba ser mujer se reencontro con si misma, pudo crecer con su relacion con su familia, con su carrera, con su amor y con su vida.
+
+Cada día me maravillo al pensar en la suerte y el privilegio que tuve al encontrarte. Eres un regalo que nunca dejaré de valorar.
 
 Con todo mi cariño,
 
