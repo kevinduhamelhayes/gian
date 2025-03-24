@@ -8,17 +8,29 @@ const content = `# Sobre Mí
 
 ![Kevin](https://placehold.co/800x400/f5eee6/6b563a?text=Mi+Foto)
 
-Hola, soy Kevin. Soy desarrollador y apasionado por la tecnología, pero hay mucho más en mi historia que solo código.
+Hola, soy Yo, naci en una familia pequña fui el unico hijo y nieto 8 años, mi familia era probre pero yo creia que me ocultaban la verdad y era millonario... jaja
 
-Crecí con una curiosidad insaciable por entender cómo funcionan las cosas. Desde pequeño, desarmar juguetes y volver a armarlos era mi pasatiempo favorito. Esa misma curiosidad me llevó a explorar el mundo de la tecnología y eventualmente a convertirme en desarrollador.
+pobre de mi al entender que realmente no habia nada oculto y el piso y las paredes eran rusticos y mi madre se enojaba por que decia que en el techo de madera caian arañas y polvo en la comida.... muy mañatica con eso pero nunca fue alguien limpia, en ese ambiente se crio un niño que hoy escribe este blog ya grande.
 
-Pero más allá de la tecnología, soy alguien que disfruta de las pequeñas cosas de la vida. Me encanta el café por las mañanas mientras leo un buen libro, las caminatas al atardecer, y las conversaciones profundas que se extienden hasta altas horas de la noche.
+mi familia siempre fue orgullosa y pensaba en que opara salir adelante no necesitaban ayuda de los demas y asi fue nunca se acepto ayuda de nadie.
+
+fui el mas exigido de la familia cargando los sueños de mis padres, ser bueno en ajedres matematicas , ser bueno en basquet y por supuesto la obligacion de ser bueno en la escuela.
+
+por supuesto recuerdo al dormir la siesta esconderme bajo la mesa para jugar con legos pensando en no hacer ruido por que mis padres dormian siesta y yo no y hasta el dia de hoy no la duermo.
 
 ![Mi pasión](https://placehold.co/800x400/f5eee6/6b563a?text=Mi+Pasión)
 
-Soy un soñador y un idealista. Creo firmemente que las conexiones humanas son lo que da sentido a nuestra existencia. Cada persona que conocemos nos enseña algo nuevo, nos desafía a crecer y nos muestra diferentes perspectivas de la vida.
+bueno esas son anecdotas realmente lo que importa es que logre por otro camino el del sentido comun y el tacto el de la experiencia y el tiempo la los valores que hoy tengo. y que coinciden con los tuyos.
 
-En mis viajes por la vida, he aprendido que amar es la aventura más grande que podemos emprender. Es un viaje de autodescubrimiento, de vulnerabilidad y de crecimiento constante. Es aprender a ver el mundo a través de los ojos de otra persona y permitir que eso cambie nuestra propia visión.
+aunque la experiencia y el tiempo no vienen solos vienen acompañados de dolor y te curten, como un soldado que ya vio mucha sangre correr y estuvo en muchas batallas y ahora se encuentra en una guerra que no puede ganar.
+
+Esta batalla la doy por perdida o suspendida, bajare mis armas y ire a lugares mas tranquilos donde pueda recuperarme,  sanar aprender sentir y crecer.
+
+hoy me encuentro con cosas nuevas como curiosidad por viajar por ser feliz pero con menos expectativas y mas libertad de ser yo mismo.
+
+el tiempo pasara y la esperanza de volver a luchar por nosotros seguira en mi corazon. si alguna vez decides volver a mi lado, sabes que estare aqui, con los brazos abiertos y el corazon lleno de amor.
+
+no te prometo que sera facil por que el futuro es incierto pero idealmente estare listo para volver a luchar por nosotros. y si yo dejo de creer o la cosa se ve dificil lucha por esto convenceme, rompete el orto! pelea! aprendiste de mi que nada es imposible anda por ello. 
 
 Esta página es mi forma de compartir mi historia, mis pensamientos y mis sentimientos. Pero más que nada, es mi manera de honrar a alguien muy especial que ha dejado una huella indeleble en mi corazón.
 
