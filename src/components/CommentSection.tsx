@@ -9,31 +9,15 @@ interface CommentSectionProps {
   slug: string;
 }
 
-export function CommentSection({ slug }: CommentSectionProps) {
-  const { data, isLoading } = useQuery({
-    queryKey: ["comments", slug],
-    queryFn: () => wisp.getComments({ slug, page: 1, limit: "all" }),
-  });
-
-  if (isLoading) {
-    return <div>Loading...</div>;
-  }
-
-  if (!data?.config.enabled) {
-    return null;
-  }
-
+export const CommentSection = () => {
   return (
-    <div className="my-8">
-      <h2 className="mb-8 text-2xl font-bold tracking-tight">Add Comments</h2>
-      <CommentForm slug={slug} config={data.config} />
-      <h2 className="mb-8 mt-16 text-2xl font-bold tracking-tight">Comments</h2>
-      <CommentList
-        comments={data.comments}
-        pagination={data.pagination}
-        config={data.config}
-        isLoading={isLoading}
-      />
+    <div className="mt-16 border-t-2 border-bronze-200 pt-8">
+      <h2 className="text-3xl font-script text-bronze-700 mb-8">Comparte tus pensamientos</h2>
+      <div className="bg-bronze-50 p-6 rounded-lg border-2 border-bronze-300">
+        <p className="text-bronze-800 text-center italic">
+          Esta sección está en desarrollo. Pronto podrás compartir tus comentarios y pensamientos sobre este post.
+        </p>
+      </div>
     </div>
   );
-}
+};

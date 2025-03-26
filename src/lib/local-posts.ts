@@ -8,6 +8,7 @@ export interface LocalPost {
   publishedAt: string;
   updatedAt: string;
   image: string;
+  carouselImages?: string[];
   tags: Array<{ id: string, name: string }>;
   featured: boolean;
 }
@@ -34,29 +35,26 @@ const generateId = () => Math.random().toString(36).substring(2, 15);
 const localPosts = [
   {
     id: generateId(),
-    title: "Nuestro primer encuentro",
-    slug: "nuestro-primer-encuentro",
-    description: "La magia de cuando te vi por primera vez y todo cambió para siempre.",
+    title: "El día que te conocí",
+    slug: "el-dia-que-te-conoci",
+    description: "La historia de nuestro primer encuentro y cómo cambió todo.",
     content: `
-# Nuestro primer encuentro
+# El día que te conocí
 
-Todavía recuerdo claramente ese día. El cielo estaba despejado, y había algo en el aire que se sentía diferente. No sabía que mi vida estaba a punto de cambiar para siempre.
+Aún recuerdo ese día como si fuera ayer. El destino, o quizás la casualidad, nos puso en el mismo lugar en el momento perfecto. Tu sonrisa iluminó la habitación y supe que algo especial estaba por comenzar.
 
-Te vi antes de que me vieras. Estabas concentrada en tus pensamientos, con una expresión serena y a la vez intensa que captó mi atención inmediatamente. Algo en mí supo en ese preciso instante que tú eras especial.
+Nuestras miradas se cruzaron y el tiempo pareció detenerse. En ese instante, aunque no lo sabía conscientemente, mi vida cambió para siempre. Tu forma de hablar, tu risa contagiosa, tu manera de ver el mundo... todo en ti me cautivó desde el primer momento.
 
-Cuando nuestras miradas se cruzaron, sentí una conexión que nunca había experimentado antes. Fue como si un hilo invisible nos hubiera estado esperando para unir nuestros caminos.
-
-La conversación fluyó naturalmente, como si nos conociéramos de toda la vida. Tu risa, tu forma de hablar, tus gestos... todo parecía tan familiar y a la vez tan fascinante.
-
-Ese día, mientras el sol comenzaba a ponerse y las horas pasaban sin que nos diéramos cuenta, supe que había encontrado algo excepcional. No sabía exactamente qué nos deparaba el futuro, pero tenía la certeza de que quería descubrirlo a tu lado.
-
-Ahora, mirando hacia atrás, sonrío al pensar en ese primer encuentro. En cómo el destino, el universo, o quizás simplemente la suerte, nos puso en el mismo lugar al mismo tiempo.
-
-Y cada día doy gracias por ese momento mágico que marcó el inicio de nuestra historia.
+Ese día marcó el inicio de nuestra historia, una historia que continúa escribiéndose con cada momento que compartimos juntos.
     `,
-    publishedAt: new Date("2023-01-15T12:00:00Z").toISOString(),
-    updatedAt: new Date("2023-01-15T12:00:00Z").toISOString(),
-    image: "https://placehold.co/800x450/f5eee6/6b563a?text=Nuestro+Primer+Encuentro",
+    publishedAt: new Date("2023-01-15").toISOString(),
+    updatedAt: new Date("2023-01-15").toISOString(),
+    image: "/images/blog/primer-encuentro.jpg",
+    carouselImages: [
+      "/images/blog/carousel-1-1.jpg",
+      "/images/blog/carousel-1-2.jpg",
+      "/images/blog/carousel-1-3.jpg"
+    ],
     tags: [
       { id: "1", name: "recuerdos" },
       { id: "2", name: "amor" }
@@ -65,169 +63,315 @@ Y cada día doy gracias por ese momento mágico que marcó el inicio de nuestra 
   },
   {
     id: generateId(),
-    title: "Cartas que nunca envié",
-    slug: "cartas-que-nunca-envie",
-    description: "Todas las palabras que guardé en mi corazón, esperando el momento adecuado para compartirlas contigo.",
+    title: "Nuestras primeras aventuras",
+    slug: "nuestras-primeras-aventuras",
+    description: "Los momentos que compartimos al inicio de nuestra historia.",
     content: `
-# Cartas que nunca envié
+# Nuestras primeras aventuras
 
-Querida Gianina,
+Cada salida contigo era una nueva aventura. Desde paseos improvisados hasta planes elaborados, cada momento juntos estaba lleno de risas, descubrimientos y conexiones más profundas.
 
-Durante años, he llenado cuadernos con palabras destinadas a ti. Pensamientos, sentimientos, sueños... Todo lo que mi corazón quería decirte pero que, por una razón u otra, nunca llegó a tus manos.
-
-Escribía cuando te extrañaba tanto que dolía. Cuando veía algo hermoso y deseaba que estuvieras allí para compartirlo. Cuando algo me hacía reír y sabía que tú también habrías sonreído.
-
-Estas cartas han sido mi refugio, mi forma de sentirte cerca cuando la distancia se interponía entre nosotros. En cada línea, en cada palabra, está impreso mi amor por ti.
-
-Algunas cartas son simples: descripciones de mi día a día, cosas cotidianas que quería compartir contigo. Otras son profundas reflexiones sobre el amor, la vida y el tiempo. Todas tienen algo en común: tú eres su destinataria, su razón de ser.
-
-Quizás algún día te muestre estos cuadernos, estas cartas que nunca envié. O quizás no sea necesario, porque ahora tengo la oportunidad de decirte en persona todo lo que mi corazón siente.
-
-De cualquier forma, saber que existen, que hay un testimonio tangible de mi amor por ti a lo largo de los años, me reconforta. Es la prueba de que, incluso en los momentos de mayor separación, nunca dejé de pensar en ti.
-
-Con todo mi amor,
-Kevin
+Recuerdo especialmente nuestros paseos por el parque, nuestras conversaciones interminables y esos momentos en que el mundo parecía detenerse solo para nosotros.
     `,
-    publishedAt: new Date("2023-02-20T15:30:00Z").toISOString(),
-    updatedAt: new Date("2023-02-20T15:30:00Z").toISOString(),
-    image: "https://placehold.co/800x450/f5eee6/6b563a?text=Cartas+No+Enviadas",
-    tags: [
-      { id: "2", name: "amor" },
-      { id: "3", name: "pensamientos" }
+    publishedAt: new Date("2023-02-01").toISOString(),
+    updatedAt: new Date("2023-02-01").toISOString(),
+    image: "/images/blog/aventuras.jpg",
+    carouselImages: [
+      "/images/blog/carousel-2-1.jpg",
+      "/images/blog/carousel-2-2.jpg",
+      "/images/blog/carousel-2-3.jpg"
     ],
-    featured: false
-  },
-  {
-    id: generateId(),
-    title: "Nuestro lugar especial",
-    slug: "nuestro-lugar-especial",
-    description: "Ese rincón del mundo que se convirtió en nuestro santuario personal.",
-    content: `
-# Nuestro lugar especial
-
-Hay lugares en el mundo que se vuelven mágicos no por su belleza intrínseca, sino por los momentos que vivimos en ellos. Nuestro lugar especial es uno de esos sitios.
-
-No es un lugar espectacular según los estándares convencionales. No tiene vistas panorámicas impresionantes ni arquitectura fastuosa. Es simplemente un rincón tranquilo que, de alguna manera, el destino reservó para nosotros.
-
-La primera vez que fuimos allí fue por casualidad. Un cambio de planes, un desvío inesperado... y de repente, estábamos descubriendo ese espacio que parecía estar esperándonos.
-
-Con el tiempo, ese lugar se convirtió en nuestro santuario. El sitio donde compartimos secretos, donde nos refugiábamos del mundo, donde nuestros corazones se sincronizaban al mismo ritmo.
-
-Era allí donde el tiempo parecía detenerse. Donde las preocupaciones se desvanecían y solo existíamos tú y yo, inmersos en nuestra burbuja de felicidad.
-
-Ahora, incluso cuando no podemos visitarlo físicamente, ese lugar vive en nuestros recuerdos. Está presente en nuestras conversaciones, en nuestras risas, en esos momentos en que nos miramos y sabemos exactamente lo que el otro está pensando.
-
-Nuestro lugar especial es más que un espacio físico; es un estado del alma. Un testimonio de lo que somos juntos y de lo que hemos construido.
-
-Y por eso, siempre será nuestro refugio, nuestro hogar compartido, nuestro pedacito de cielo en la tierra.
-    `,
-    publishedAt: new Date("2023-03-10T09:45:00Z").toISOString(),
-    updatedAt: new Date("2023-03-10T09:45:00Z").toISOString(),
-    image: "https://placehold.co/800x450/f5eee6/6b563a?text=Nuestro+Lugar+Especial",
     tags: [
       { id: "1", name: "recuerdos" },
-      { id: "4", name: "lugares" }
-    ],
-    featured: true
-  },
-  {
-    id: generateId(),
-    title: "Lo que aprendo de ti cada día",
-    slug: "lo-que-aprendo-de-ti-cada-dia",
-    description: "Cómo tu presencia en mi vida me transforma y me hace crecer.",
-    content: `
-# Lo que aprendo de ti cada día
-
-Dicen que las personas más importantes en nuestra vida son aquellas que nos inspiran a ser mejores. Si es así, tú eres, sin duda, la persona más importante en la mía.
-
-Cada día aprendo algo nuevo de ti. De tu paciencia cuando el mundo parece ir demasiado rápido. De tu fortaleza cuando enfrentas desafíos que harían tambalearse a cualquiera. De tu empatía cuando escuchas y comprendes sin juzgar.
-
-Me enseñas a ver la belleza en lo simple, en lo cotidiano. A encontrar alegría en los pequeños momentos. A valorar el presente y no preocuparme tanto por el futuro.
-
-Aprendo de tu autenticidad, de cómo eres fiel a ti misma sin importar las circunstancias. De cómo defiendes tus convicciones y, al mismo tiempo, estás abierta a nuevas ideas y perspectivas.
-
-Contigo, he aprendido que el amor no es solo un sentimiento, sino una decisión que se toma cada día. Es elegir estar presente, apoyar, escuchar, comprender, perdonar.
-
-También me has enseñado sobre mí mismo. A reconocer mis fortalezas y aceptar mis debilidades. A ser más paciente, más compasivo, más consciente.
-
-Cada conversación, cada risas, cada lágrima compartida es una lección de vida que atesoro. Y aunque a veces el aprendizaje viene con desafíos, sé que al final del día, crezco y evoluciono gracias a tu presencia en mi vida.
-
-Por todo lo que me enseñas, por toda la sabiduría que compartes, por cómo me inspiras a ser mejor: gracias.
-    `,
-    publishedAt: new Date("2023-04-05T14:20:00Z").toISOString(),
-    updatedAt: new Date("2023-04-05T14:20:00Z").toISOString(),
-    image: "https://placehold.co/800x450/f5eee6/6b563a?text=Aprendizaje+Diario",
-    tags: [
-      { id: "2", name: "amor" },
-      { id: "5", name: "crecimiento" }
+      { id: "3", name: "aventuras" }
     ],
     featured: false
   },
   {
     id: generateId(),
-    title: "La distancia y nosotros",
-    slug: "la-distancia-y-nosotros",
-    description: "Reflexiones sobre cómo enfrentamos los kilómetros que nos separan y cómo nuestro amor se fortalece a pesar de ello.",
+    title: "Los pequeños momentos",
+    slug: "los-pequenos-momentos",
+    description: "Esos instantes cotidianos que hacen especial nuestra relación.",
     content: `
-# La distancia y nosotros
+# Los pequeños momentos
 
-La distancia física es una realidad en nuestra relación que hemos aprendido a enfrentar. Kilómetros de carreteras, ciudades enteras, a veces incluso países se interponen entre nosotros. Pero si algo hemos descubierto, es que la verdadera cercanía no se mide en metros o kilómetros.
+Son los pequeños momentos los que construyen una historia de amor. Las miradas cómplices, los mensajes inesperados, los abrazos sorpresa... cada detalle suma a nuestra historia.
 
-En los días en que te extraño más intensamente, recuerdo las palabras de Antoine de Saint-Exupéry: "Si estás a las tres de la tarde, comenzaré a ser feliz desde las dos. Cuanto más avance la hora, más feliz me sentiré." La anticipación de volver a verte convierte la espera en una dulce agonía.
-
-Hemos aprendido a valorar cada momento juntos, a aprovechar cada minuto como si fuera un tesoro invaluable. La distancia nos ha enseñado que no hay que dar por sentado el tiempo compartido.
-
-Las videollamadas, los mensajes, las cartas... se han convertido en nuestros puentes, en las formas de mantenernos conectados a pesar de la separación física. Y aunque nada reemplaza el calor de tu abrazo o la dulzura de tu beso, estos pequeños gestos mantienen viva nuestra conexión.
-
-A veces, la distancia duele. Hay noches en que miro el espacio vacío a mi lado y siento un peso en el pecho. Pero luego recuerdo que este es solo un capítulo en nuestra historia, no el libro completo.
-
-La distancia ha fortalecido nuestro amor, lo ha hecho más resiliente, más consciente. Nos ha obligado a comunicarnos mejor, a expresar nuestros sentimientos con mayor claridad, a no dejar palabras importantes sin decir.
-
-Y aunque los kilómetros nos separen físicamente, nuestros corazones siempre están en el mismo lugar: junto al otro, latiendo al mismo ritmo, compartiendo la misma canción de amor.
+He aprendido a valorar cada instante contigo, desde las mañanas tranquilas hasta las noches de conversaciones profundas.
     `,
-    publishedAt: new Date("2023-05-12T18:00:00Z").toISOString(),
-    updatedAt: new Date("2023-05-12T18:00:00Z").toISOString(),
-    image: "https://placehold.co/800x450/f5eee6/6b563a?text=Distancia+y+Amor",
+    publishedAt: new Date("2023-02-15").toISOString(),
+    updatedAt: new Date("2023-02-15").toISOString(),
+    image: "/images/blog/momentos.jpg",
+    carouselImages: [
+      "/images/blog/carousel-3-1.jpg",
+      "/images/blog/carousel-3-2.jpg",
+      "/images/blog/carousel-3-3.jpg"
+    ],
     tags: [
       { id: "2", name: "amor" },
-      { id: "6", name: "distancia" }
+      { id: "4", name: "cotidiano" }
     ],
     featured: true
   },
   {
     id: generateId(),
-    title: "Promesas para nuestro futuro",
-    slug: "promesas-para-nuestro-futuro",
-    description: "Los sueños que tengo para nosotros y las promesas que hago para nuestro camino juntos.",
+    title: "Nuestros lugares especiales",
+    slug: "nuestros-lugares-especiales",
+    description: "Los rincones que se han vuelto parte de nuestra historia.",
     content: `
-# Promesas para nuestro futuro
+# Nuestros lugares especiales
 
-Mientras miro hacia el horizonte de nuestra vida juntos, mi corazón se llena de esperanza y anticipación. El futuro se despliega ante nosotros como un lienzo en blanco, esperando a ser pintado con los colores de nuestros sueños compartidos.
+Hay lugares que se vuelven mágicos porque los compartimos contigo. Ese café donde tuvimos nuestra primera cita, el parque donde pasamos tardes enteras, el banco donde nos sentamos a ver el atardecer...
 
-Te prometo estar allí en cada paso del camino. En los momentos de alegría, para celebrar tus éxitos como si fueran míos. En los tiempos difíciles, para ofrecerte mi fuerza cuando la tuya flaquee.
-
-Prometo recordar siempre los pequeños detalles: cómo te gusta el café por la mañana, la canción que te hace sonreír, el libro que estás leyendo. Porque son esos pequeños detalles los que construyen la intimidad y la complicidad que compartimos.
-
-Te prometo escuchar no solo tus palabras, sino también los silencios entre ellas. Estar atento a lo que no dices, a esos pensamientos que a veces no encuentran el camino hacia la expresión verbal.
-
-Prometo seguir sorprendiéndote, mantener viva la chispa, encontrar nuevas formas de hacerte sentir amada cada día. No dejar que la rutina apague el fuego de nuestra pasión.
-
-Te prometo respetar tu individualidad, tus sueños y aspiraciones personales. Apoyarte en tus proyectos, alentarte en tus metas, ser tu mayor fan en todo lo que emprendas.
-
-Prometo crecer contigo y permitir que crezcas por tu cuenta cuando lo necesites. Evolucionar juntos, adaptarnos a los cambios que la vida nos presente, fortalecer nuestro vínculo con cada experiencia compartida.
-
-Y, sobre todo, te prometo amor. Un amor constante, paciente, resiliente. Un amor que no se rinde ante las dificultades, que encuentra siempre el camino de regreso a casa, que se renueva cada mañana con el primer pensamiento que tengo al despertar: tú.
-
-Estas son mis promesas para nuestro futuro. Un futuro que construiremos juntos, día a día, promesa a promesa, sueño a sueño.
+Cada lugar guarda memorias únicas de nosotros, momentos que han construido nuestra historia de amor.
     `,
-    publishedAt: new Date("2023-06-25T10:15:00Z").toISOString(),
-    updatedAt: new Date("2023-06-25T10:15:00Z").toISOString(),
-    image: "https://placehold.co/800x450/f5eee6/6b563a?text=Promesas+de+Futuro",
+    publishedAt: new Date("2023-03-01").toISOString(),
+    updatedAt: new Date("2023-03-01").toISOString(),
+    image: "/images/blog/lugares.jpg",
+    carouselImages: [
+      "/images/blog/carousel-4-1.jpg",
+      "/images/blog/carousel-4-2.jpg",
+      "/images/blog/carousel-4-3.jpg"
+    ],
+    tags: [
+      { id: "1", name: "recuerdos" },
+      { id: "5", name: "lugares" }
+    ],
+    featured: false
+  },
+  {
+    id: generateId(),
+    title: "Nuestras risas compartidas",
+    slug: "nuestras-risas-compartidas",
+    description: "Los momentos de alegría que llenan nuestra vida juntos.",
+    content: `
+# Nuestras risas compartidas
+
+Tu risa es mi sonido favorito. Cada vez que escucho tu carcajada, mi corazón se llena de alegría. Hemos compartido tantos momentos divertidos, tantas bromas internas, tantas situaciones que solo nosotros entendemos...
+
+Esos momentos de risa son los que hacen nuestra relación única y especial.
+    `,
+    publishedAt: new Date("2023-03-15").toISOString(),
+    updatedAt: new Date("2023-03-15").toISOString(),
+    image: "/images/blog/risas.jpg",
+    carouselImages: [
+      "/images/blog/carousel-5-1.jpg",
+      "/images/blog/carousel-5-2.jpg",
+      "/images/blog/carousel-5-3.jpg"
+    ],
+    tags: [
+      { id: "2", name: "amor" },
+      { id: "6", name: "felicidad" }
+    ],
+    featured: true
+  },
+  {
+    id: generateId(),
+    title: "Nuestros sueños juntos",
+    slug: "nuestros-suenos-juntos",
+    description: "Los planes y esperanzas que compartimos para el futuro.",
+    content: `
+# Nuestros sueños juntos
+
+Cada vez que hablamos del futuro, mis ojos brillan con ilusión. Tenemos tantos sueños compartidos, tantos planes por realizar, tantas aventuras por vivir...
+
+Me encanta soñar contigo, planear nuestro futuro y visualizar todo lo que podemos lograr juntos.
+    `,
+    publishedAt: new Date("2023-04-01").toISOString(),
+    updatedAt: new Date("2023-04-01").toISOString(),
+    image: "/images/blog/suenos.jpg",
+    carouselImages: [
+      "/images/blog/carousel-6-1.jpg",
+      "/images/blog/carousel-6-2.jpg",
+      "/images/blog/carousel-6-3.jpg"
+    ],
     tags: [
       { id: "2", name: "amor" },
       { id: "7", name: "futuro" }
     ],
     featured: false
+  },
+  {
+    id: generateId(),
+    title: "Nuestras tradiciones",
+    slug: "nuestras-tradiciones",
+    description: "Las costumbres especiales que hemos creado juntos.",
+    content: `
+# Nuestras tradiciones
+
+Con el tiempo, hemos creado nuestras propias tradiciones. Esos pequeños rituales que hacen especial nuestra relación: las cenas de los viernes, los mensajes de buenos días, los paseos de domingo...
+
+Estas tradiciones son el tejido que forma nuestra historia de amor.
+    `,
+    publishedAt: new Date("2023-04-15").toISOString(),
+    updatedAt: new Date("2023-04-15").toISOString(),
+    image: "/images/blog/tradiciones.jpg",
+    carouselImages: [
+      "/images/blog/carousel-7-1.jpg",
+      "/images/blog/carousel-7-2.jpg",
+      "/images/blog/carousel-7-3.jpg"
+    ],
+    tags: [
+      { id: "2", name: "amor" },
+      { id: "8", name: "tradiciones" }
+    ],
+    featured: true
+  },
+  {
+    id: generateId(),
+    title: "Nuestros desafíos superados",
+    slug: "nuestros-desafios-superados",
+    description: "Los obstáculos que hemos vencido juntos.",
+    content: `
+# Nuestros desafíos superados
+
+Cada relación enfrenta sus propios desafíos, y la nuestra no ha sido la excepción. Pero lo importante no son los obstáculos, sino cómo los hemos superado juntos.
+
+Cada desafío nos ha hecho más fuertes, más unidos y más seguros de nuestro amor.
+    `,
+    publishedAt: new Date("2023-05-01").toISOString(),
+    updatedAt: new Date("2023-05-01").toISOString(),
+    image: "/images/blog/desafios.jpg",
+    carouselImages: [
+      "/images/blog/carousel-8-1.jpg",
+      "/images/blog/carousel-8-2.jpg",
+      "/images/blog/carousel-8-3.jpg"
+    ],
+    tags: [
+      { id: "2", name: "amor" },
+      { id: "9", name: "superación" }
+    ],
+    featured: false
+  },
+  {
+    id: generateId(),
+    title: "Nuestros momentos de crecimiento",
+    slug: "nuestros-momentos-de-crecimiento",
+    description: "Cómo hemos crecido y evolucionado juntos.",
+    content: `
+# Nuestros momentos de crecimiento
+
+Ver cómo hemos crecido juntos es una de las experiencias más hermosas. Cada uno ha evolucionado a su manera, pero siempre apoyándonos mutuamente.
+
+Me enorgullece ver en quién te has convertido y cómo seguimos creciendo juntos.
+    `,
+    publishedAt: new Date("2023-05-15").toISOString(),
+    updatedAt: new Date("2023-05-15").toISOString(),
+    image: "/images/blog/crecimiento.jpg",
+    carouselImages: [
+      "/images/blog/carousel-9-1.jpg",
+      "/images/blog/carousel-9-2.jpg",
+      "/images/blog/carousel-9-3.jpg"
+    ],
+    tags: [
+      { id: "2", name: "amor" },
+      { id: "10", name: "crecimiento" }
+    ],
+    featured: true
+  },
+  {
+    id: generateId(),
+    title: "Nuestras celebraciones",
+    slug: "nuestras-celebraciones",
+    description: "Los momentos especiales que hemos festejado juntos.",
+    content: `
+# Nuestras celebraciones
+
+Cada celebración contigo es única. Desde los grandes acontecimientos hasta los pequeños logros, me encanta festejar la vida a tu lado.
+
+Tus éxitos son mis alegrías, y compartir estos momentos de celebración hace nuestra relación más especial.
+    `,
+    publishedAt: new Date("2023-06-01").toISOString(),
+    updatedAt: new Date("2023-06-01").toISOString(),
+    image: "/images/blog/celebraciones.jpg",
+    carouselImages: [
+      "/images/blog/carousel-10-1.jpg",
+      "/images/blog/carousel-10-2.jpg",
+      "/images/blog/carousel-10-3.jpg"
+    ],
+    tags: [
+      { id: "2", name: "amor" },
+      { id: "11", name: "celebraciones" }
+    ],
+    featured: false
+  },
+  {
+    id: generateId(),
+    title: "Nuestros viajes juntos",
+    slug: "nuestros-viajes-juntos",
+    description: "Las aventuras que hemos vivido en diferentes lugares.",
+    content: `
+# Nuestros viajes juntos
+
+Cada viaje contigo es una nueva aventura. Descubrir nuevos lugares, crear memorias en diferentes rincones del mundo, compartir experiencias únicas...
+
+Estos viajes han fortalecido nuestra conexión y nos han regalado recuerdos inolvidables.
+    `,
+    publishedAt: new Date("2023-06-15").toISOString(),
+    updatedAt: new Date("2023-06-15").toISOString(),
+    image: "/images/blog/viajes.jpg",
+    carouselImages: [
+      "/images/blog/carousel-11-1.jpg",
+      "/images/blog/carousel-11-2.jpg",
+      "/images/blog/carousel-11-3.jpg"
+    ],
+    tags: [
+      { id: "3", name: "aventuras" },
+      { id: "12", name: "viajes" }
+    ],
+    featured: true
+  },
+  {
+    id: generateId(),
+    title: "Nuestros proyectos compartidos",
+    slug: "nuestros-proyectos-compartidos",
+    description: "Las metas y sueños que estamos construyendo juntos.",
+    content: `
+# Nuestros proyectos compartidos
+
+Trabajar juntos en proyectos comunes ha sido una experiencia increíble. Ver cómo nuestras ideas se complementan, cómo unimos fuerzas para alcanzar metas...
+
+Cada proyecto es una nueva oportunidad para crecer y fortalecer nuestra relación.
+    `,
+    publishedAt: new Date("2023-07-01").toISOString(),
+    updatedAt: new Date("2023-07-01").toISOString(),
+    image: "/images/blog/proyectos.jpg",
+    carouselImages: [
+      "/images/blog/carousel-12-1.jpg",
+      "/images/blog/carousel-12-2.jpg",
+      "/images/blog/carousel-12-3.jpg"
+    ],
+    tags: [
+      { id: "2", name: "amor" },
+      { id: "13", name: "proyectos" }
+    ],
+    featured: false
+  },
+  {
+    id: generateId(),
+    title: "Nuestro amor en palabras",
+    slug: "nuestro-amor-en-palabras",
+    description: "Una recopilación de pensamientos y sentimientos sobre nuestro amor.",
+    content: `
+# Nuestro amor en palabras
+
+A veces las palabras no son suficientes para expresar todo lo que siento por ti, pero intentaré plasmar en estas líneas la profundidad de nuestro amor.
+
+Cada día descubro nuevas razones para amarte, nuevas formas de ver la vida a través de tus ojos.
+    `,
+    publishedAt: new Date("2023-07-15").toISOString(),
+    updatedAt: new Date("2023-07-15").toISOString(),
+    image: "/images/blog/amor-palabras.jpg",
+    carouselImages: [
+      "/images/blog/carousel-13-1.jpg",
+      "/images/blog/carousel-13-2.jpg",
+      "/images/blog/carousel-13-3.jpg"
+    ],
+    tags: [
+      { id: "2", name: "amor" },
+      { id: "14", name: "reflexiones" }
+    ],
+    featured: true
   }
 ];
 
