@@ -54,22 +54,25 @@ export const ImageCarousel = () => {
             <CarouselItem key={index}>
               <Card className="border-2 border-bronze-300 shadow-lg">
                 <CardContent className="p-2">
-                  <div className="relative w-full h-[400px] overflow-hidden rounded-lg">
+                  <div className="relative w-full h-[400px] overflow-hidden rounded-lg flex items-center justify-center bg-bronze-50">
                     {imageErrors[index] ? (
-                      <div className="w-full h-full flex items-center justify-center bg-bronze-50 text-bronze-700">
+                      <div className="w-full h-full flex items-center justify-center text-bronze-700">
                         <p className="text-center font-handwritten">Imagen no disponible</p>
                       </div>
                     ) : (
-                      <Image 
-                        src={src} 
-                        alt={`Recuerdo ${index + 1}`} 
-                        fill
-                        unoptimized={true}
-                        sizes="(max-width: 768px) 100vw, 700px"
-                        className="object-contain bg-bronze-50"
-                        priority={index === 0}
-                        onError={() => handleImageError(index)}
-                      />
+                      <div className="relative w-full h-full flex items-center justify-center">
+                        <Image 
+                          src={src} 
+                          alt={`Recuerdo ${index + 1}`} 
+                          fill
+                          unoptimized={true}
+                          sizes="(max-width: 768px) 100vw, 700px"
+                          className="object-contain"
+                          style={{ maxHeight: "100%", maxWidth: "100%" }}
+                          priority={index === 0}
+                          onError={() => handleImageError(index)}
+                        />
+                      </div>
                     )}
                   </div>
                 </CardContent>
