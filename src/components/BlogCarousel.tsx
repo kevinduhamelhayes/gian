@@ -21,6 +21,7 @@ export const BlogCarousel = ({ images }: BlogCarouselProps) => {
   const [current, setCurrent] = React.useState(0);
   const [count, setCount] = React.useState(0);
   const [imageErrors, setImageErrors] = React.useState<Record<number, boolean>>({});
+  const [isLoading, setIsLoading] = React.useState<Record<number, boolean>>({});
 
   React.useEffect(() => {
     if (!api) {
@@ -38,6 +39,19 @@ export const BlogCarousel = ({ images }: BlogCarouselProps) => {
   const handleImageError = (index: number) => {
     setImageErrors(prev => ({ ...prev, [index]: true }));
   };
+
+  const handleImageLoad = (index: number) => {
+    setIsLoading(prev => ({ ...prev, [index]: false }));
+  };
+
+  React.useEffect(() => {
+    // Inicializar todas las imágenes como cargando
+    const initialLoadingState: Record<number, boolean> = {};
+    images.forEach((_, index) => {
+      initialLoadingState[index] = true;
+    });
+    setIsLoading(initialLoadingState);
+  }, [images]);
 
   if (!images || images.length === 0) {
     return null;
@@ -58,6 +72,11 @@ export const BlogCarousel = ({ images }: BlogCarouselProps) => {
                       </div>
                     ) : (
                       <div className="w-full h-full flex items-center justify-center">
+                        {isLoading[index] && (
+                          <div className="absolute inset-0 flex items-center justify-center">
+                            <div className="w-8 h-8 border-4 border-bronze-300 border-t-bronze-600 rounded-full animate-spin"></div>
+                          </div>
+                        )}
                         <Image 
                           src={src} 
                           alt={`Imagen ${index + 1} del post`} 
@@ -67,6 +86,7 @@ export const BlogCarousel = ({ images }: BlogCarouselProps) => {
                           className="object-contain max-h-full max-w-full"
                           priority={index === 0}
                           onError={() => handleImageError(index)}
+                          onLoad={() => handleImageLoad(index)}
                         />
                       </div>
                     )}

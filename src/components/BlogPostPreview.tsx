@@ -4,21 +4,31 @@ import { LocalPost } from "@/lib/local-posts";
 import { formatDate } from "date-fns";
 import Image from "next/image";
 import Link from "next/link";
-import { FunctionComponent } from "react";
+import { FunctionComponent, useState } from "react";
 
 export const BlogPostPreview: FunctionComponent<{
   post: LocalPost;
 }> = ({ post }) => {
+  const [imageError, setImageError] = useState(false);
+
   return (
     <div className="break-words group">
       <Link href={`/blog/${post.slug}`} className="block overflow-hidden rounded-lg">
-        <div className="aspect-[16/9] relative group-hover:scale-105 transition-transform duration-300">
-          <Image
-            alt={post.title}
-            className="object-cover"
-            src={post.image || "/images/placeholder.webp"}
-            fill
-          />
+        <div className="aspect-[16/9] relative bg-bronze-50">
+          {!imageError ? (
+            <Image
+              alt={post.title}
+              className="object-cover hover:scale-105 transition-transform duration-300"
+              src={post.image || "/images/placeholder.webp"}
+              fill
+              sizes="(max-width: 768px) 100vw, 500px"
+              onError={() => setImageError(true)}
+            />
+          ) : (
+            <div className="w-full h-full flex items-center justify-center">
+              <p className="text-center font-handwritten text-bronze-700">Imagen no disponible</p>
+            </div>
+          )}
           <div className="absolute inset-0 bg-bronze-800/10 group-hover:bg-bronze-800/0 transition-colors"></div>
         </div>
       </Link>
