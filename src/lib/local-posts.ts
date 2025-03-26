@@ -53,7 +53,7 @@ Ese día marcó el inicio de nuestra historia, una historia que continúa escrib
     carouselImages: [
       "/images/blog/lo-que-no-sospechamos/primer-encuentro-1.jpg",
       "/images/blog/lo-que-no-sospechamos/primer-encuentro-2.jpg",
-      "/images/blog/lo-que-no-sospechamos/primer-encuentro-3.jpg"
+      "/images/blog/lo-que-no-sospechamos/primer-encuentro-2.jpg"
     ],
     tags: [
       { id: "1", name: "recuerdos" },
@@ -259,9 +259,9 @@ Me enorgullece ver en quién te has convertido y cómo seguimos creciendo juntos
     updatedAt: new Date("2023-05-15").toISOString(),
     image: "/images/blog/crecimiento.jpg",
     carouselImages: [
-      "/images/blog/carousel-9-1.jpg",
-      "/images/blog/carousel-9-2.jpg",
-      "/images/blog/carousel-9-3.jpg"
+      "/images/blog/creciendo/IMG-20240327-WA0028.jpg",
+      "/images/blog/creciendo/IMG-20240327-WA0029.jpg",
+      "/images/blog/creciendo/IMG-20240421-WA0012.jpg"
     ],
     tags: [
       { id: "2", name: "amor" },
@@ -311,9 +311,9 @@ Estos viajes han fortalecido nuestra conexión y nos han regalado recuerdos inol
     updatedAt: new Date("2023-06-15").toISOString(),
     image: "/images/blog/viajes.jpg",
     carouselImages: [
-      "/images/blog/carousel-11-1.jpg",
-      "/images/blog/carousel-11-2.jpg",
-      "/images/blog/carousel-11-3.jpg"
+      "/images/blog/nuestro-primer-viaje/IMG-20240714-WA0013.jpg",
+      "/images/blog/nuestro-primer-viaje/IMG_20240712_030209.jpg",
+      "/images/blog/nuestro-primer-viaje/IMG_20240712_030215.jpg"
     ],
     tags: [
       { id: "3", name: "aventuras" },
@@ -370,6 +370,144 @@ Cada día descubro nuevas razones para amarte, nuevas formas de ver la vida a tr
     tags: [
       { id: "2", name: "amor" },
       { id: "14", name: "reflexiones" }
+    ],
+    featured: true
+  },
+  {
+    id: generateId(),
+    title: "Mi sorpresa",
+    slug: "mi-sorpresa",
+    description: "Una sorpresa que me hizo sentir muy feliz",
+    content: `
+# Mi sorpresa
+
+Fue una sorpresa que me hizo sentir muy feliz.
+    `,
+    publishedAt: new Date("2024-06-29").toISOString(),
+    updatedAt: new Date("2024-06-29").toISOString(),
+    image: "/images/blog/mi-sorpresa/IMG_20240629_004516.jpg",
+    carouselImages: [
+      "/images/blog/mi-sorpresa/IMG_20240629_004525.jpg",
+      "/images/blog/mi-sorpresa/IMG_20240929_145831.jpg",
+      "/images/blog/mi-sorpresa/IMG_20240929_145832.jpg"
+    ],
+    tags: [
+      { id: "15", name: "sorpresa" }
+    ],
+    featured: true
+  },
+  {
+    id: generateId(),
+    title: "Quedarme por amor",
+    slug: "quedarme-por-amor",
+    description: "Una decisión que tomé por amor",
+    content: `
+# Quedarme por amor
+
+Fue una decisión que tomé por amor.
+    `,
+    publishedAt: new Date("2024-12-01").toISOString(),
+    updatedAt: new Date("2024-12-01").toISOString(),
+    image: "/images/blog/quedarme-por-amor/IMG_20241201_192033.jpg",
+    carouselImages: [
+      "/images/blog/quedarme-por-amor/IMG_20241201_192033.jpg",
+      "/images/blog/quedarme-por-amor/IMG_20241201_192033.jpg",
+      "/images/blog/quedarme-por-amor/IMG_20241201_192033.jpg"
+    ],
+    tags: [
+      { id: "16", name: "amor" }
+    ],
+    featured: true
+  },
+  {
+    id: generateId(),
+    title: "Queriendo lo que no pediste",
+    slug: "queriendo-lo-que-no-pediste",
+    description: "Una situación que me encontré",
+    content: `
+# Queriendo lo que no pediste
+
+Fue una situación que me encontré.
+    `,
+    publishedAt: new Date("2025-03-10").toISOString(),
+    updatedAt: new Date("2025-03-10").toISOString(),
+    image: "/images/blog/queriendo-lo-que-no-pediste/IMG-20250310-WA0044.jpg",
+    carouselImages: [
+      "/images/blog/queriendo-lo-que-no-pediste/IMG-20250310-WA0044.jpg",
+      "/images/blog/queriendo-lo-que-no-pediste/IMG-20250310-WA0044.jpg",
+      "/images/blog/queriendo-lo-que-no-pediste/IMG-20250310-WA0044.jpg"
+    ],
+    tags: [
+      { id: "17", name: "amor" }
+    ],
+    featured: true
+  },
+  {
+    id: generateId(),
+    title: "Diciembre y disfrutar",
+    slug: "diciembre-y-disfrutar",
+    description: "Una época que me encanta",
+    content: `
+# Diciembre y disfrutar
+
+Fue una época que me encanta.
+    `,
+    publishedAt: new Date("2024-12-05").toISOString(),
+    updatedAt: new Date("2024-12-05").toISOString(),
+    image: "/images/blog/diciembre-y-disfrutar/IMG-20241205-WA0111.jpg",
+    carouselImages: [
+      "/images/blog/diciembre-y-disfrutar/IMG-20241205-WA0118.jpg",
+      "/images/blog/diciembre-y-disfrutar/IMG-20241206-WA0110.jpg",
+      "/images/blog/diciembre-y-disfrutar/IMG-20241206-WA0112.jpg"
+    ],
+    tags: [
+      { id: "18", name: "amor" }
+    ],
+    featured: true
+  },
+  {
+    id: generateId(),
+    title: "Perderlo todo",
+    slug: "perderlo-todo",
+    description: "Una situación que me hizo sentir muy triste",
+    content: `
+# Perderlo todo
+
+Fue una situación que me hizo sentir muy triste.
+    `,
+    publishedAt: new Date("2024-12-27").toISOString(),
+    updatedAt: new Date("2024-12-27").toISOString(),
+    image: "/images/blog/perderlo-todo/IMG-20241227-WA0023.jpg",
+    carouselImages: [
+      "/images/blog/perderlo-todo/IMG-20241227-WA0023.jpg",
+      "/images/blog/perderlo-todo/IMG-20241227-WA0029.jpg",
+      "/images/blog/perderlo-todo/IMG-20241227-WA0029.jpg"
+    ],
+    tags: [
+      { id: "19", name: "amor" }
+    ],
+    featured: true
+  },
+  {
+    id: generateId(),
+    title: "Lo que no tiene palabras",
+    slug: "lo-que-no-tiene-palabras",
+    description: "Una situación que me hizo sentir muy feliz",
+    content: `
+# Lo que no tiene palabras
+
+Fue una situación que me hizo sentir muy feliz.
+    `,
+    publishedAt: new Date("2025-03-16").toISOString(),
+    updatedAt: new Date("2025-03-16").toISOString(),
+    image: "/images/blog/lo-que-no-tiene-palabras/IMG_20250316_185035.jpg",
+    carouselImages: [
+      "/images/blog/lo-que-no-tiene-palabras/IMG_20250316_185035.jpg",
+      "/images/blog/lo-que-no-tiene-palabras/IMG_20250316_185035.jpg",
+      "/images/blog/lo-que-no-tiene-palabras/IMG_20250316_185035.jpg"
+    ],
+    tags: [
+      { id: "20", name: "amor" }
     ],
     featured: true
   }
