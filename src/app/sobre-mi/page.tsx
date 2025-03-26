@@ -3,10 +3,80 @@ import { Header } from "@/components/Header";
 import { config } from "@/config";
 import { signOgImageUrl } from "@/lib/og-image";
 import Markdown from "react-markdown";
+import Image from "next/image";
+import * as React from "react";
+import { Card, CardContent } from "@/components/ui/card";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+  type CarouselApi,
+} from "@/components/ui/carousel";
 
+// Array de rutas de imágenes para el carrusel (seleccionando 5 imágenes)
+const carouselImages = [
+  "/images/sobre-mi/carousel/IMG_20240407_171235.jpg",
+  "/images/sobre-mi/carousel/IMG_20240511_190345.jpg",
+  "/images/sobre-mi/carousel/IMG_20240629_004516.jpg",
+  "/images/sobre-mi/carousel/IMG_20240712_185035.jpg",
+  "/images/sobre-mi/carousel/IMG_20241201_192033.jpg"
+];
+
+// Componente de Carrusel con imágenes reales
+const ImageCarousel = () => {
+  const [api, setApi] = React.useState<CarouselApi>();
+  const [current, setCurrent] = React.useState(0);
+  const [count, setCount] = React.useState(0);
+
+  React.useEffect(() => {
+    if (!api) {
+      return;
+    }
+
+    setCount(api.scrollSnapList().length);
+    setCurrent(api.selectedScrollSnap() + 1);
+
+    api.on("select", () => {
+      setCurrent(api.selectedScrollSnap() + 1);
+    });
+  }, [api]);
+
+  return (
+    <div className="mx-auto max-w-2xl my-8">
+      <Carousel setApi={setApi} className="w-full">
+        <CarouselContent>
+          {carouselImages.map((src, index) => (
+            <CarouselItem key={index}>
+              <Card>
+                <CardContent className="flex aspect-video items-center justify-center p-1">
+                  <div className="relative w-full h-full">
+                    <Image 
+                      src={src} 
+                      alt={`Recuerdo ${index + 1}`} 
+                      fill 
+                      className="object-cover rounded-lg"
+                      priority={index === 0}
+                    />
+                  </div>
+                </CardContent>
+              </Card>
+            </CarouselItem>
+          ))}
+        </CarouselContent>
+        <CarouselPrevious />
+        <CarouselNext />
+      </Carousel>
+      <div className="py-2 text-center text-sm text-muted-foreground">
+        Imagen {current} de {count}
+      </div>
+    </div>
+  );
+};
+
+// Contenido de Markdown sin las imágenes
 const content = `# Sobre Mí
-
-![Kevin](https://placehold.co/800x400/f5eee6/6b563a?text=Mi+Foto)
 
 Hola, soy Yo, naci en una familia pequña fui el unico hijo y nieto 8 años, mi familia era probre pero yo creia que me ocultaban la verdad y era millonario... jaja
 
@@ -17,8 +87,6 @@ mi familia siempre fue orgullosa y pensaba en que opara salir adelante no necesi
 fui el mas exigido de la familia cargando los sueños de mis padres, ser bueno en ajedres matematicas , ser bueno en basquet y por supuesto la obligacion de ser bueno en la escuela.
 
 por supuesto recuerdo al dormir la siesta esconderme bajo la mesa para jugar con legos pensando en no hacer ruido por que mis padres dormian siesta y yo no y hasta el dia de hoy no la duermo.
-
-![Mi pasión](https://placehold.co/800x400/f5eee6/6b563a?text=Mi+Pasión)
 
 bueno esas son anecdotas realmente lo que importa es que logre por otro camino el del sentido comun y el tacto el de la experiencia y el tiempo la los valores que hoy tengo. y que coinciden con los tuyos.
 
@@ -61,7 +129,25 @@ const Page = async () => {
     <div className="container mx-auto px-5">
       <Header />
       <div className="prose lg:prose-lg dark:prose-invert m-auto mt-20 mb-10 blog-content">
+        {/* Imagen de perfil como componente, antes del Markdown */}
+        <div className="w-full flex justify-center mb-8">
+          <div className="relative w-64 h-64 rounded-full overflow-hidden border-4 border-bronze-400">
+            <Image 
+              src="/images/sobre-mi/perfil/kevin.jpg" 
+              alt="Kevin" 
+              fill 
+              className="object-cover"
+              priority
+            />
+          </div>
+        </div>
+        
+        {/* Contenido Markdown */}
         <Markdown>{content}</Markdown>
+        
+        {/* Carrusel en lugar de la segunda imagen */}
+        <h2 className="text-center text-2xl font-script text-bronze-700 mt-10 mb-4">Mis Recuerdos</h2>
+        <ImageCarousel />
       </div>
       <Footer />
     </div>
