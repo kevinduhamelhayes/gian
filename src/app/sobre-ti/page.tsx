@@ -50,15 +50,16 @@ const Page = async () => {
   return (
     <div className="container mx-auto px-5">
       <Header />
-      <div className="prose lg:prose-lg dark:prose-invert m-auto mt-20 mb-10 blog-content">
-        <div className="w-full flex justify-center mb-12">
-          <div className="w-[300px] h-[400px] relative overflow-hidden border-4 border-bronze-400 rounded-xl shadow-xl">
+      <div className="prose lg:prose-lg dark:prose-invert m-auto mt-20 pb-10 blog-content">
+        <div className="w-full flex items-center bg-bronze-50 justify-center pb-12">
+          <div className="w-[700px] h-[700px] relative overflow-hidden   ">
+            
             <Image 
               src="/images/sobre-ti/perfil/tu-perfil.jpg" 
               alt="Gianina" 
               fill
-              sizes="300px"
-              className="object-cover object-center"
+              sizes="700px"
+              className="object-cover border-2 border-bronze-400 rounded-xl shadow-xl h-full w-full max-h-[700px] min-h-[700px]"
               priority
               quality={95}
               unoptimized={false}
@@ -68,7 +69,7 @@ const Page = async () => {
         
         <Markdown>{content}</Markdown>
         
-        <h2 className="text-center text-2xl font-script text-bronze-700 mt-10 mb-4">Momentos Juntos</h2>
+        <h2 className="text-center text-2xl font-script text-bronze-700 mt-10 mb-4">Tu vida</h2>
         <ImageCarousel />
       </div>
       <Footer />
