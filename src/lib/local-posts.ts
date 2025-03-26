@@ -75,17 +75,15 @@ He aprendido a valorar cada instante contigo, desde las mañanas tranquilas hast
     `,
     publishedAt: new Date("2023-02-15").toISOString(),
     updatedAt: new Date("2023-02-15").toISOString(),
-    image: "/images/blog/creciendo/IMG-20240327-WA0028.jpg",
+    image: "/images/blog/creciendo/4.jpg",
     carouselImages: [
-      "/images/blog/creciendo/IMG-20240327-WA0029.jpg",
-      "/images/blog/creciendo/IMG_20240421_172754_824.jpg",
-      "/images/blog/creciendo/IMG-20240421-WA0012.jpg",
-      "/images/blog/creciendo/IMG-20240421-WA0013.jpg",
-      "/images/blog/creciendo/IMG_20240511_190340.jpg",
-      "/images/blog/creciendo/IMG_20240511_190345.jpg",
-      "/images/blog/creciendo/IMG_20240511_190346.jpg",
-      "/images/blog/creciendo/IMG_20240511_190347.jpg",
-      "/images/blog/creciendo/IMG_20240511_190349.jpg"
+      "/images/blog/creciendo/1.jpg",
+      "/images/blog/creciendo/2.jpg",
+      "/images/blog/creciendo/3.jpg",
+      "/images/blog/creciendo/4.jpg",
+      "/images/blog/creciendo/5.jpg",
+      "/images/blog/creciendo/6.jpg",
+      "/images/blog/creciendo/7.jpg"
     ],
     tags: [
       { id: "2", name: "amor" },
@@ -109,9 +107,9 @@ Cada lugar guarda memorias únicas de nosotros, momentos que han construido nues
     updatedAt: new Date("2023-03-01").toISOString(),
     image: "/images/blog/lugares.jpg",
     carouselImages: [
-      "/images/blog/nuestro-primer-viaje/IMG_20240712_030209.jpg",
-      "/images/blog/nuestro-primer-viaje/IMG_20240712_030215.jpg",
-      "/images/blog/nuestro-primer-viaje/IMG_20240712_030216.jpg"
+      "/images/blog/nuestro-primer-viaje/IMG_20240712_030220.jpg",
+      "/images/blog/nuestro-primer-viaje/IMG_20240712_131443.jpg",
+      "/images/blog/nuestro-primer-viaje/IMG_20240712_185035.jpg"
     ],
     tags: [
       { id: "1", name: "recuerdos" },
@@ -240,13 +238,9 @@ Estos viajes han fortalecido nuestra conexión y nos han regalado recuerdos inol
     image: "/images/blog/viajes.jpg",
     carouselImages: [
       "/images/blog/nuestro-primer-viaje/IMG-20240714-WA0013.jpg",
-      "/images/blog/nuestro-primer-viaje/IMG_20240712_030209.jpg",
-      "/images/blog/nuestro-primer-viaje/IMG_20240712_030215.jpg",
-      "/images/blog/nuestro-primer-viaje/IMG_20240712_030216.jpg",
-      "/images/blog/nuestro-primer-viaje/IMG_20240712_030219.jpg",
       "/images/blog/nuestro-primer-viaje/IMG_20240712_030220.jpg",
       "/images/blog/nuestro-primer-viaje/IMG_20240712_131443.jpg",
-      "/images/blog/nuestro-primer-viaje/IMG_20240712_133457.jpg",
+      "/images/blog/nuestro-primer-viaje/IMG_20240712_133456.jpg",
       "/images/blog/nuestro-primer-viaje/IMG_20240712_185035.jpg"
     ],
     tags: [
