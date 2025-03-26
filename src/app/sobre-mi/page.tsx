@@ -61,14 +61,16 @@ const Page = async () => {
       <Header />
       <div className="prose lg:prose-lg dark:prose-invert m-auto mt-20 mb-10 blog-content">
         {/* Imagen de perfil como componente, antes del Markdown */}
-        <div className="w-full flex justify-center mb-8">
-          <div className="relative w-[800px] h-[400px] rounded-none overflow-hidden border-4 border-bronze-400">
+        <div className="w-full flex justify-center mb-12">
+          <div className="w-[300px] h-[400px] relative overflow-hidden border-4 border-bronze-400 rounded-xl shadow-xl">
             <Image 
               src="/images/sobre-mi/perfil/IMG_20241225_015614.jpg" 
               alt="Kevin" 
-              fill 
-              className="object-cover"
+              fill
+              sizes="(max-width: 768px) 300px, 300px"
+              className="object-cover object-center"
               priority
+              unoptimized={true}
             />
           </div>
         </div>
