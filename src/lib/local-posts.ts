@@ -101,11 +101,11 @@ He aprendido a valorar cada instante contigo, desde las mañanas tranquilas hast
     `,
     publishedAt: new Date("2023-02-15").toISOString(),
     updatedAt: new Date("2023-02-15").toISOString(),
-    image: "/images/blog/momentos.jpg",
+    image: "/images/blog/creciendo/IMG-20240327-WA0028.jpg",
     carouselImages: [
-      "/images/blog/carousel-3-1.jpg",
-      "/images/blog/carousel-3-2.jpg",
-      "/images/blog/carousel-3-3.jpg"
+      "/images/blog/creciendo/IMG-20240327-WA0029.jpg",
+      "/images/blog/creciendo/IMG-20240421-WA0012.jpg",
+      "/images/blog/creciendo/IMG-20240421-WA0013.jpg"
     ],
     tags: [
       { id: "2", name: "amor" },
@@ -129,9 +129,9 @@ Cada lugar guarda memorias únicas de nosotros, momentos que han construido nues
     updatedAt: new Date("2023-03-01").toISOString(),
     image: "/images/blog/lugares.jpg",
     carouselImages: [
-      "/images/blog/carousel-4-1.jpg",
-      "/images/blog/carousel-4-2.jpg",
-      "/images/blog/carousel-4-3.jpg"
+      "/images/blog/nuestro-primer-viaje/IMG_20240712_030209.jpg",
+      "/images/blog/nuestro-primer-viaje/IMG_20240712_030215.jpg",
+      "/images/blog/nuestro-primer-viaje/IMG_20240712_030216.jpg"
     ],
     tags: [
       { id: "1", name: "recuerdos" },
@@ -155,9 +155,9 @@ Esos momentos de risa son los que hacen nuestra relación única y especial.
     updatedAt: new Date("2023-03-15").toISOString(),
     image: "/images/blog/risas.jpg",
     carouselImages: [
-      "/images/blog/carousel-5-1.jpg",
-      "/images/blog/carousel-5-2.jpg",
-      "/images/blog/carousel-5-3.jpg"
+      "/images/blog/mi-sorpresa/IMG_20240629_004525.jpg",
+      "/images/blog/mi-sorpresa/IMG_20240929_145831.jpg",
+      "/images/blog/mi-sorpresa/IMG_20240929_145832.jpg"
     ],
     tags: [
       { id: "2", name: "amor" },
@@ -181,9 +181,9 @@ Me encanta soñar contigo, planear nuestro futuro y visualizar todo lo que podem
     updatedAt: new Date("2023-04-01").toISOString(),
     image: "/images/blog/suenos.jpg",
     carouselImages: [
-      "/images/blog/carousel-6-1.jpg",
-      "/images/blog/carousel-6-2.jpg",
-      "/images/blog/carousel-6-3.jpg"
+      "/images/blog/quedarme-por-amor/IMG_20241201_192033.jpg",
+      "/images/blog/quedarme-por-amor/IMG_20241201_192033.jpg",
+      "/images/blog/quedarme-por-amor/IMG_20241201_192033.jpg"
     ],
     tags: [
       { id: "2", name: "amor" },
@@ -207,9 +207,9 @@ Estas tradiciones son el tejido que forma nuestra historia de amor.
     updatedAt: new Date("2023-04-15").toISOString(),
     image: "/images/blog/tradiciones.jpg",
     carouselImages: [
-      "/images/blog/carousel-7-1.jpg",
-      "/images/blog/carousel-7-2.jpg",
-      "/images/blog/carousel-7-3.jpg"
+      "/images/blog/queriendo-lo-que-no-pediste/IMG-20250310-WA0044.jpg",
+      "/images/blog/queriendo-lo-que-no-pediste/IMG-20250310-WA0044.jpg",
+      "/images/blog/queriendo-lo-que-no-pediste/IMG-20250310-WA0044.jpg"
     ],
     tags: [
       { id: "2", name: "amor" },
@@ -233,9 +233,9 @@ Cada desafío nos ha hecho más fuertes, más unidos y más seguros de nuestro a
     updatedAt: new Date("2023-05-01").toISOString(),
     image: "/images/blog/desafios.jpg",
     carouselImages: [
-      "/images/blog/carousel-8-1.jpg",
-      "/images/blog/carousel-8-2.jpg",
-      "/images/blog/carousel-8-3.jpg"
+      "/images/blog/diciembre-y-disfrutar/IMG-20241205-WA0118.jpg",
+      "/images/blog/diciembre-y-disfrutar/IMG-20241206-WA0110.jpg",
+      "/images/blog/diciembre-y-disfrutar/IMG-20241206-WA0112.jpg"
     ],
     tags: [
       { id: "2", name: "amor" },
@@ -259,9 +259,9 @@ Me enorgullece ver en quién te has convertido y cómo seguimos creciendo juntos
     updatedAt: new Date("2023-05-15").toISOString(),
     image: "/images/blog/crecimiento.jpg",
     carouselImages: [
-      "/images/blog/creciendo/IMG-20240327-WA0028.jpg",
-      "/images/blog/creciendo/IMG-20240327-WA0029.jpg",
-      "/images/blog/creciendo/IMG-20240421-WA0012.jpg"
+      "/images/blog/perderlo-todo/IMG-20241227-WA0023.jpg",
+      "/images/blog/perderlo-todo/IMG-20241227-WA0029.jpg",
+      "/images/blog/perderlo-todo/IMG-20241227-WA0029.jpg"
     ],
     tags: [
       { id: "2", name: "amor" },
@@ -313,13 +313,14 @@ Estos viajes han fortalecido nuestra conexión y nos han regalado recuerdos inol
     carouselImages: [
       "/images/blog/nuestro-primer-viaje/IMG-20240714-WA0013.jpg",
       "/images/blog/nuestro-primer-viaje/IMG_20240712_030209.jpg",
-      "/images/blog/nuestro-primer-viaje/IMG_20240712_030215.jpg"
+      "/images/blog/nuestro-primer-viaje/IMG_20240712_030215.jpg",
+      "/images/blog/nuestro-primer-viaje/IMG_20240712_030216.jpg"
     ],
     tags: [
-      { id: "3", name: "aventuras" },
-      { id: "12", name: "viajes" }
+      { id: "1", name: "recuerdos" },
+      { id: "5", name: "lugares" }
     ],
-    featured: true
+    featured: false
   },
   {
     id: generateId(),
@@ -363,9 +364,9 @@ Cada día descubro nuevas razones para amarte, nuevas formas de ver la vida a tr
     updatedAt: new Date("2023-07-15").toISOString(),
     image: "/images/blog/amor-palabras.jpg",
     carouselImages: [
-      "/images/blog/carousel-13-1.jpg",
-      "/images/blog/carousel-13-2.jpg",
-      "/images/blog/carousel-13-3.jpg"
+      "/images/blog/lo-que-no-tiene-palabras/IMG_20250316_185035.jpg",
+      "/images/blog/lo-que-no-tiene-palabras/IMG_20250316_185035.jpg",
+      "/images/blog/lo-que-no-tiene-palabras/IMG_20250316_185035.jpg"
     ],
     tags: [
       { id: "2", name: "amor" },
@@ -392,7 +393,8 @@ Fue una sorpresa que me hizo sentir muy feliz.
       "/images/blog/mi-sorpresa/IMG_20240929_145832.jpg"
     ],
     tags: [
-      { id: "15", name: "sorpresa" }
+      { id: "2", name: "amor" },
+      { id: "6", name: "felicidad" }
     ],
     featured: true
   },
