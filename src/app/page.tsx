@@ -48,9 +48,9 @@ const Page = async (
       {/* Inspirational Quote */}
       <div className="my-16 bg-bronze-100 p-8 rounded-lg text-center">
         <blockquote className="text-2xl md:text-3xl font-script text-bronze-700 italic">
-          "El amor no consiste en mirarse el uno al otro, sino en mirar juntos en la misma dirección."
+          "El dolor al principio no me dejaba hacer esto ahora puedo por que siento amor pero espero que esto no quede en el recuerdo y sigamos escribiendo nuestra historia juntos"
         </blockquote>
-        <p className="mt-4 font-handwritten text-bronze-600">— Antoine de Saint-Exupéry</p>
+        <p className="mt-4 font-handwritten text-bronze-600">— con amor YO</p>
       </div>
       
       <h3 className="text-2xl md:text-3xl font-script text-bronze-700 mb-8 text-center">Nuestras Historias</h3>
