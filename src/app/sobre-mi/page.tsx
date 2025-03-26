@@ -64,7 +64,7 @@ const Page = async () => {
         <div className="w-full flex justify-center mb-8">
           <div className="relative w-64 h-64 rounded-full overflow-hidden border-4 border-bronze-400">
             <Image 
-              src="/images/sobre-mi/perfil/kevin.jpg" 
+              src="/images/sobre-mi/perfil/IMG_20241225_015614.jpg" 
               alt="Kevin" 
               fill 
               className="object-cover"
