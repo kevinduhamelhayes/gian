@@ -62,7 +62,7 @@ const Page = async () => {
       <div className="prose lg:prose-lg dark:prose-invert m-auto mt-20 mb-10 blog-content">
         {/* Imagen de perfil como componente, antes del Markdown */}
         <div className="w-full flex justify-center mb-8">
-          <div className="relative w-64 h-64 rounded-full overflow-hidden border-4 border-bronze-400">
+          <div className="relative w-[800px] h-[400px] rounded-none overflow-hidden border-4 border-bronze-400">
             <Image 
               src="/images/sobre-mi/perfil/IMG_20241225_015614.jpg" 
               alt="Kevin" 

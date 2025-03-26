@@ -14,11 +14,12 @@ import {
 
 // Array de rutas de imágenes para el carrusel (seleccionando 5 imágenes)
 const carouselImages = [
-  "/images/sobre-mi/carousel/IMG_20240407_171235.jpg",
-  "/images/sobre-mi/carousel/IMG_20240511_190345.jpg",
-  "/images/sobre-mi/carousel/IMG_20240629_004516.jpg",
-  "/images/sobre-mi/carousel/IMG_20240712_185035.jpg",
-  "/images/sobre-mi/carousel/IMG_20241201_192033.jpg"
+  "/images/sobre-mi/carousel/IMG_20250110_193709.jpg",
+  "/images/sobre-mi/carousel/IMG-20250201-WA0007.jpg",
+  "/images/sobre-mi/carousel/IMG-20250201-WA0008.jpg",
+  "/images/sobre-mi/carousel/IMG-20250314-WA0064.jpeg",
+  "/images/sobre-mi/carousel/SAVE_20250117_242050.jpg",
+  "/images/sobre-mi/carousel/SAVE_20250117_242105.jpg"
 ];
 
 // Componente de Carrusel con imágenes reales
