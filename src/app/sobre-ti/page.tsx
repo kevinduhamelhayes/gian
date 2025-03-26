@@ -3,18 +3,16 @@ import { Header } from "@/components/Header";
 import { config } from "@/config";
 import { signOgImageUrl } from "@/lib/og-image";
 import Markdown from "react-markdown";
+import Image from "next/image";
+import { ImageCarousel } from "./carousel";
 
 const content = `# Sobre Ti
-
-![Gianina](https://placehold.co/800x400/f5eee6/6b563a?text=Tu+Foto)
 
 Giani, te encontre llena de miedos e inseguridades, nunca pense que tendrias en mi vida la importancia que tenes hoy que al darle sentido a tu vida al enseñarte al sacarte miedos tambien me estaba ablandando y enseñandfo a mi mismo viendo a travez de tus ojos como ser mejor.
 
 Tus valores tu forma de amar tu velocidad para aprender y la forma de entendernos. Fue de lo primero que note unico y nos llevo hasta adonde estasmos.
 
 Admiro tu fuerza interior y tu capacidad para superar cualquier obstáculo que se presenta en tu camino. Entendes muy bien de sacrificio de valores sos tenis sos familia sos valores sos  amigos sos tu carrera y un poco vas a ser lo que pude dejarte en ti y yo sere un poco lo que me enseñaste a ser.
-
-![Tu esencia](https://placehold.co/800x400/f5eee6/6b563a?text=Tu+Esencia)
 
 Entiendo tus peleas por estar en todos lados pero nunca pierdas el foco de lo que realmente importa llegara el tiempo de ir achicando lo que abarcas quizas pronto tu carrera te deje de apretar pero tu alma es joven y arde fuerte asi que buscaras algo quizas para seguir manteniendo el nivel de exigencia. No pretendas ser alquien que no eres ni asi sea por otro solo hacelo si es por vos el cambio a mi me gustabas aun con esas diferencias.
 
@@ -53,7 +51,24 @@ const Page = async () => {
     <div className="container mx-auto px-5">
       <Header />
       <div className="prose lg:prose-lg dark:prose-invert m-auto mt-20 mb-10 blog-content">
+        <div className="w-full flex justify-center mb-12">
+          <div className="w-[300px] h-[400px] relative overflow-hidden border-4 border-bronze-400 rounded-xl shadow-xl">
+            <Image 
+              src="/images/sobre-ti/perfil/tu-perfil.jpg" 
+              alt="Gianina" 
+              fill
+              sizes="(max-width: 768px) 300px, 300px"
+              className="object-cover object-center"
+              priority
+              unoptimized={true}
+            />
+          </div>
+        </div>
+        
         <Markdown>{content}</Markdown>
+        
+        <h2 className="text-center text-2xl font-script text-bronze-700 mt-10 mb-4">Momentos Juntos</h2>
+        <ImageCarousel />
       </div>
       <Footer />
     </div>
