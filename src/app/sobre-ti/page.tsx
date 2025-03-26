@@ -57,10 +57,11 @@ const Page = async () => {
               src="/images/sobre-ti/perfil/tu-perfil.jpg" 
               alt="Gianina" 
               fill
-              sizes="(max-width: 768px) 300px, 300px"
+              sizes="300px"
               className="object-cover object-center"
               priority
-              unoptimized={true}
+              quality={95}
+              unoptimized={false}
             />
           </div>
         </div>
