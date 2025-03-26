@@ -9,7 +9,7 @@ import { ImageCarousel } from "./carousel";
 // Contenido de Markdown sin las imágenes
 const content = `# Sobre Mí
 
-Hola, soy Yo, naci en una familia pequña fui el unico hijo y nieto 8 años, mi familia era probre pero yo creia que me ocultaban la verdad y era millonario... jaja
+Hola, soy Yo, naci en una familia pequña fui el unico hijo y nieto 8 años, mi familia era pobre pero yo creia que me ocultaban la verdad y era millonario... jaja
 
 pobre de mi al entender que realmente no habia nada oculto y el piso y las paredes eran rusticos y mi madre se enojaba por que decia que en el techo de madera caian arañas y polvo en la comida.... muy mañatica con eso pero nunca fue alguien limpia, en ese ambiente se crio un niño que hoy escribe este blog ya grande.
 
@@ -29,7 +29,7 @@ hoy me encuentro con cosas nuevas como curiosidad por viajar por ser feliz pero 
 
 el tiempo pasara y la esperanza de volver a luchar por nosotros seguira en mi corazon. si alguna vez decides volver a mi lado, sabes que estare aqui, con los brazos abiertos y el corazon lleno de amor.
 
-no te prometo que sera facil por que el futuro es incierto pero idealmente estare listo para volver a luchar por nosotros. y si yo dejo de creer o la cosa se ve dificil lucha por esto convenceme, rompete el orto! pelea! aprendiste de mi que nada es imposible anda por ello. 
+no te prometo que sera facil por que el futuro es incierto pero idealmente estare listo para volver a luchar por nosotros. y si yo dejo de creer o la cosa se ve dificil lucha por esto convenceme, rompete el orto! pelea! aprendiste de mi que nada es imposible anda por ello.
 
 Esta página es mi forma de compartir mi historia, mis pensamientos y mis sentimientos. Pero más que nada, es mi manera de honrar a alguien muy especial que ha dejado una huella indeleble en mi corazón.
 
@@ -59,27 +59,25 @@ const Page = async () => {
   return (
     <div className="container mx-auto px-5">
       <Header />
-      <div className="prose lg:prose-lg dark:prose-invert m-auto mt-20 mb-10 blog-content">
-        {/* Imagen de perfil como componente, antes del Markdown */}
-        <div className="w-full flex justify-center mb-12">
-          <div className="w-[300px] h-[400px] relative overflow-hidden border-4 border-bronze-400 rounded-xl shadow-xl">
+      <div className="prose lg:prose-lg dark:prose-invert m-auto mt-20 pb-10 blog-content">
+        <div className="w-full flex items-center bg-bronze-50 justify-center pb-12">
+          <div className="w-[700px] h-[700px] relative overflow-hidden">
             <Image 
               src="/images/sobre-mi/perfil/IMG_20241225_015614.jpg" 
               alt="Kevin" 
               fill
-              sizes="(max-width: 768px) 300px, 300px"
-              className="object-cover object-center"
+              sizes="700px"
+              className="object-cover border-2 border-bronze-400 rounded-xl shadow-xl h-full w-full max-h-[700px] min-h-[700px]"
               priority
-              unoptimized={true}
+              quality={95}
+              unoptimized={false}
             />
           </div>
         </div>
         
-        {/* Contenido Markdown */}
         <Markdown>{content}</Markdown>
         
-        {/* Carrusel en lugar de la segunda imagen */}
-        <h2 className="text-center text-2xl font-script text-bronze-700 mt-10 mb-4">Mis Recuerdos</h2>
+        <h2 className="text-center text-2xl font-script text-bronze-700 mt-10 mb-4">Mi vida</h2>
         <ImageCarousel />
       </div>
       <Footer />
