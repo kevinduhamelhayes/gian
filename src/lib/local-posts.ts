@@ -49,11 +49,11 @@ Ese día marcó el inicio de nuestra historia, una historia que continúa escrib
     `,
     publishedAt: new Date("2023-01-15").toISOString(),
     updatedAt: new Date("2023-01-15").toISOString(),
-    image: "/images/blog/primer-encuentro.jpg",
+    image: "/images/blog/lo-que-no-sospechamos/carousel1-1.jpg",
     carouselImages: [
-      "/images/blog/carousel-1-1.jpg",
-      "/images/blog/carousel-1-2.jpg",
-      "/images/blog/carousel-1-3.jpg"
+      "/images/blog/lo-que-no-sospechamos/primer-encuentro-1.jpg",
+      "/images/blog/lo-que-no-sospechamos/primer-encuentro-2.jpg",
+      "/images/blog/lo-que-no-sospechamos/primer-encuentro-3.jpg"
     ],
     tags: [
       { id: "1", name: "recuerdos" },
