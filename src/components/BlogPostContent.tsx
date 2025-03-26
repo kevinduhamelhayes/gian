@@ -4,6 +4,7 @@ import Link from "next/link";
 import sanitize, { defaults } from "sanitize-html";
 import Image from "next/image";
 import Markdown from "react-markdown";
+import { useState } from "react";
 
 export const PostContent = ({ content }: { content: string }) => {
   const sanitizedContent = sanitize(content, {
@@ -57,6 +58,8 @@ interface BlogPostContentProps {
 }
 
 export const BlogPostContent = ({ post }: BlogPostContentProps) => {
+  const [imageError, setImageError] = useState(false);
+
   if (!post) return null;
   const { title, publishedAt, content, tags } = post;
   return (
@@ -65,16 +68,23 @@ export const BlogPostContent = ({ post }: BlogPostContentProps) => {
       <p className="text-bronze-600 mb-8">{post.description}</p>
       
       {post.image && (
-        <div className="relative w-full h-[400px] mb-8 overflow-hidden rounded-lg border-2 border-bronze-300 shadow-lg">
-          <Image
-            src={post.image}
-            alt={title}
-            fill
-            unoptimized={true}
-            sizes="(max-width: 768px) 100vw, 700px"
-            className="object-cover"
-            priority
-          />
+        <div className="relative w-full h-[400px] mb-8 overflow-hidden rounded-lg border-2 border-bronze-300 shadow-lg bg-bronze-50">
+          {!imageError ? (
+            <Image
+              src={post.image}
+              alt={title}
+              fill
+              unoptimized={true}
+              sizes="(max-width: 768px) 100vw, 800px"
+              className="object-contain"
+              priority
+              onError={() => setImageError(true)}
+            />
+          ) : (
+            <div className="w-full h-full flex items-center justify-center">
+              <p className="text-center font-handwritten text-lg text-bronze-700">Imagen no disponible</p>
+            </div>
+          )}
         </div>
       )}
       
