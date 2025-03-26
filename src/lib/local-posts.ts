@@ -51,8 +51,8 @@ Ese día marcó el inicio de nuestra historia, una historia que continúa escrib
     updatedAt: new Date("2023-01-15").toISOString(),
     image: "/images/blog/lo-que-no-sospechamos/carousel1-1.jpg",
     carouselImages: [
+      "/images/blog/lo-que-no-sospechamos/carousel1-1.jpg",
       "/images/blog/lo-que-no-sospechamos/primer-encuentro-1.jpg",
-      "/images/blog/lo-que-no-sospechamos/primer-encuentro-2.jpg",
       "/images/blog/lo-que-no-sospechamos/primer-encuentro-2.jpg"
     ],
     tags: [
@@ -60,32 +60,6 @@ Ese día marcó el inicio de nuestra historia, una historia que continúa escrib
       { id: "2", name: "amor" }
     ],
     featured: true
-  },
-  {
-    id: generateId(),
-    title: "Nuestras primeras aventuras",
-    slug: "nuestras-primeras-aventuras",
-    description: "Los momentos que compartimos al inicio de nuestra historia.",
-    content: `
-# Nuestras primeras aventuras
-
-Cada salida contigo era una nueva aventura. Desde paseos improvisados hasta planes elaborados, cada momento juntos estaba lleno de risas, descubrimientos y conexiones más profundas.
-
-Recuerdo especialmente nuestros paseos por el parque, nuestras conversaciones interminables y esos momentos en que el mundo parecía detenerse solo para nosotros.
-    `,
-    publishedAt: new Date("2023-02-01").toISOString(),
-    updatedAt: new Date("2023-02-01").toISOString(),
-    image: "/images/blog/aventuras.jpg",
-    carouselImages: [
-      "/images/blog/carousel-2-1.jpg",
-      "/images/blog/carousel-2-2.jpg",
-      "/images/blog/carousel-2-3.jpg"
-    ],
-    tags: [
-      { id: "1", name: "recuerdos" },
-      { id: "3", name: "aventuras" }
-    ],
-    featured: false
   },
   {
     id: generateId(),
@@ -104,8 +78,14 @@ He aprendido a valorar cada instante contigo, desde las mañanas tranquilas hast
     image: "/images/blog/creciendo/IMG-20240327-WA0028.jpg",
     carouselImages: [
       "/images/blog/creciendo/IMG-20240327-WA0029.jpg",
+      "/images/blog/creciendo/IMG_20240421_172754_824.jpg",
       "/images/blog/creciendo/IMG-20240421-WA0012.jpg",
-      "/images/blog/creciendo/IMG-20240421-WA0013.jpg"
+      "/images/blog/creciendo/IMG-20240421-WA0013.jpg",
+      "/images/blog/creciendo/IMG_20240511_190340.jpg",
+      "/images/blog/creciendo/IMG_20240511_190345.jpg",
+      "/images/blog/creciendo/IMG_20240511_190346.jpg",
+      "/images/blog/creciendo/IMG_20240511_190347.jpg",
+      "/images/blog/creciendo/IMG_20240511_190349.jpg"
     ],
     tags: [
       { id: "2", name: "amor" },
@@ -245,58 +225,6 @@ Cada desafío nos ha hecho más fuertes, más unidos y más seguros de nuestro a
   },
   {
     id: generateId(),
-    title: "Nuestros momentos de crecimiento",
-    slug: "nuestros-momentos-de-crecimiento",
-    description: "Cómo hemos crecido y evolucionado juntos.",
-    content: `
-# Nuestros momentos de crecimiento
-
-Ver cómo hemos crecido juntos es una de las experiencias más hermosas. Cada uno ha evolucionado a su manera, pero siempre apoyándonos mutuamente.
-
-Me enorgullece ver en quién te has convertido y cómo seguimos creciendo juntos.
-    `,
-    publishedAt: new Date("2023-05-15").toISOString(),
-    updatedAt: new Date("2023-05-15").toISOString(),
-    image: "/images/blog/crecimiento.jpg",
-    carouselImages: [
-      "/images/blog/perderlo-todo/IMG-20241227-WA0023.jpg",
-      "/images/blog/perderlo-todo/IMG-20241227-WA0029.jpg",
-      "/images/blog/perderlo-todo/IMG-20241227-WA0029.jpg"
-    ],
-    tags: [
-      { id: "2", name: "amor" },
-      { id: "10", name: "crecimiento" }
-    ],
-    featured: true
-  },
-  {
-    id: generateId(),
-    title: "Nuestras celebraciones",
-    slug: "nuestras-celebraciones",
-    description: "Los momentos especiales que hemos festejado juntos.",
-    content: `
-# Nuestras celebraciones
-
-Cada celebración contigo es única. Desde los grandes acontecimientos hasta los pequeños logros, me encanta festejar la vida a tu lado.
-
-Tus éxitos son mis alegrías, y compartir estos momentos de celebración hace nuestra relación más especial.
-    `,
-    publishedAt: new Date("2023-06-01").toISOString(),
-    updatedAt: new Date("2023-06-01").toISOString(),
-    image: "/images/blog/celebraciones.jpg",
-    carouselImages: [
-      "/images/blog/carousel-10-1.jpg",
-      "/images/blog/carousel-10-2.jpg",
-      "/images/blog/carousel-10-3.jpg"
-    ],
-    tags: [
-      { id: "2", name: "amor" },
-      { id: "11", name: "celebraciones" }
-    ],
-    featured: false
-  },
-  {
-    id: generateId(),
     title: "Nuestros viajes juntos",
     slug: "nuestros-viajes-juntos",
     description: "Las aventuras que hemos vivido en diferentes lugares.",
@@ -314,7 +242,12 @@ Estos viajes han fortalecido nuestra conexión y nos han regalado recuerdos inol
       "/images/blog/nuestro-primer-viaje/IMG-20240714-WA0013.jpg",
       "/images/blog/nuestro-primer-viaje/IMG_20240712_030209.jpg",
       "/images/blog/nuestro-primer-viaje/IMG_20240712_030215.jpg",
-      "/images/blog/nuestro-primer-viaje/IMG_20240712_030216.jpg"
+      "/images/blog/nuestro-primer-viaje/IMG_20240712_030216.jpg",
+      "/images/blog/nuestro-primer-viaje/IMG_20240712_030219.jpg",
+      "/images/blog/nuestro-primer-viaje/IMG_20240712_030220.jpg",
+      "/images/blog/nuestro-primer-viaje/IMG_20240712_131443.jpg",
+      "/images/blog/nuestro-primer-viaje/IMG_20240712_133457.jpg",
+      "/images/blog/nuestro-primer-viaje/IMG_20240712_185035.jpg"
     ],
     tags: [
       { id: "1", name: "recuerdos" },
@@ -322,58 +255,7 @@ Estos viajes han fortalecido nuestra conexión y nos han regalado recuerdos inol
     ],
     featured: false
   },
-  {
-    id: generateId(),
-    title: "Nuestros proyectos compartidos",
-    slug: "nuestros-proyectos-compartidos",
-    description: "Las metas y sueños que estamos construyendo juntos.",
-    content: `
-# Nuestros proyectos compartidos
 
-Trabajar juntos en proyectos comunes ha sido una experiencia increíble. Ver cómo nuestras ideas se complementan, cómo unimos fuerzas para alcanzar metas...
-
-Cada proyecto es una nueva oportunidad para crecer y fortalecer nuestra relación.
-    `,
-    publishedAt: new Date("2023-07-01").toISOString(),
-    updatedAt: new Date("2023-07-01").toISOString(),
-    image: "/images/blog/proyectos.jpg",
-    carouselImages: [
-      "/images/blog/carousel-12-1.jpg",
-      "/images/blog/carousel-12-2.jpg",
-      "/images/blog/carousel-12-3.jpg"
-    ],
-    tags: [
-      { id: "2", name: "amor" },
-      { id: "13", name: "proyectos" }
-    ],
-    featured: false
-  },
-  {
-    id: generateId(),
-    title: "Nuestro amor en palabras",
-    slug: "nuestro-amor-en-palabras",
-    description: "Una recopilación de pensamientos y sentimientos sobre nuestro amor.",
-    content: `
-# Nuestro amor en palabras
-
-A veces las palabras no son suficientes para expresar todo lo que siento por ti, pero intentaré plasmar en estas líneas la profundidad de nuestro amor.
-
-Cada día descubro nuevas razones para amarte, nuevas formas de ver la vida a través de tus ojos.
-    `,
-    publishedAt: new Date("2023-07-15").toISOString(),
-    updatedAt: new Date("2023-07-15").toISOString(),
-    image: "/images/blog/amor-palabras.jpg",
-    carouselImages: [
-      "/images/blog/lo-que-no-tiene-palabras/IMG_20250316_185035.jpg",
-      "/images/blog/lo-que-no-tiene-palabras/IMG_20250316_185035.jpg",
-      "/images/blog/lo-que-no-tiene-palabras/IMG_20250316_185035.jpg"
-    ],
-    tags: [
-      { id: "2", name: "amor" },
-      { id: "14", name: "reflexiones" }
-    ],
-    featured: true
-  },
   {
     id: generateId(),
     title: "Mi sorpresa",
@@ -390,7 +272,10 @@ Fue una sorpresa que me hizo sentir muy feliz.
     carouselImages: [
       "/images/blog/mi-sorpresa/IMG_20240629_004525.jpg",
       "/images/blog/mi-sorpresa/IMG_20240929_145831.jpg",
-      "/images/blog/mi-sorpresa/IMG_20240929_145832.jpg"
+      "/images/blog/mi-sorpresa/IMG_20240929_145832.jpg",
+      "/images/blog/mi-sorpresa/IMG_20240929_145833.jpg",
+      "/images/blog/mi-sorpresa/IMG_20241028_142712.jpg",
+      "/images/blog/mi-sorpresa/IMG_20241028_142837.jpg"
     ],
     tags: [
       { id: "2", name: "amor" },
@@ -460,7 +345,14 @@ Fue una época que me encanta.
     carouselImages: [
       "/images/blog/diciembre-y-disfrutar/IMG-20241205-WA0118.jpg",
       "/images/blog/diciembre-y-disfrutar/IMG-20241206-WA0110.jpg",
-      "/images/blog/diciembre-y-disfrutar/IMG-20241206-WA0112.jpg"
+      "/images/blog/diciembre-y-disfrutar/IMG-20241206-WA0112.jpg",
+      "/images/blog/diciembre-y-disfrutar/IMG-20241206-WA0116.jpg",
+      "/images/blog/diciembre-y-disfrutar/IMG-20241206-WA0124.jpg",
+      "/images/blog/diciembre-y-disfrutar/IMG-20241206-WA0132.jpg",
+      "/images/blog/diciembre-y-disfrutar/IMG-20241206-WA0139.jpg",
+      "/images/blog/diciembre-y-disfrutar/IMG-20241208-WA0049.jpg",
+      "/images/blog/diciembre-y-disfrutar/IMG-20241210-WA0036.jpg",
+      "/images/blog/diciembre-y-disfrutar/IMG-20241218-WA0097.jpg"
     ],
     tags: [
       { id: "18", name: "amor" }
