@@ -65,18 +65,18 @@ export const BlogPostContent = ({ post }: BlogPostContentProps) => {
   return (
     <article className="blog-post">
       <h1 className="text-4xl font-bold mb-4">{title}</h1>
-      <p className="text-bronze-600 mb-8">{post.description}</p>
+      <p className="text-bronze-600 ">{post.description}</p>
       
       {post.image && (
-        <div className="relative w-full h-[400px] mb-8 overflow-hidden rounded-lg border-2 border-bronze-300 shadow-lg bg-bronze-50">
+        <div className="relative w-full h-[700px]  overflow-hidden rounded-lg border-bronze-300 shadow-lg bg-bronze-50 mb-4">
           {!imageError ? (
             <Image
               src={post.image}
               alt={title}
               fill
               unoptimized={true}
-              sizes="(max-width: 768px) 100vw, 800px"
-              className="object-contain"
+               sizes="700px"
+              className="object-cover border-2 border-bronze-400 rounded-xl shadow-xl h-full w-full max-h-[700px] min-h-[700px]"
               priority
               onError={() => setImageError(true)}
             />

@@ -14,20 +14,23 @@ import {
 
 // Array de rutas de imágenes para el primer carrusel (Nosotros)
 const carouselImagesNosotros = [
-  "/images/nuestro-amor/carousel/placeholder-1.jpg",
-  "/images/nuestro-amor/carousel/placeholder-2.jpg",
-  "/images/nuestro-amor/carousel/placeholder-3.jpg",
-  "/images/nuestro-amor/carousel/placeholder-4.jpg",
-  "/images/nuestro-amor/carousel/placeholder-5.jpg",
+  "/images/nuestro-amor/carousel/1.jpg",
+  "/images/nuestro-amor/carousel/2.jpg",
+  "/images/nuestro-amor/carousel/3.jpg",
+  "/images/nuestro-amor/carousel/4.jpg",
+  "/images/nuestro-amor/carousel/5.jpg",
+  "/images/nuestro-amor/carousel/6.jpg",
+  "/images/nuestro-amor/carousel/7.jpg",
 ];
 
 // Array de rutas de imágenes para el segundo carrusel (Momentos)
 const carouselImagesMomentos = [
-  "/images/nuestro-amor/momentos/placeholder-1.jpg",
-  "/images/nuestro-amor/momentos/placeholder-2.jpg",
-  "/images/nuestro-amor/momentos/placeholder-3.jpg",
-  "/images/nuestro-amor/momentos/placeholder-4.jpg",
-  "/images/nuestro-amor/momentos/placeholder-5.jpg",
+  "/images/nuestro-amor/momentos/1.jpg",
+  "/images/nuestro-amor/momentos/2.jpg",
+  "/images/nuestro-amor/momentos/3.jpg",
+  "/images/nuestro-amor/momentos/4.jpg",
+  "/images/nuestro-amor/momentos/5.jpg",
+  "/images/nuestro-amor/momentos/6.jpg",
 ];
 
 // Componente de Carrusel con imágenes para la sección "Nosotros"

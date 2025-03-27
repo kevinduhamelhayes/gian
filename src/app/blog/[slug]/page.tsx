@@ -1,15 +1,12 @@
 import { BlogCarousel } from "@/components/BlogCarousel";
 import { BlogPostContent } from "@/components/BlogPostContent";
-import { CommentSection } from "@/components/CommentSection";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
-import { RelatedPosts } from "@/components/RelatedPosts";
 import { config } from "@/config";
 import { localPostsApi } from "@/lib/local-posts";
 import { signOgImageUrl } from "@/lib/og-image";
 import { Metadata } from "next";
-import { notFound } from "next/navigation";
-import type { BlogPosting, WithContext } from "schema-dts";
+
 
 interface Props {
   params: {
@@ -48,8 +45,7 @@ const Page = async ({ params }: Props) => {
         {post.carouselImages && post.carouselImages.length > 0 && (
           <BlogCarousel images={post.carouselImages} />
         )}
-        <CommentSection />
-        <RelatedPosts posts={relatedPosts} />
+
       </div>
       <Footer />
     </div>
