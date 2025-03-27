@@ -17,8 +17,12 @@ import { miSorpresa } from './mi-sorpresa';
 import { loQueNoSospechamos } from './lo-que-no-sospechamos';
 import { diciembreYDisfrutar } from './diciembre-y-disfrutar';
 
-// Combine all posts into a single array
-export const localPosts: LocalPost[] = [
+/**
+ * Lista de posts sin ordenar
+ * Añade o quita posts de esta lista según sea necesario
+ */
+const allPosts: LocalPost[] = [
+  loQueNoSospechamos, // Este post debe aparecer primero
   elDiaQueTeConoci,
   pequenosMomentos,
   lugaresEspeciales,
@@ -31,6 +35,48 @@ export const localPosts: LocalPost[] = [
   queriendoLoQueNoPediste,
   quedarmePorAmor,
   miSorpresa,
-  loQueNoSospechamos,
   diciembreYDisfrutar
-]; 
+];
+
+/**
+ * Orden personalizado para los posts en la página principal
+ * 
+ * INSTRUCCIONES PARA MODIFICAR EL ORDEN:
+ * 1. Asigna un valor numérico a cada slug, donde números más bajos aparecen primero
+ * 2. Los slugs no incluidos en este objeto se ordenarán después por fecha de publicación
+ * 3. Si dos posts tienen el mismo valor, se ordenarán por fecha de publicación
+ * 
+ * Ejemplo: { "post-mas-importante": 1, "segundo-post": 2, "tercer-post": 3 }
+ */
+const customOrder: Record<string, number> = {
+  "lo-que-no-sospechamos": 1,  // Aparecerá primero
+  "el-dia-que-te-conoci": 2,   // Aparecerá segundo
+  "nuestro-primer-viaje": 3,   // Aparecerá tercero
+  // Añade más posts aquí para controlar su orden
+};
+
+/**
+ * Ordena los posts según el orden personalizado y luego por fecha
+ * @param posts - Array de posts a ordenar
+ * @returns Array ordenado según customOrder y luego por fecha de publicación (más recientes primero)
+ */
+const sortPosts = (posts: LocalPost[]): LocalPost[] => {
+  return [...posts].sort((a, b) => {
+    // Primero, comprueba si ambos posts tienen un orden personalizado
+    const orderA = customOrder[a.slug] || Number.MAX_SAFE_INTEGER;
+    const orderB = customOrder[b.slug] || Number.MAX_SAFE_INTEGER;
+    
+    // Si los órdenes son diferentes, ordena por ellos
+    if (orderA !== orderB) {
+      return orderA - orderB;
+    }
+    
+    // Si los órdenes son iguales o no existen, ordena por fecha de publicación (más recientes primero)
+    const dateA = new Date(a.publishedAt).getTime();
+    const dateB = new Date(b.publishedAt).getTime();
+    return dateB - dateA;
+  });
+};
+
+// Exporta los posts ordenados
+export const localPosts: LocalPost[] = sortPosts(allPosts); 
