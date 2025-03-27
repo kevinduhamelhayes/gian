@@ -1,6 +1,6 @@
 import { LocalPost } from '../local-posts';
 import { generateId } from '../utils/id-utils';
-import { getPostImagePath, getNumberedImagePaths } from '../image-utils';
+import { getPostImagePath } from '../image-utils';
 
 // Slug for this post
 const SLUG = 'verte-feliz';
@@ -33,18 +33,18 @@ Verte feliz es mi mayor alegría. Tu sonrisa es el regalo más hermoso que puedo
   `,
   publishedAt: new Date("2023-05-20").toISOString(),
   updatedAt: new Date("2023-05-20").toISOString(),
-  image: getPostImagePath(SLUG, '3.jpg'), // Imagen principal
+  image: getPostImagePath(SLUG, '1.jpg'), // Primera imagen para la preview
   carouselImages: [
-    getPostImagePath(SLUG, '1.jpeg'),
-    getPostImagePath(SLUG, '2.jpeg'),
-    getPostImagePath(SLUG, '4.jpeg'),
-    getPostImagePath(SLUG, '5.jpeg')
-    
+    getPostImagePath(SLUG, '1.jpg'),
+    getPostImagePath(SLUG, '2.jpg'),
+    getPostImagePath(SLUG, '3.jpg'),
+    getPostImagePath(SLUG, '4.jpg'),
+    getPostImagePath(SLUG, '5.jpg')
   ],
   tags: [
-    { id: generateId(), name: "amor" },
-    { id: generateId(), name: "felicidad" },
-    { id: generateId(), name: "momentos" }
+    { id: "10", name: "amor" },
+    { id: "11", name: "felicidad" },
+    { id: "12", name: "momentos" }
   ],
   featured: true
 }; 
