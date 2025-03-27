@@ -33,7 +33,7 @@ interface BlogCarouselProps {
  * A responsive carousel component for displaying blog post images
  * Features:
  * - Automatically rotates images (can be paused on hover)
- * - Shows two images side-by-side on large screens
+ * - Shows one image at a time on all screen sizes
  * - Handles both portrait and landscape images appropriately
  * - Provides loading states and error handling
  */
@@ -51,9 +51,6 @@ export const BlogCarousel = ({
   const [isPaused, setIsPaused] = React.useState(false);
   const [imageDimensions, setImageDimensions] = React.useState<Record<number, { width: number, height: number }>>({});
   
-  // Check if screen is large enough to show two slides
-  const isLargeScreen = useMediaQuery("(min-width: 1024px)");
-
   // Memoize validated images to prevent unnecessary recalculations
   const validatedImages = React.useMemo(
     () => images.map(img => validateImage(img)),
@@ -135,7 +132,7 @@ export const BlogCarousel = ({
 
   return (
     <div 
-      className="mx-auto max-w-6xl my-8"
+      className="mx-auto max-w-4xl my-8"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
     >
@@ -144,18 +141,15 @@ export const BlogCarousel = ({
         className="w-full" 
         opts={{ 
           loop: true,
-          slidesToScroll: isLargeScreen ? 2 : 1,
-          align: "start"
+          slidesToScroll: 1,
+          align: "center"
         }}
       >
         <CarouselContent className="-ml-2 md:-ml-4">
           {validatedImages.map((src, index) => (
             <CarouselItem 
               key={`${src}-${index}`} 
-              className={cn(
-                "pl-2 md:pl-4",
-                isLargeScreen ? "basis-1/2" : "basis-full"
-              )}
+              className="pl-2 md:pl-4 basis-full"
             >
               <div className="p-1">
                 <Card className="border-2 border-bronze-300 shadow-lg overflow-hidden">
@@ -183,7 +177,7 @@ export const BlogCarousel = ({
                               // Apply different object-fit based on image orientation
                               isPortrait(index) 
                                 ? "object-contain max-h-[480px] max-w-full" 
-                                : "object-cover h-full w-full"
+                                : "object-contain h-full w-full"
                             )}
                             priority={index === 0}
                             onError={() => handleImageError(index)}
