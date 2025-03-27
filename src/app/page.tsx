@@ -14,7 +14,7 @@ const Page = async (
 ) => {
   const searchParams = await props.searchParams;
   const page = searchParams.page ? parseInt(searchParams.page as string) : 1;
-  const result = await localPostsApi.getPosts({ limit: 6, page });
+  const result = await localPostsApi.getPosts({ limit: 10, page });
   
   return (
     <div className="container mx-auto px-5 mb-10">
