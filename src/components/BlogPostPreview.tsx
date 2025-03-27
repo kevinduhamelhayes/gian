@@ -4,29 +4,63 @@ import { LocalPost } from "@/lib/local-posts";
 import { formatDate } from "date-fns";
 import Image from "next/image";
 import Link from "next/link";
-import { FunctionComponent, useState } from "react";
+import { FunctionComponent, useState, useEffect } from "react";
+import { validateImage, DEFAULT_FALLBACK_IMAGE } from "@/lib/image-utils";
 
 export const BlogPostPreview: FunctionComponent<{
   post: LocalPost;
 }> = ({ post }) => {
   const [imageError, setImageError] = useState(false);
+  const [imageSrc, setImageSrc] = useState(post.image || DEFAULT_FALLBACK_IMAGE);
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    // Validate the image when the component mounts or post changes
+    setImageSrc(validateImage(post.image));
+    setIsLoading(true);
+    setImageError(false);
+  }, [post.image]);
+
+  const handleImageLoad = () => {
+    setIsLoading(false);
+  };
+
+  const handleImageError = () => {
+    setImageError(true);
+    setIsLoading(false);
+    setImageSrc(DEFAULT_FALLBACK_IMAGE);
+  };
 
   return (
     <div className="break-words group">
       <Link href={`/blog/${post.slug}`} className="block overflow-hidden rounded-lg">
         <div className="aspect-[16/9] relative bg-bronze-50">
-          {!imageError ? (
-            <Image
-              alt={post.title}
-              className="object-cover hover:scale-105 transition-transform duration-300"
-              src={post.image || "/images/placeholder.webp"}
-              fill
-              sizes="(max-width: 768px) 100vw, 500px"
-              onError={() => setImageError(true)}
-            />
-          ) : (
+          {isLoading && (
+            <div className="absolute inset-0 flex items-center justify-center z-10">
+              <div className="w-8 h-8 border-4 border-bronze-300 border-t-bronze-600 rounded-full animate-spin"></div>
+            </div>
+          )}
+          
+          {imageError ? (
             <div className="w-full h-full flex items-center justify-center">
               <p className="text-center font-handwritten text-bronze-700">Imagen no disponible</p>
+            </div>
+          ) : (
+            <div className="absolute inset-0 flex items-center justify-center">
+              <Image
+                alt={post.title}
+                className={cn(
+                  "object-contain max-h-full max-w-full transition-all duration-300",
+                  "hover:scale-105",
+                  isLoading ? "opacity-0" : "opacity-100"
+                )}
+                src={imageSrc}
+                fill
+                sizes="(max-width: 768px) 100vw, 500px"
+                onError={handleImageError}
+                onLoad={handleImageLoad}
+                priority
+              />
             </div>
           )}
           <div className="absolute inset-0 bg-bronze-800/10 group-hover:bg-bronze-800/0 transition-colors"></div>
