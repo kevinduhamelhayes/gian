@@ -34,7 +34,7 @@ export const BlogPostPreview: FunctionComponent<{
   return (
     <div className="break-words group">
       <Link href={`/blog/${post.slug}`} className="block overflow-hidden rounded-lg">
-        <div className="aspect-[16/9] relative bg-bronze-50">
+        <div className="aspect-[16/12] relative bg-bronze-50 min-h-[380px]">
           {isLoading && (
             <div className="absolute inset-0 flex items-center justify-center z-10">
               <div className="w-8 h-8 border-4 border-bronze-300 border-t-bronze-600 rounded-full animate-spin"></div>
@@ -42,7 +42,7 @@ export const BlogPostPreview: FunctionComponent<{
           )}
           
           {imageError ? (
-            <div className="w-full h-full flex items-center justify-center">
+            <div className="w-full h-full  flex items-center justify-center">
               <p className="text-center font-handwritten text-bronze-700">Imagen no disponible</p>
             </div>
           ) : (
@@ -50,8 +50,8 @@ export const BlogPostPreview: FunctionComponent<{
               <Image
                 alt={post.title}
                 className={cn(
-                  "object-contain max-h-full max-w-full transition-all duration-300",
-                  "hover:scale-105",
+                  "object-contain max-h-[580px] max-w-full transition-all duration-300",
+                  "hover:scale-105 aspect-video",
                   isLoading ? "opacity-0" : "opacity-100"
                 )}
                 src={imageSrc}
@@ -95,7 +95,7 @@ export const BlogPostsPreview: FunctionComponent<{
   return (
     <div
       className={cn(
-        "grid grid-cols-1 gap-16 lg:gap-28 md:grid-cols-2 md:my-16 my-8",
+        "grid grid-cols-1 gap-16 lg:gap-20 md:grid-cols-2 md:my-16 my-8",
         className
       )}
     >
