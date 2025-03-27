@@ -5,7 +5,7 @@ import { generateId } from '../utils/id-utils';
 import { elDiaQueTeConoci } from './el-dia-que-te-conoci';
 import { pequenosMomentos } from './pequenos-momentos';
 import { lugaresEspeciales } from './lugares-especiales';
-import { risasCompartidas } from './risas-compartidas';
+import { vertefeliz } from './verte-feliz';
 import { creciendo } from './creciendo';
 import { nuestroPrimerViaje } from './nuestro-primer-viaje';
 import { nuestroPrimer } from './nuestro-primer';
@@ -26,7 +26,7 @@ const allPosts: LocalPost[] = [
   elDiaQueTeConoci,
   pequenosMomentos,
   lugaresEspeciales,
-  risasCompartidas,
+  vertefeliz,
   creciendo,
   nuestroPrimerViaje,
   nuestroPrimer,
@@ -52,6 +52,7 @@ const customOrder: Record<string, number> = {
   "lo-que-no-sospechamos": 1,  // Aparecerá primero
   "el-dia-que-te-conoci": 2,   // Aparecerá segundo
   "nuestro-primer-viaje": 3,   // Aparecerá tercero
+  "verte-feliz": 4,            // Aparecerá cuarto
   // Añade más posts aquí para controlar su orden
 };
 
