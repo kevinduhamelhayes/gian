@@ -18,24 +18,24 @@ import { loQueNoSospechamos } from './lo-que-no-sospechamos';
 import { diciembreYDisfrutar } from './diciembre-y-disfrutar';
 
 /**
- * Lista de posts sin ordenar
- * Añade o quita posts de esta lista según sea necesario
+ * Lista de posts en el orden establecido por defecto.
+ * Este orden se usa como base pero puede ser modificado por la función de ordenamiento.
  */
 const allPosts: LocalPost[] = [
   loQueNoSospechamos, // Este post debe aparecer primero
   elDiaQueTeConoci,
+  miSorpresa,
+  vertefeliz,
+  nuestroPrimerViaje,
   pequenosMomentos,
   lugaresEspeciales,
-  vertefeliz,
-  creciendo,
-  nuestroPrimerViaje,
-  nuestroPrimer,
-  loQueNoTienePalabras,
-  perderloTodo,
-  queriendoLoQueNoPediste,
   quedarmePorAmor,
-  miSorpresa,
-  diciembreYDisfrutar
+  creciendo,
+  nuestroPrimer,
+  queriendoLoQueNoPediste,
+  diciembreYDisfrutar,
+  perderloTodo,
+  loQueNoTienePalabras
 ];
 
 /**
@@ -57,27 +57,53 @@ const customOrder: Record<string, number> = {
 };
 
 /**
+ * Opciones para ordenar los posts
+ */
+export interface SortOptions {
+  /** Si es true, invierte el orden final de los posts */
+  reverse?: boolean;
+  /** Si es false, ignora el orden personalizado y solo ordena por fecha */
+  useCustomOrder?: boolean;
+}
+
+/**
  * Ordena los posts según el orden personalizado y luego por fecha
  * @param posts - Array de posts a ordenar
- * @returns Array ordenado según customOrder y luego por fecha de publicación (más recientes primero)
+ * @param options - Opciones de ordenamiento
+ * @returns Array ordenado según las opciones especificadas
  */
-const sortPosts = (posts: LocalPost[]): LocalPost[] => {
-  return [...posts].sort((a, b) => {
-    // Primero, comprueba si ambos posts tienen un orden personalizado
-    const orderA = customOrder[a.slug] || Number.MAX_SAFE_INTEGER;
-    const orderB = customOrder[b.slug] || Number.MAX_SAFE_INTEGER;
-    
-    // Si los órdenes son diferentes, ordena por ellos
-    if (orderA !== orderB) {
-      return orderA - orderB;
+export const sortPosts = (posts: LocalPost[], options: SortOptions = {}): LocalPost[] => {
+  const { reverse = false, useCustomOrder = true } = options;
+  
+  let sortedPosts = [...posts].sort((a, b) => {
+    if (useCustomOrder) {
+      // Primero, comprueba si ambos posts tienen un orden personalizado
+      const orderA = customOrder[a.slug] || Number.MAX_SAFE_INTEGER;
+      const orderB = customOrder[b.slug] || Number.MAX_SAFE_INTEGER;
+      
+      // Si los órdenes son diferentes, ordena por ellos
+      if (orderA !== orderB) {
+        return orderA - orderB;
+      }
     }
     
-    // Si los órdenes son iguales o no existen, ordena por fecha de publicación (más recientes primero)
+    // Si los órdenes son iguales o no existen, o si useCustomOrder es false,
+    // ordena por fecha de publicación (más recientes primero)
     const dateA = new Date(a.publishedAt).getTime();
     const dateB = new Date(b.publishedAt).getTime();
     return dateB - dateA;
   });
+  
+  // Si se solicita invertir el orden, se invierte el array
+  if (reverse) {
+    sortedPosts = sortedPosts.reverse();
+  }
+  
+  return sortedPosts;
 };
 
-// Exporta los posts ordenados
-export const localPosts: LocalPost[] = sortPosts(allPosts); 
+// Exporta los posts ordenados con la configuración por defecto
+export const localPosts: LocalPost[] = sortPosts(allPosts);
+
+// También exporta el array original para quienes necesiten acceso a los posts sin ordenar
+export const originalPosts: LocalPost[] = allPosts; 
