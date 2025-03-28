@@ -27,7 +27,10 @@ Esta experiencia me enseñó que "perderlo todo" es solo una percepción, porque
     getPostImagePath(SLUG, '2.jpg'),
     getPostImagePath(SLUG, '3.jpg'),
     getPostImagePath(SLUG, '4.jpg'),
-    getPostImagePath(SLUG, '5.jpg')
+    getPostImagePath(SLUG, '5.jpg'),
+    getPostImagePath(SLUG, '6.jpg'),
+
+
   ],
   tags: [
     { id: "14", name: "superación" },

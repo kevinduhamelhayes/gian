@@ -14,19 +14,23 @@ export const loQueNoSospechamos: LocalPost = {
   content: `
 # Lo que no sospechamos
 
-Cuando comenzamos este viaje juntos, nunca imaginamos todas las sorpresas que el camino nos tenía preparadas. Hay tanto en nuestra relación que jamás habríamos podido anticipar.
+Ninguno de mis mensajes sera escrito con inteligencia artificial sere yo detras de cada palabra. asi que paciencia puede que no se me entienda lo que quiero decir. este es el primer post en orden cronologico.
 
-No sospechábamos que seríamos capaces de crecer tanto, de superar tantos obstáculos, de construir tantos recuerdos hermosos. No imaginábamos que el amor podía transformarse y fortalecerse de tantas maneras diferentes.
+Vos sabes y te lo dije mas de una vez nunca pense que realmente saldriamos juntos, te vi timida la hermana de cande jajaja
 
-Cada día descubrimos algo nuevo el uno del otro, algo que no sospechábamos y que nos hace enamorarnos un poco más. Y esa es quizás la mayor belleza de nuestra historia: que sigue sorprendiéndonos, incluso después de todo este tiempo.
+te saque a bailar un par de veces siempre rebotando pero mas alla de eso no pegabamos onda no nos entendiamos obviamente yo chocaba... no nos entendiamos bailando hasta este dia creo yo que dije epaaaaaaaaaaa
+
+y te empese a ver distinto... admito que entre a tu perfil mire y dije tiene cara de menor de edad jajaja
   `,
   publishedAt: new Date("2023-08-15").toISOString(),
   updatedAt: new Date("2023-08-15").toISOString(),
-  image: getPostImagePath(SLUG, 'carousel1-1.jpg'), // Primera imagen para la preview
+  image: getPostImagePath(SLUG, '1.jpeg'), // Primera imagen para la preview
   carouselImages: [
-    getPostImagePath(SLUG, 'carousel1-1.jpg'),
-    getPostImagePath(SLUG, 'primer-encuentro-1.jpg'),
-    getPostImagePath(SLUG, 'primer-encuentro-2.jpg')
+    getPostImagePath(SLUG, '2.jpeg'),
+    getPostImagePath(SLUG, '3.jpeg'),
+    getPostImagePath(SLUG, '4.jpeg'),
+    getPostImagePath(SLUG, '5.jpeg')
+    
   ],
   tags: [
     { id: "2", name: "amor" },

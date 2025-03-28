@@ -50,9 +50,19 @@ const allPosts: LocalPost[] = [
  */
 const customOrder: Record<string, number> = {
   "lo-que-no-sospechamos": 1,  // Aparecerá primero
-  "el-dia-que-te-conoci": 2,   // Aparecerá segundo
-  "nuestro-primer-viaje": 3,   // Aparecerá tercero
-  "verte-feliz": 4,            // Aparecerá cuarto
+  "el-dia-que-te-conoci": 2,
+  "mi-sorpresa": 3,
+  "verte-feliz": 4,
+  "nuestro-primer-viaje": 5,
+  "pequenos-momentos": 6,
+  "lugares-especiales": 7,
+  "quedarme-por-amor": 8,
+  "creciendo": 9,
+  "nuestro-primer": 10,
+  "queriendo-lo-que-no-pediste": 11,
+  "diciembre-y-disfrutar": 12,
+  "perderlo-todo": 13,
+  "lo-que-no-tiene-palabras": 14
   // Añade más posts aquí para controlar su orden
 };
 
