@@ -14,25 +14,25 @@ export const nuestroPrimerViaje: LocalPost = {
   content: `
 # Nuestro primer viaje juntos
 
-Este recuerdo creo que a los dos se nos pasa seguido al menos a mi me pasa... no eramos tan pegados por aquel momento para explicarte todo lo que pasaba por mi mente
+Este recuerdo creo que a los dos se nos viene seguido, al menos a mí me pasa... No éramos tan pegados por aquel momento como para explicarte todo lo que pasaba por mi mente.
 
-hoy y aca puedo contarte algunas cosas que no sabias y seguire el relato de como fue el viaje.
+Hoy y acá puedo contarte algunas cosas que no sabías y seguiré el relato de cómo fue el viaje.
 
-por aca estaba sufriendola bastante entre lo que mi corazon decia lo que queria lo que sentia y los ahorros que estaba quemando para atrazarme y disfrutarte cada momento. a demas que bs as es como mi segunda ciudad y queria darte todo lo mejor de mi.
+Por acá estaba sufriéndola bastante entre lo que mi corazón decía, lo que quería, lo que sentía y los ahorros que estaba quemando para atrasarme y disfrutarte cada momento. Además, que Bs. As. es como mi segunda ciudad y quería darte todo lo mejor de mí.
 
-sin embargo el viaje se cambio mucho para lo que mi estructura en ese momento podia soportar. lamentablemente un poco falle el primer dia pero fue por eso, no me justifico pero es lo que es.
+Sin embargo, el viaje se cambió mucho para lo que mi estructura en ese momento podía soportar. Lamentablemente, un poco fallé el primer día, pero fue por eso. No me justifico, pero es lo que es.
 
-viajamos con andres nos encontramos con tu papa la pizza se quemo un poco una pesadilla para mi y algo re normal para vos. jaja que distintos... bueno el segundo dia salimos adelante!
+Viajamos con Andrés, nos encontramos con tu papá. La pizza se quemó un poco (una pesadilla para mí y algo re normal para vos, ¡jaja, qué distintos!)... Bueno, ¡el segundo día salimos adelante!
 
-que no hicimos ese viaje? cuando pudimos ser nosotros caminamos un monton me corte el dedo en una parada de bondi y la sangre toda....
+¿Qué no hicimos ese viaje? Cuando pudimos ser nosotros, caminamos un montón, me corté el dedo en una parada de bondi y ¡la sangre toda!...
 
-caminamos conocimos bailamos nos divertimos 
+Caminamos, conocimos, bailamos, nos divertimos.
 
-algun entredicho menor tubimos pero traigo este viaje aqui por que es facil olvidar con los años y aqui estara este recuerdo seguro
+Algún entredicho menor tuvimos, pero traigo este viaje aquí porque es fácil olvidar con los años, y aquí estará este recuerdo seguro.
 
-como olvidar tu carita en el colon?
+¿Cómo olvidar tu carita en el Colón?
 
-dios cuanto amor...
+Dios, cuánto amor...
   `,
   publishedAt: new Date("2024-07-12").toISOString(),
   updatedAt: new Date("2024-07-12").toISOString(),
@@ -45,8 +45,6 @@ dios cuanto amor...
     getPostImagePath(SLUG, '7.jpg'),
     getPostImagePath(SLUG, '8.jpg'),
     getPostImagePath(SLUG, '9.jpg'),
-
-    
   ],
   tags: [
     { id: "1", name: "recuerdos" },
@@ -54,4 +52,4 @@ dios cuanto amor...
     { id: "11", name: "viajes" }
   ],
   featured: true
-}; 
+};

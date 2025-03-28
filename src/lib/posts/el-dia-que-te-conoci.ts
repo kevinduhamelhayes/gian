@@ -14,15 +14,15 @@ export const elDiaQueTeConoci: LocalPost = {
   content: `
 # El día que te conocí
 
-Y llego el dia que me diste la oportunidad, dos personas tan distintas de dos formas de vida tan diferentes.
+Y llegó el día que me diste la oportunidad. Dos personas tan distintas, de dos formas de vida tan diferentes.
 
-te juro me parecio tan chocante algunas cosas de tu vida como entendias todo a tu manera y yo venia a irrumpir con mis maneras de entender el mundo. pero no nos adelantemos.
+Te juro, me pareció tan chocante algunas cosas de tu vida, cómo entendías todo a tu manera, y yo venía a irrumpir con mis maneras de entender el mundo. Pero no nos adelantemos.
 
-este dia me diste una oportunidad tomamos mates hablamos de la vida y me lleve ese primer beso... quede pensando esta piba no me ve nunca mas jajaja el tipo ni fe se tenia pero la verdad un poco paso esto
+Este día me diste una oportunidad: tomamos mates, hablamos de la vida y me llevé ese primer beso... Quedé pensando: 'Esta piba no me ve nunca más', jajaja. El tipo ni fe se tenía, pero la verdad, un poco pasó esto.
 
- Tu forma de hablar coincidia en valores solo una foto me quedo de ese dia y me encanta.
+Tu forma de hablar coincidía en valores. Solo una foto me quedó de ese día, y me encanta.
 
-Ese día marcó el inicio de nuestra historia
+Ese día marcó el inicio de nuestra historia.
   `,
   publishedAt: new Date("2023-01-15").toISOString(),
   updatedAt: new Date("2023-01-15").toISOString(),
@@ -35,4 +35,4 @@ Ese día marcó el inicio de nuestra historia
     { id: "2", name: "amor" }
   ],
   featured: true
-}; 
+};

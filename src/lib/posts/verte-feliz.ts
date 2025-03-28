@@ -14,17 +14,17 @@ export const vertefeliz: LocalPost = {
   content: `
 # Verte Feliz
 
-Que me llenaria mas que verte feliz? yo se que queres que sea mas egoista y piense en mi y en hacerme feliz a mi pero esto paso y pasa. me encantan esos pequeños momentos cotidianos en los que tu rostro se ilumina con una sonrisa, esos instantes en que tus ojos brillan de emoción. De los que nunca saco una puta foto. jajaja
+¿Qué me llenaría más que verte feliz? Yo sé que querés que sea más egoísta y piense en mí y en hacerme feliz a mí, pero esto pasó y pasa. Me encantan esos pequeños momentos cotidianos en los que tu rostro se ilumina con una sonrisa, esos instantes en que tus ojos brillan de emoción. De los que nunca saco una puta foto. Jajaja.
 
-Verte feliz en las cosas simples unas costeletas bien condimentadas un rico postre y un cafe con leche. un poco de helado, bailando...
+Verte feliz en las cosas simples: unas costeletas bien condimentadas, un rico postre y un café con leche, un poco de helado, bailando...
 
-Este post esta separado del anterior pero relacionado.
+Este post está separado del anterior, pero relacionado.
 
-yo te empece a sentir especial y tambien a quererte ver feliz y aca empece a mandar algun error mio, queria hacerte feliz en lo que yo entendia por felicidad.
+Yo te empecé a sentir especial y también a quererte ver feliz, y acá empecé a mandar algún error mío: quería hacerte feliz en lo que yo entendía por felicidad.
 
-por ahi poniendote por delante de mi bienestar y dando o tratando de dar lo que a mi me parecia que te haria feliz este es un error que mas adelante me arrepentire.
+Por ahí, poniéndote por delante de mi bienestar y dando o tratando de dar lo que a mí me parecía que te haría feliz. Este es un error del que más adelante me arrepentiré.
 
-Pero vamos las risas no faltaban la comida y el heladito espero tampoco.
+Pero vamos, las risas no faltaban; la comida y el heladito, espero, tampoco.
   `,
   publishedAt: new Date("2023-05-20").toISOString(),
   updatedAt: new Date("2023-05-20").toISOString(),
@@ -35,10 +35,11 @@ Pero vamos las risas no faltaban la comida y el heladito espero tampoco.
     getPostImagePath(SLUG, '4.jpg'),
     getPostImagePath(SLUG, '5.jpg')
   ],
+  // Tags corregidos para consistencia (ID de 'amor') y relevancia
   tags: [
-    { id: "10", name: "amor" },
+    { id: "2", name: "amor" }, // ID normalizado a '2'
     { id: "11", name: "felicidad" },
     { id: "12", name: "momentos" }
   ],
   featured: true
-}; 
+};

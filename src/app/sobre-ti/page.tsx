@@ -6,21 +6,22 @@ import Markdown from "react-markdown";
 import Image from "next/image";
 import { ImageCarousel } from "./carousel";
 
+// Texto corregido dentro de la constante content
 const content = `# Sobre Ti
 
-Giani, te encontre llena de miedos e inseguridades, nunca pense que tendrias en mi vida la importancia que tenes hoy que al darle sentido a tu vida al enseñarte al sacarte miedos tambien me estaba ablandando y enseñandfo a mi mismo viendo a travez de tus ojos como ser mejor.
+Giani, te encontré llena de miedos e inseguridades. Nunca pensé que tendrías en mi vida la importancia que tenés hoy; que al darle sentido a tu vida, al enseñarte, al sacarte miedos, también me estaba ablandando y enseñando a mí mismo, viendo a través de tus ojos cómo ser mejor.
 
-Tus valores tu forma de amar tu velocidad para aprender y la forma de entendernos. Fue de lo primero que note unico y nos llevo hasta adonde estasmos.
+Tus valores, tu forma de amar, tu velocidad para aprender y la forma de entendernos... Fue de lo primero que noté único y nos llevó hasta adonde estábamos.
 
-Admiro tu fuerza interior y tu capacidad para superar cualquier obstáculo que se presenta en tu camino. Entendes muy bien de sacrificio de valores sos tenis sos familia sos valores sos  amigos sos tu carrera y un poco vas a ser lo que pude dejarte en ti y yo sere un poco lo que me enseñaste a ser.
+Admiro tu fuerza interior y tu capacidad para superar cualquier obstáculo que se presenta en tu camino. Entendés muy bien de sacrificio, de valores. Sos tenis, sos familia, sos valores, sos amigos, sos tu carrera... y un poco vas a ser lo que pude dejarte en ti, y yo seré un poco lo que me enseñaste a ser.
 
-Entiendo tus peleas por estar en todos lados pero nunca pierdas el foco de lo que realmente importa llegara el tiempo de ir achicando lo que abarcas quizas pronto tu carrera te deje de apretar pero tu alma es joven y arde fuerte asi que buscaras algo quizas para seguir manteniendo el nivel de exigencia. No pretendas ser alquien que no eres ni asi sea por otro solo hacelo si es por vos el cambio a mi me gustabas aun con esas diferencias.
+Entiendo tus peleas por estar en todos lados, pero nunca pierdas el foco de lo que realmente importa. Llegará el tiempo de ir achicando lo que abarcás. Quizás pronto tu carrera te deje de apretar, pero tu alma es joven y arde fuerte, así que buscarás algo, quizás, para seguir manteniendo el nivel de exigencia. No pretendas ser alguien que no eres, ni así sea por otro. Solo hacelo si es por vos el cambio. A mí me gustabas aun con esas diferencias.
 
-Tu corazón es inmenso. Tienes una capacidad única para empatizar con los demás, para ponerte en el lugar del otro y entender sus sentimientos pudiste hacerme sentir como si fuera el unico en el mundo y desarmarme con tus brazos. Me diste tu tiempo y tu afecto en mis momentos de debilidad y me enseñaste a amarme a mi mismo y que todo esconde un cierto aprendisaje.
+Tu corazón es inmenso. Tenés una capacidad única para empatizar con los demás, para ponerte en el lugar del otro y entender sus sentimientos. Pudiste hacerme sentir como si fuera el único en el mundo y desarmarme con tus brazos. Me diste tu tiempo y tu afecto en mis momentos de debilidad y me enseñaste a amarme a mí mismo y que todo esconde un cierto aprendizaje.
 
 Esta página es mi tributo a ti, a todo lo que eres y a todo lo que representas en mi vida. Es mi forma de celebrar tu existencia y de agradecerte por ser lo que sos y por haber crecido tanto en este corto tiempo.
 
-la niña asustada que encontre con sus complejos, que no disfrutaba ser mujer se reencontro con si misma, pudo crecer con su relacion con su familia, con su carrera, con su amor y con su vida.
+La niña asustada que encontré, con sus complejos, que no disfrutaba ser mujer, se reencontró consigo misma. Pudo crecer en su relación con su familia, con su carrera, con su amor y con su vida.
 
 Cada día me maravillo al pensar en la suerte y el privilegio que tuve al encontrarte. Eres un regalo que nunca dejaré de valorar.
 
@@ -77,4 +78,4 @@ const Page = async () => {
   );
 };
 
-export default Page; 
+export default Page;

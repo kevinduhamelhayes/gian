@@ -3,47 +3,48 @@ import { generateId } from '../utils/id-utils';
 import { getPostImagePath } from '../image-utils';
 
 // Slug for this post
-const SLUG = 'nuestro-primer';
+const SLUG = 'nuestro-primer'; // Slug mantenido como 'nuestro-primer'
 
 // Define post data
 export const nuestroPrimer: LocalPost = {
   id: generateId(),
-  title: "Uber, la Empresa, y nuesttros crujidos",
+  // Título ajustado para mayor coherencia con el contenido y el encabezado H1
+  title: "Crujíamos",
   slug: SLUG,
-  description: "Como un guerrero saque fuerzas que nos costaron mas de lo que pensaba",
+  // Descripción corregida
+  description: "Como un guerrero, saqué fuerzas que nos costaron más de lo que pensaba.",
   content: `
-# Crujiamos
+# Crujíamos
 
-Tal y como vos sabes yo ya pelee mas batallas de las que deberia haber peleado.
+Tal y como vos sabés, yo ya peleé más batallas de las que debería haber peleado.
 
-Pero esta vez no fue para ganar, fue para sobrevivir. queria que nuestro amor fuera fuerte como yo entendia la fuerza.... me fui a todo o nada y asi quede con nada...
+Pero esta vez no fue para ganar, fue para sobrevivir. Quería que nuestro amor fuera fuerte como yo entendía la fuerza... Me fui a todo o nada y así quedé, con nada...
 
-el plan era "simple" comprar un auto con plata que no tenia ponerlo a laburar con gente honesta plotearlo que se haga la publicidad sola que venga el trabajo cobrarlo bien y vivir de ambos ingresos ir delegando trabajo cobrando acorde... poder ir expandiendonos tener dinero para ambos y poder viajar.
+El plan era 'simple': comprar un auto con plata que no tenía, ponerlo a laburar con gente honesta, plotearlo, que se haga la publicidad sola, que venga el trabajo, cobrarlo bien y vivir de ambos ingresos, ir delegando trabajo cobrando acorde... Poder ir expandiéndonos, tener dinero para ambos y poder viajar.
 
-que podria salir mal? bueno todo! absolutamente todo!
+¿Qué podría salir mal? Bueno, ¡todo! ¡Absolutamente todo!
 
-la presion del auto no vino mas que a empeorar la liquidacion de mis ahorros, la gente de uber lo choca a los 20 dias y me roban un 30% mas siendo que yo les ofrecia una comision del 50%
+La presión del auto no vino más que a empeorar la liquidación de mis ahorros. La gente de Uber lo choca a los 20 días y me roban un 30% más, siendo que yo les ofrecía una comisión del 50%.
 
-los trabajos no llegaban, los gastos de matricula si...
+Los trabajos no llegaban; los gastos de matrícula, sí...
 
-psicologicamente te necesite y exprimi mas de lo que hoy me gustaria admitir.
+Psicológicamente te necesité y exprimí más de lo que hoy me gustaría admitir.
 
-obviamente eso hizo mella en nuestra relacion que igual siguio adelante por que no la peleaba solo 
+Obviamente, eso hizo mella en nuestra relación, que igual siguió adelante porque no la peleaba solo.
 
-vos a tu manera y desde otro lado tambien te habias puesto los guantes y te la bancabas... 
+Vos, a tu manera y desde otro lado, también te habías puesto los guantes y te la bancabas...
 
-pero los meses pasaban y la cosa no cesaba frene a miguel en uber y me puse a remodelar deptos... en el medio alguna cosa buena algun viaje pudimos hacer visitamos avellaneda con el auto algunas frutas aparecian del proyecto futuro pero nos estaba costando demasiado.
+Pero los meses pasaban y la cosa no cesaba. Frené a Miguel en Uber y me puse a remodelar deptos... En el medio, alguna cosa buena: algún viaje pudimos hacer, visitamos Avellaneda con el auto, algunas frutas aparecían del proyecto futuro... pero nos estaba costando demasiado.
 
-mi filosofia de que nada es imposible de ir con toda y de disfrutar en pocos años no envejecer para poder estar tranquilos nos estaria costando la pareja
+Mi filosofía de que nada es imposible, de ir con toda y de 'disfrutar en pocos años, no envejecer para poder estar tranquilos', nos estaría costando la pareja.
 
-y sin la pareja todo eso no tenia sentido. cosas que uno entiende pero solo desde el futuro hacia atras. te pido perdon por las veces que minimice tus sacrificios y tus estudios.
+Y sin la pareja, todo eso no tenía sentido. Cosas que uno entiende, pero solo desde el futuro hacia atrás. Te pido perdón por las veces que minimicé tus sacrificios y tus estudios.
 
-uno lleva tal dinamica que solo podes ver lo que esta mal y no reconocer suficientemente lo que esta bien.
+Uno lleva tal dinámica que solo podés ver lo que está mal y no reconocer suficientemente lo que está bien.
 
-igualmente el amor se hacia ver pero bueno con amor no basta me dijiste hace poco...
+Igualmente, el amor se hacía ver, pero bueno... 'Con amor no basta', me dijiste hace poco...
 
-en este post las fotos nose si representaran todo bien... hay una en particular el dia que te fui a ver dar el final pusieron el hinodoro 10 cmts mas alto que la descarga.... me entendes porque no podia darte mas? de mi...
-
+En este post, las fotos no sé si representarán todo bien... Hay una en particular: el día que te fui a ver dar el final, pusieron el inodoro 10 cm más alto que la descarga... ¿Me entendés por qué no podía darte más de mí?...
   `,
   publishedAt: new Date("2023-05-20").toISOString(),
   updatedAt: new Date("2023-05-20").toISOString(),
@@ -54,10 +55,11 @@ en este post las fotos nose si representaran todo bien... hay una en particular 
     getPostImagePath(SLUG, '3.jpg'),
     getPostImagePath(SLUG, '4.jpg')
   ],
+  // Etiquetas ajustadas para reflejar mejor el contenido
   tags: [
     { id: "1", name: "recuerdos" },
     { id: "2", name: "amor" },
-    { id: "12", name: "inicios" }
+    { id: "15", name: "dificultades" } // Reemplazando 'inicios' por 'dificultades'
   ],
   featured: true
-}; 
+};

@@ -10,18 +10,31 @@ export const diciembreYDisfrutar: LocalPost = {
   id: generateId(),
   title: "Diciembre y disfrutar",
   slug: SLUG,
-  description: "La magia de celebrar juntos la época más especial del año.",
+  // Descripción ajustada para reflejar mejor el contenido agridulce
+  description: "Un diciembre de contrastes: entre la alegría de un viaje soñado y las tensiones de las expectativas familiares.",
   content: `
 # Diciembre y disfrutar
 
-Diciembre siempre trae consigo una atmósfera especial, pero vivirlo a tu lado lo hace aún más mágico. Las luces navideñas que iluminan nuestros rostros, el aroma de las galletas recién horneadas, las canciones que tarareamos juntos... todo adquiere un significado más profundo cuando lo compartimos.
+Diciembre fue el mes más especial. Quizás llegaba ese viaje tan esperado que habíamos empezado a pensar hace tanto...
 
-Esta época del año nos invita a hacer un pausa, a reflexionar sobre lo vivido y a disfrutar de los pequeños momentos. Y no hay nadie con quien preferiría compartir esos instantes que contigo.
+Sin embargo, yo hacía un depto por mes y el viaje caía el 4 de diciembre. Veníamos de un noviembre atrasado, choferes de Uber robando...
 
-Diciembre nos recuerda que, entre todos los regalos posibles, el tiempo juntos es el más valioso. Y por eso, cada año, me propongo disfrutar de cada segundo de este mes especial a tu lado.
+Yo decidí mal, tendría que haberlo previsto. Tendríamos que haber ido al aeropuerto en bondi y no haciendo yo de chofer para mis choferes. Casi la palmo en esa ida al aeropuerto...
+
+Casi arruino el viaje, pero estabas ahí a mi lado... Nada que reclamar, qué decirte... Yo lo manejé mal. Fue un mes muy exigente, ya era la cereza del año. Estábamos cerca de terminar los quilombos, pero el cliente pedía más cosas...
+
+Finalmente llegamos a Bariloche y yo tomé mi primer avión a tu lado... Fue malo y bueno a la vez... Pero te agradezco darme esos empujones.
+
+Llegamos allá cansados. Dormí, te dejé el teléfono, te puse al mando. Yo no daba más, estaba cansado y nervioso...
+
+Al otro día, finalmente logramos salir adelante. Finalmente, el viaje fue increíble y nada logró arruinarlo... Qué feliz me hace tenerte a mi lado...
+
+Si ves la galeria de imagenes mas abajo como van cambiando nuestros rostros... cuanto amor por dios... despues porque quiero seguirla peleando, la pelearia mil veces... lo vale...
+
   `,
-  publishedAt: new Date("2024-12-05").toISOString(),
-  updatedAt: new Date("2024-12-05").toISOString(),
+
+  publishedAt: new Date("2024-12-05").toISOString(), // Manteniendo fecha original
+  updatedAt: new Date("2024-12-05").toISOString(), // Manteniendo fecha original
   image: getPostImagePath(SLUG, '1.jpg'), // Primera imagen para la preview
   carouselImages: [
     getPostImagePath(SLUG, '1.jpg'),
@@ -47,9 +60,12 @@ Diciembre nos recuerda que, entre todos los regalos posibles, el tiempo juntos e
     getPostImagePath(SLUG, '21.jpg'),
     getPostImagePath(SLUG, '22.jpg'),
   ],
+  // Etiquetas ajustadas para reflejar mejor los temas del texto
   tags: [
-    { id: "20", name: "celebraciones" },
-    { id: "21", name: "navidad" }
+    { id: "2", name: "amor" }, // Mantenido de ejemplo anterior si aplica, o usar un ID adecuado
+    { id: "22", name: "viajes" }, // ID de ejemplo
+    { id: "23", name: "familia" }, // ID de ejemplo
+    { id: "24", name: "desafíos personales" } // ID de ejemplo
   ],
   featured: true
-}; 
+};

@@ -14,26 +14,25 @@ export const quedarmePorAmor: LocalPost = {
   content: `
 # Quedarme por amor
 
-no tenemos dia de aniversario... se nos paso anotar ese dia por que la estabamos viviendo intensamente.
+No tenemos día de aniversario. Sabes porque? Se nos pasó anotar ese día porque la estábamos viviendo intensamente.
 
-tampoco hay fotos que lo reflejen certeramente... pero eso paso... amarte me dio sentido, amarte y que me ames me curo que decirte.
+Tampoco hay fotos que lo reflejen certeramente... pero eso pasó... Amarte me dio sentido; amarte y que me ames me curó. Qué decirte.
 
-me daba fuerzas alimentaba mi alma y decidi quedarme a hacerlo posible.
+Me daba fuerzas, alimentaba mi alma y decidí quedarme a hacerlo posible.
 
-a generar los proyectos a tratar de hacerte feliz a tratar de hacer un camino para nosotros.
+A generar los proyectos, a tratar de hacerte feliz, a tratar de hacer un camino para nosotros.
 
-yo necesitaba o queria cierta forma de camino basado en lo que yo vivi 
+Yo necesitaba o quería cierta forma de camino, basado en lo que yo viví.
 
-por este momento no sabia como haria para quedarme pero estaba dispuesto a hacer cualquier cosa, incluso atender clientes jaja algo que no me gusta y veriamos en el futuro que pasa pero a no adelantarme...
+Por este momento no sabía cómo haría para quedarme, pero estaba dispuesto a hacer cualquier cosa, incluso atender clientes (jaja, algo que no me gusta) y veríamos en el futuro qué pasa... Pero a no adelantarme...
 
-te anaba cada dia y vos a mi y yo no estaba dispuesto a renunciar a eso me quede a pelear y no podia solo asi que un poco te arrastre tambien fuimos cayendo en el amor.
+Te amaba cada día, y vos a mí, y yo no estaba dispuesto a renunciar a eso. Me quedé a pelear y no podía solo, así que un poco te arrastré también. Fuimos cayendo en el amor.
 
-los teatros, las risas, los momentos, las conversaciones, los besos, los abrazos, los momentos en que te vi sonreir.
+Los teatros, las risas, los momentos, las conversaciones, los besos, los abrazos, los momentos en que te vi sonreír.
 
-pero especialmente aca empezo ese no se que que no podemos explicar que aun vive y espero que siga asi.
+Pero especialmente acá empezó ese no sé qué que no podemos explicar, que aún vive y espero que siga así.
 
-aunque ya nose que pasara con nosotros...
-
+Aunque ya no sé qué pasará con nosotros...
   `,
   publishedAt: new Date("2024-12-01").toISOString(),
   updatedAt: new Date("2024-12-01").toISOString(),
@@ -51,4 +50,4 @@ aunque ya nose que pasara con nosotros...
     { id: "17", name: "decisiones" }
   ],
   featured: true
-}; 
+};
