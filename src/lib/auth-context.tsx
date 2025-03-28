@@ -36,6 +36,7 @@ export const useAuth = () => useContext(AuthContext);
 export const AuthProvider = ({ children }: { children: ReactNode }) => {
   const [user, setUser] = useState<User | null>(null);
   const [isLoading, setIsLoading] = useState(true);
+  const [mounted, setMounted] = useState(false);
 
   // Usuarios hardcodeados (en producción deberían estar en .env)
   const validUsers = [
@@ -55,7 +56,12 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
         name: foundUser.name,
       };
       setUser(userInfo);
-      localStorage.setItem('authUser', JSON.stringify(userInfo));
+      
+      // Solo guardar en localStorage si estamos en el cliente
+      if (typeof window !== 'undefined') {
+        localStorage.setItem('authUser', JSON.stringify(userInfo));
+      }
+      
       return true;
     }
     
@@ -65,24 +71,39 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
   // Función para cerrar sesión
   const logout = () => {
     setUser(null);
-    localStorage.removeItem('authUser');
+    
+    // Solo eliminar de localStorage si estamos en el cliente
+    if (typeof window !== 'undefined') {
+      localStorage.removeItem('authUser');
+    }
+    
+    // Redirigir a login después de cerrar sesión
+    if (typeof window !== 'undefined') {
+      window.location.href = '/login';
+    }
   };
 
   // Comprobar si ya hay una sesión guardada al cargar la página
   useEffect(() => {
-    const storedUser = localStorage.getItem('authUser');
+    // Marcar el componente como montado en el cliente
+    setMounted(true);
     
-    if (storedUser) {
-      try {
-        const parsedUser = JSON.parse(storedUser) as User;
-        setUser(parsedUser);
-      } catch (error) {
-        console.error('Error parsing stored user:', error);
-        localStorage.removeItem('authUser');
+    // Recuperar usuario del localStorage solo en el cliente
+    if (typeof window !== 'undefined') {
+      const storedUser = localStorage.getItem('authUser');
+      
+      if (storedUser) {
+        try {
+          const parsedUser = JSON.parse(storedUser) as User;
+          setUser(parsedUser);
+        } catch (error) {
+          console.error('Error parsing stored user:', error);
+          localStorage.removeItem('authUser');
+        }
       }
+      
+      setIsLoading(false);
     }
-    
-    setIsLoading(false);
   }, []);
 
   // Valores del contexto
@@ -91,7 +112,7 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
     isAuthenticated: !!user,
     login,
     logout,
-    isLoading,
+    isLoading: !mounted || isLoading,
   };
 
   return (
