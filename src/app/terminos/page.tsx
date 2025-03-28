@@ -28,13 +28,30 @@ export default function TerminosPage() {
 
   // Función para aceptar términos
   const handleAcceptTerms = () => {
-    // Guardar en localStorage que el usuario ha aceptado los términos
-    localStorage.setItem('termsAccepted', 'true');
-    
-    // Guardar también en cookie para que el middleware pueda leerla
-    Cookies.set('termsAccepted', 'true', { expires: 30 }); // Expira en 30 días
-    
-    router.push('/');
+    try {
+      // Guardar en localStorage que el usuario ha aceptado los términos
+      localStorage.setItem('termsAccepted', 'true');
+      
+      // Guardar también en cookie para que el middleware pueda leerla
+      // Configurar opciones más específicas para asegurar que se guarde bien
+      Cookies.set('termsAccepted', 'true', { 
+        expires: 30, // 30 días
+        path: '/',
+        secure: window.location.protocol === 'https:',
+        sameSite: 'strict'
+      });
+      
+      console.log('Terms accepted, saved in cookie:', Cookies.get('termsAccepted'));
+      
+      // Esperar un momento para asegurar que la cookie se guarde
+      setTimeout(() => {
+        router.push('/');
+      }, 100);
+    } catch (error) {
+      console.error('Error saving acceptance:', error);
+      // Intentar redirigir de todos modos
+      router.push('/');
+    }
   };
 
   // Mostrar loading hasta que esté montado en cliente
