@@ -66,23 +66,19 @@ export default function TerminosPage() {
   
   return (
     <div className="min-h-screen flex flex-col items-center justify-center relative py-8">
-      {/* Imagen de fondo - Usando una imagen conocida del blog */}
+      {/* Imagen de fondo */}
       <div className="absolute inset-0 z-0 overflow-hidden">
-        <Image 
-          src="/images/blog/el-dia-que-te-conoci/1.jpg" 
-          alt="Fondo de términos" 
-          fill
-          sizes="100vw"
-          priority
-          className="object-cover brightness-75 dark:brightness-50"
+        <div 
+          className="w-full h-full bg-gradient-to-br from-bronze-800 to-bronze-500"
           style={{
-            objectPosition: 'center',
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
           }}
         />
       </div>
       
       {/* Overlay para mejorar legibilidad */}
-      <div className="absolute inset-0 bg-bronze-900/40 dark:bg-bronze-950/70 backdrop-blur-sm z-10"></div>
+      <div className="absolute inset-0 bg-bronze-900/30 dark:bg-bronze-950/60 backdrop-blur-sm z-10"></div>
       
       {/* Contenido de términos */}
       <div className="w-full max-w-3xl bg-white/90 dark:bg-zinc-800/90 backdrop-blur-md rounded-lg shadow-xl overflow-hidden relative z-20 mx-4">
