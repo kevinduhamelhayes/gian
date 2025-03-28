@@ -4,9 +4,23 @@ import type { NextRequest } from 'next/server';
 // Rutas públicas que no requieren autenticación
 const publicRoutes = ['/login', '/terminos'];
 
+// Extensiones de archivos estáticos que deben ser accesibles sin autenticación
+const staticExtensions = ['.jpg', '.jpeg', '.png', '.svg', '.ico', '.css', '.js', '.woff', '.woff2', '.ttf'];
+
 // Comprueba si la ruta actual es pública
 const isPublicRoute = (path: string) => {
-  return publicRoutes.some(route => path === route || path.startsWith(`${route}/`));
+  // Rutas explícitamente públicas
+  if (publicRoutes.some(route => path === route || path.startsWith(`${route}/`))) {
+    return true;
+  }
+  
+  // Archivos estáticos (imágenes, etc.)
+  if (path.startsWith('/images/') || path.startsWith('/icons/') || path.startsWith('/fonts/')) {
+    return true;
+  }
+  
+  // Comprobar extensiones de archivos
+  return staticExtensions.some(ext => path.endsWith(ext));
 };
 
 // Función de depuración para registrar información de la solicitud
@@ -19,6 +33,16 @@ function logRequestInfo(request: NextRequest, message: string) {
 
 export function middleware(request: NextRequest) {
   const path = request.nextUrl.pathname;
+  
+  // Si es un recurso estático, permitir acceso inmediato
+  if (
+    path.startsWith('/images/') || 
+    path.startsWith('/icons/') || 
+    path.startsWith('/fonts/') ||
+    staticExtensions.some(ext => path.endsWith(ext))
+  ) {
+    return NextResponse.next();
+  }
   
   // Verificar si hay una sesión activa
   const authCookie = request.cookies.get('authUser')?.value;
@@ -64,7 +88,8 @@ export const config = {
      * 2. /_next (Next.js internals)
      * 3. /_static (inside /public)
      * 4. all root files inside /public (e.g. /favicon.ico)
+     * 5. /images, /icons, /fonts (static resources)
      */
-    '/((?!api|_next|_static|_vercel|[\\w-]+\\.\\w+).*)',
+    '/((?!api|_next|_static|_vercel|images|icons|fonts|[\\w-]+\\.\\w+).*)',
   ],
 }; 
