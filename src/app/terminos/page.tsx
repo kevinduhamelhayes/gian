@@ -68,11 +68,15 @@ export default function TerminosPage() {
     <div className="min-h-screen flex flex-col items-center justify-center relative py-8">
       {/* Imagen de fondo */}
       <div className="absolute inset-0 z-0 overflow-hidden">
-        <div 
-          className="w-full h-full bg-gradient-to-br from-bronze-800 to-bronze-500"
+        <Image 
+          src="/images/nuestra-primer-foto.jpg" 
+          alt="Nuestra primera foto" 
+          fill
+          sizes="100vw"
+          priority
+          className="object-cover brightness-75 dark:brightness-50"
           style={{
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
+            objectPosition: 'center',
           }}
         />
       </div>

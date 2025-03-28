@@ -59,11 +59,15 @@ export default function LoginPage() {
     <div className="min-h-screen flex items-center justify-center relative">
       {/* Imagen de fondo */}
       <div className="absolute inset-0 z-0 overflow-hidden">
-        <div 
-          className="w-full h-full bg-gradient-to-br from-bronze-800 to-bronze-500"
+        <Image 
+          src="/images/nuestra-primer-foto.jpg" 
+          alt="Nuestra primera foto" 
+          fill
+          sizes="100vw"
+          priority
+          className="object-cover brightness-75 dark:brightness-50"
           style={{
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
+            objectPosition: 'center',
           }}
         />
       </div>
@@ -76,11 +80,11 @@ export default function LoginPage() {
         <CardHeader className="space-y-1 text-center">
           <div className="mx-auto mb-4 w-32 h-32 relative">
             <Image 
-              src="/images/logo.svg" 
+              src="/images/logo.png" 
               alt="Logo GK"
               width={120}
               height={120}
-              className="mx-auto p-2"
+              className="mx-auto p-2 rounded-xl"
               priority
             />
           </div>
