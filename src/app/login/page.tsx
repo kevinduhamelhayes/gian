@@ -56,8 +56,24 @@ export default function LoginPage() {
   }
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-bronze-50 dark:bg-zinc-900 px-4">
-      <Card className="w-full max-w-md border-bronze-200 shadow-lg">
+    <div className="min-h-screen flex items-center justify-center relative">
+      {/* Imagen de fondo */}
+      <div className="absolute inset-0 z-0">
+        <Image 
+          src="/images/nuestra-primer-foto.jpg" 
+          alt="Fondo de login" 
+          fill
+          sizes="100vw"
+          priority
+          className="object-cover brightness-[0.65] dark:brightness-[0.4]"
+        />
+      </div>
+      
+      {/* Overlay para mejorar legibilidad */}
+      <div className="absolute inset-0 bg-bronze-900/30 dark:bg-bronze-950/60 backdrop-blur-sm z-10"></div>
+      
+      {/* Contenido del login */}
+      <Card className="w-full max-w-md border-bronze-200 shadow-xl relative z-20 mx-4 bg-white/90 dark:bg-zinc-900/90 backdrop-blur-md">
         <CardHeader className="space-y-1 text-center">
           <div className="mx-auto mb-4">
             <Image 
@@ -85,7 +101,7 @@ export default function LoginPage() {
                 id="username"
                 type="text"
                 placeholder="Ingresa tu usuario"
-                className="border-bronze-300 focus:border-bronze-500"
+                className="border-bronze-300 focus:border-bronze-500 bg-white/80 dark:bg-zinc-800/80"
                 value={username}
                 onChange={(e) => setUsername(e.target.value)}
               />
@@ -98,7 +114,7 @@ export default function LoginPage() {
                 id="password"
                 type="password"
                 placeholder="Ingresa tu contraseña"
-                className="border-bronze-300 focus:border-bronze-500"
+                className="border-bronze-300 focus:border-bronze-500 bg-white/80 dark:bg-zinc-800/80"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
               />

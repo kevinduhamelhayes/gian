@@ -6,6 +6,7 @@ import { ScrollArea } from "@/components/ui/scroll-area";
 import { useEffect, useState } from "react";
 import { useAuth } from "@/lib/auth-context";
 import Cookies from 'js-cookie';
+import Image from 'next/image';
 
 export default function TerminosPage() {
   const router = useRouter();
@@ -64,8 +65,24 @@ export default function TerminosPage() {
   }
   
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center bg-bronze-50 dark:bg-zinc-900 px-4 py-8">
-      <div className="w-full max-w-3xl bg-white dark:bg-zinc-800 rounded-lg shadow-lg overflow-hidden">
+    <div className="min-h-screen flex flex-col items-center justify-center relative py-8">
+      {/* Imagen de fondo */}
+      <div className="absolute inset-0 z-0">
+        <Image 
+          src="/images/nuestra-primer-foto.jpg" 
+          alt="Fondo de términos" 
+          fill
+          sizes="100vw"
+          priority
+          className="object-cover brightness-[0.65] dark:brightness-[0.4]"
+        />
+      </div>
+      
+      {/* Overlay para mejorar legibilidad */}
+      <div className="absolute inset-0 bg-bronze-900/30 dark:bg-bronze-950/60 backdrop-blur-sm z-10"></div>
+      
+      {/* Contenido de términos */}
+      <div className="w-full max-w-3xl bg-white/90 dark:bg-zinc-800/90 backdrop-blur-md rounded-lg shadow-xl overflow-hidden relative z-20 mx-4">
         <div className="p-6 md:p-8 border-b border-bronze-200 dark:border-bronze-700">
           <h1 className="text-2xl md:text-3xl font-handwritten text-bronze-800 dark:text-bronze-100 mb-2">
             Términos y Condiciones
