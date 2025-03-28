@@ -1,6 +1,7 @@
 "use client";
 
 import React, { createContext, useState, useContext, useEffect, ReactNode } from 'react';
+import Cookies from 'js-cookie';
 
 // Tipo para los usuarios
 type User = {
@@ -57,9 +58,24 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
       };
       setUser(userInfo);
       
-      // Solo guardar en localStorage si estamos en el cliente
+      // Solo guardar en localStorage y cookie si estamos en el cliente
       if (typeof window !== 'undefined') {
-        localStorage.setItem('authUser', JSON.stringify(userInfo));
+        try {
+          // Guardar en localStorage
+          localStorage.setItem('authUser', JSON.stringify(userInfo));
+          
+          // Guardar en cookie para el middleware
+          Cookies.set('authUser', JSON.stringify(userInfo), { 
+            expires: 30, // 30 días
+            path: '/',
+            secure: window.location.protocol === 'https:',
+            sameSite: 'strict'
+          });
+          
+          console.log('User logged in:', userInfo.username);
+        } catch (error) {
+          console.error('Error saving auth data:', error);
+        }
       }
       
       return true;
@@ -72,13 +88,23 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
   const logout = () => {
     setUser(null);
     
-    // Solo eliminar de localStorage si estamos en el cliente
+    // Solo eliminar de localStorage y cookie si estamos en el cliente
     if (typeof window !== 'undefined') {
-      localStorage.removeItem('authUser');
-    }
-    
-    // Redirigir a login después de cerrar sesión
-    if (typeof window !== 'undefined') {
+      try {
+        // Eliminar de localStorage
+        localStorage.removeItem('authUser');
+        localStorage.removeItem('termsAccepted');
+        
+        // Eliminar cookies
+        Cookies.remove('authUser', { path: '/' });
+        Cookies.remove('termsAccepted', { path: '/' });
+        
+        console.log('User logged out');
+      } catch (error) {
+        console.error('Error clearing auth data:', error);
+      }
+      
+      // Redirigir a login después de cerrar sesión
       window.location.href = '/login';
     }
   };
@@ -88,18 +114,32 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
     // Marcar el componente como montado en el cliente
     setMounted(true);
     
-    // Recuperar usuario del localStorage solo en el cliente
+    // Recuperar usuario del localStorage y/o cookie solo en el cliente
     if (typeof window !== 'undefined') {
-      const storedUser = localStorage.getItem('authUser');
-      
-      if (storedUser) {
-        try {
+      try {
+        // Intentar recuperar de localStorage
+        const storedUser = localStorage.getItem('authUser');
+        
+        if (storedUser) {
           const parsedUser = JSON.parse(storedUser) as User;
           setUser(parsedUser);
-        } catch (error) {
-          console.error('Error parsing stored user:', error);
-          localStorage.removeItem('authUser');
+          console.log('Auth restored from localStorage:', parsedUser.username);
+        } else {
+          // Si no está en localStorage, intentar recuperar de cookie
+          const cookieUser = Cookies.get('authUser');
+          if (cookieUser) {
+            const parsedCookieUser = JSON.parse(cookieUser) as User;
+            setUser(parsedCookieUser);
+            
+            // Guardar también en localStorage para coherencia
+            localStorage.setItem('authUser', cookieUser);
+            console.log('Auth restored from cookie:', parsedCookieUser.username);
+          }
         }
+      } catch (error) {
+        console.error('Error parsing stored user:', error);
+        localStorage.removeItem('authUser');
+        Cookies.remove('authUser', { path: '/' });
       }
       
       setIsLoading(false);
