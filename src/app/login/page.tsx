@@ -13,15 +13,21 @@ export default function LoginPage() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
+  const [mounted, setMounted] = useState(false);
   const { login, isAuthenticated } = useAuth();
   const router = useRouter();
 
+  // Evitar renderizado en servidor que cause errores de hidratación
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
   // Redireccionar si ya está autenticado
   useEffect(() => {
-    if (isAuthenticated) {
+    if (mounted && isAuthenticated) {
       router.push('/');
     }
-  }, [isAuthenticated, router]);
+  }, [isAuthenticated, router, mounted]);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -34,10 +40,20 @@ export default function LoginPage() {
     
     const success = login(username, password);
     
-    if (!success) {
+    if (success) {
+      // Redirigir a términos y condiciones después de un login exitoso
+      router.push('/terminos');
+    } else {
       setError('Usuario o contraseña incorrectos');
     }
   };
+
+  // Si no está montado aún, mostrar un placeholder o nada
+  if (!mounted) {
+    return <div className="min-h-screen flex items-center justify-center bg-bronze-50 dark:bg-zinc-900">
+      <div className="animate-pulse">Cargando...</div>
+    </div>;
+  }
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-bronze-50 dark:bg-zinc-900 px-4">

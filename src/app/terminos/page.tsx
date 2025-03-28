@@ -3,9 +3,48 @@
 import { Button } from "@/components/ui/button";
 import { useRouter } from "next/navigation";
 import { ScrollArea } from "@/components/ui/scroll-area";
+import { useEffect, useState } from "react";
+import { useAuth } from "@/lib/auth-context";
+import Cookies from 'js-cookie';
 
 export default function TerminosPage() {
   const router = useRouter();
+  const { isAuthenticated, isLoading } = useAuth();
+  const [mounted, setMounted] = useState(false);
+  
+  // Evitar errores de hidratación
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  // Verificar autenticación
+  useEffect(() => {
+    if (mounted && !isLoading) {
+      if (!isAuthenticated) {
+        router.push('/login');
+      }
+    }
+  }, [mounted, isAuthenticated, isLoading, router]);
+
+  // Función para aceptar términos
+  const handleAcceptTerms = () => {
+    // Guardar en localStorage que el usuario ha aceptado los términos
+    localStorage.setItem('termsAccepted', 'true');
+    
+    // Guardar también en cookie para que el middleware pueda leerla
+    Cookies.set('termsAccepted', 'true', { expires: 30 }); // Expira en 30 días
+    
+    router.push('/');
+  };
+
+  // Mostrar loading hasta que esté montado en cliente
+  if (!mounted || isLoading) {
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-bronze-50 dark:bg-zinc-900">
+        <div className="animate-pulse">Cargando...</div>
+      </div>
+    );
+  }
   
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-bronze-50 dark:bg-zinc-900 px-4 py-8">
@@ -107,7 +146,7 @@ export default function TerminosPage() {
           </Button>
           
           <Button 
-            onClick={() => router.push('/')}
+            onClick={handleAcceptTerms}
             className="bg-bronze-600 hover:bg-bronze-700 text-white"
           >
             Acepto los términos
