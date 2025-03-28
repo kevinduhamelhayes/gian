@@ -24,7 +24,12 @@ Este sentimiento indescriptible es el tesoro más valioso que compartimos.
   updatedAt: new Date("2025-03-16").toISOString(),
   image: getPostImagePath(SLUG, '1.jpg'), // Primera imagen para la preview
   carouselImages: [
-    getPostImagePath(SLUG, '2.jpg')
+    getPostImagePath(SLUG, '1.jpg'),
+    getPostImagePath(SLUG, '2.jpg'),
+    getPostImagePath(SLUG, '3.jpg'),
+    getPostImagePath(SLUG, '4.jpg'),
+    getPostImagePath(SLUG, '5.jpg'),
+
   ],
   tags: [
     { id: "2", name: "amor" },

@@ -14,17 +14,37 @@ export const quedarmePorAmor: LocalPost = {
   content: `
 # Quedarme por amor
 
-A veces, la vida nos presenta encrucijadas donde debemos elegir entre diferentes caminos. Había muchas razones para irme, pero solo una para quedarme: el amor que sentía por ti.
+no tenemos dia de aniversario... se nos paso anotar ese dia por que la estabamos viviendo intensamente.
 
-Esa decisión que tomé, de permanecer a tu lado cuando todo parecía indicar que debía seguir otro rumbo, ha sido una de las más significativas de mi vida. Porque elegir quedarse por amor no es señal de debilidad, sino de reconocer que algunas personas valen cada sacrificio.
+tampoco hay fotos que lo reflejen certeramente... pero eso paso... amarte me dio sentido, amarte y que me ames me curo que decirte.
 
-Hoy, mirando atrás, sé que tomé la decisión correcta. Cada día a tu lado me reafirma que el amor verdadero merece todas las segundas oportunidades, todos los esfuerzos y todas las esperas.
+me daba fuerzas alimentaba mi alma y decidi quedarme a hacerlo posible.
+
+a generar los proyectos a tratar de hacerte feliz a tratar de hacer un camino para nosotros.
+
+yo necesitaba o queria cierta forma de camino basado en lo que yo vivi 
+
+por este momento no sabia como haria para quedarme pero estaba dispuesto a hacer cualquier cosa, incluso atender clientes jaja algo que no me gusta y veriamos en el futuro que pasa pero a no adelantarme...
+
+te anaba cada dia y vos a mi y yo no estaba dispuesto a renunciar a eso me quede a pelear y no podia solo asi que un poco te arrastre tambien fuimos cayendo en el amor.
+
+los teatros, las risas, los momentos, las conversaciones, los besos, los abrazos, los momentos en que te vi sonreir.
+
+pero especialmente aca empezo ese no se que que no podemos explicar que aun vive y espero que siga asi.
+
+aunque ya nose que pasara con nosotros...
+
   `,
   publishedAt: new Date("2024-12-01").toISOString(),
   updatedAt: new Date("2024-12-01").toISOString(),
-  image: getPostImagePath(SLUG, 'IMG_20241201_192033.jpg'), // Primera imagen para la preview
+  image: getPostImagePath(SLUG, '1.jpg'), // Primera imagen para la preview
   carouselImages: [
-    getPostImagePath(SLUG, 'IMG_20241201_192033.jpg')
+    getPostImagePath(SLUG, '1.jpg'),
+    getPostImagePath(SLUG, '2.jpg'),
+    getPostImagePath(SLUG, '3.jpg'),
+    getPostImagePath(SLUG, '4.jpg'),
+    getPostImagePath(SLUG, '5.jpg'),
+    
   ],
   tags: [
     { id: "2", name: "amor" },

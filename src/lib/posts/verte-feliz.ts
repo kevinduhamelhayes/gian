@@ -14,30 +14,24 @@ export const vertefeliz: LocalPost = {
   content: `
 # Verte Feliz
 
-No hay nada en este mundo que me llene más que verte feliz. Esos pequeños momentos cotidianos en los que tu rostro se ilumina con una sonrisa, esos instantes en que tus ojos brillan de emoción.
+Que me llenaria mas que verte feliz? yo se que queres que sea mas egoista y piense en mi y en hacerme feliz a mi pero esto paso y pasa. me encantan esos pequeños momentos cotidianos en los que tu rostro se ilumina con una sonrisa, esos instantes en que tus ojos brillan de emoción. De los que nunca saco una puta foto. jajaja
 
-Verte feliz en las cosas simples, como cuando disfrutas un café por la mañana, cuando te ríes de algo tonto que dije, cuando te entusiasmas por algún plan que estamos haciendo juntos...
+Verte feliz en las cosas simples unas costeletas bien condimentadas un rico postre y un cafe con leche. un poco de helado, bailando...
 
-Me encanta verte feliz cuando:
-- Bailamos juntos, aunque no siempre coordinemos los pasos
-- Probamos algo nuevo y te gusta
-- Te sorprendo con algún detalle pequeño que no esperabas
-- Logramos superar algún desafío juntos
-- Simplemente estamos compartiendo un momento tranquilo
+Este post esta separado del anterior pero relacionado.
 
-Tu felicidad es contagiosa, y me hace sentir que todo en el mundo está bien cuando te veo sonreír. Por eso, uno de mis propósitos diarios es buscar pequeñas formas de hacerte sonreír, de iluminar tu día aunque sea un poco.
+yo te empece a sentir especial y tambien a quererte ver feliz y aca empece a mandar algun error mio, queria hacerte feliz en lo que yo entendia por felicidad.
 
-Y lo más hermoso es que tu felicidad parece ser más grande cuando estamos juntos, cuando compartimos esos momentos que, aunque simples, se vuelven especiales simplemente porque nos tenemos el uno al otro.
+por ahi poniendote por delante de mi bienestar y dando o tratando de dar lo que a mi me parecia que te haria feliz este es un error que mas adelante me arrepentire.
 
-Verte feliz es mi mayor alegría. Tu sonrisa es el regalo más hermoso que puedo recibir cada día.
+Pero vamos las risas no faltaban la comida y el heladito espero tampoco.
   `,
   publishedAt: new Date("2023-05-20").toISOString(),
   updatedAt: new Date("2023-05-20").toISOString(),
-  image: getPostImagePath(SLUG, '1.jpg'), // Primera imagen para la preview
+  image: getPostImagePath(SLUG, '3.jpg'), // Primera imagen para la preview
   carouselImages: [
-    getPostImagePath(SLUG, '1.jpg'),
     getPostImagePath(SLUG, '2.jpg'),
-    getPostImagePath(SLUG, '3.jpg'),
+    getPostImagePath(SLUG, '1.jpg'),
     getPostImagePath(SLUG, '4.jpg'),
     getPostImagePath(SLUG, '5.jpg')
   ],

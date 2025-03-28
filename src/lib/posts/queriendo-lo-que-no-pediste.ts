@@ -22,9 +22,15 @@ Hoy, agradezco que el destino me haya dado lo que no pedí, porque resultó ser 
   `,
   publishedAt: new Date("2025-03-10").toISOString(),
   updatedAt: new Date("2025-03-10").toISOString(),
-  image: getPostImagePath(SLUG, 'IMG-20250310-WA0044.jpg'), // Primera imagen para la preview
+  image: getPostImagePath(SLUG, '2.jpg'), // Primera imagen para la preview
   carouselImages: [
-    getPostImagePath(SLUG, 'IMG-20250310-WA0044.jpg')
+    getPostImagePath(SLUG, '1.jpg'),
+    getPostImagePath(SLUG, '3.jpg'),
+    getPostImagePath(SLUG, '4.jpg'),
+    getPostImagePath(SLUG, '5.jpg'),
+    getPostImagePath(SLUG, '6.jpg'),
+    getPostImagePath(SLUG, '7.jpg'),
+    
   ],
   tags: [
     { id: "2", name: "amor" },
