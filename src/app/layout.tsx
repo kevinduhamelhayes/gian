@@ -1,7 +1,7 @@
 import { config } from "@/config";
 import { signOgImageUrl } from "@/lib/og-image";
 import { cn } from "@/lib/utils";
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Dancing_Script, Indie_Flower, Inter } from "next/font/google";
 import "./globals.css";
 import { Providers } from "./providers";
@@ -9,6 +9,14 @@ import { Providers } from "./providers";
 const fontSans = Inter({ subsets: ["latin"], variable: "--font-sans" });
 const fontScript = Dancing_Script({ subsets: ["latin"], variable: "--font-script" });
 const fontHandwritten = Indie_Flower({ weight: "400", subsets: ["latin"], variable: "--font-handwritten" });
+
+// Exportar configuración de viewport separada según las recomendaciones
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1,
+  themeColor: "#B8860B", // Color bronce
+};
 
 export const metadata: Metadata = {
   title: {
@@ -54,12 +62,6 @@ export const metadata: Metadata = {
     description: config.blog.metadata.description,
     images: [signOgImageUrl({ title: config.blog.name })],
   },
-  viewport: {
-    width: "device-width",
-    initialScale: 1,
-    maximumScale: 1,
-  },
-  themeColor: "#B8860B", // Color bronce
 };
 
 export default function RootLayout({
