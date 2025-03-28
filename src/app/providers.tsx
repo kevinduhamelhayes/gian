@@ -2,6 +2,7 @@
 
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import dynamic from "next/dynamic";
+import { AuthProvider } from "@/lib/auth-context";
 
 const NextThemeProvider = dynamic(
   () => import("next-themes").then((mod) => mod.ThemeProvider),
@@ -20,7 +21,9 @@ export const Providers = ({ children }: { children: React.ReactNode }) => {
       enableSystem
       disableTransitionOnChange
     >
-      <QueryClientProvider client={queryClient}>{children}</QueryClientProvider>
+      <QueryClientProvider client={queryClient}>
+        <AuthProvider>{children}</AuthProvider>
+      </QueryClientProvider>
     </NextThemeProvider>
   );
 };
