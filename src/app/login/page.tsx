@@ -74,13 +74,13 @@ export default function LoginPage() {
       {/* Contenido del login */}
       <Card className="w-full max-w-md border-bronze-200 shadow-xl relative z-20 mx-4 bg-white/90 dark:bg-zinc-900/90 backdrop-blur-md">
         <CardHeader className="space-y-1 text-center">
-          <div className="mx-auto mb-4 w-24 h-24 relative">
+          <div className="mx-auto mb-4 w-32 h-32 relative">
             <Image 
               src="/images/logo.svg" 
               alt="Logo GK"
-              width={80}
-              height={80}
-              className="mx-auto"
+              width={120}
+              height={120}
+              className="mx-auto p-2"
               priority
             />
           </div>
