@@ -14,13 +14,13 @@ export const loQueNoSospechamos: LocalPost = {
   content: `
 # Lo que no sospechamos
 
-Ninguno de mis mensajes sera escrito con inteligencia artificial sere yo detras de cada palabra. asi que paciencia puede que no se me entienda lo que quiero decir. este es el primer post en orden cronologico.
+Ninguno de mis mensajes será escrito con inteligencia artificial, seré yo detrás de cada palabra. Así que paciencia, puede que no se me entienda lo que quiero decir. Este es el primer post en orden cronológico.
 
-Vos sabes y te lo dije mas de una vez nunca pense que realmente saldriamos juntos, te vi timida la hermana de cande jajaja
+Vos sabés, y te lo dije más de una vez, nunca pensé que realmente saldríamos juntos. Te vi tímida, la hermana de Cande, jajaja.
 
-te saque a bailar un par de veces siempre rebotando pero mas alla de eso no pegabamos onda no nos entendiamos obviamente yo chocaba... no nos entendiamos bailando hasta este dia creo yo que dije epaaaaaaaaaaa
+Te saqué a bailar un par de veces, siempre rebotando, pero más allá de eso no pegábamos onda, no nos entendíamos. Obviamente, yo chocaba... No nos entendíamos bailando hasta este día, creo yo, que dije: '¡Epaaaaaaa!'
 
-y te empese a ver distinto... admito que entre a tu perfil mire y dije tiene cara de menor de edad jajaja
+Y te empecé a ver distinto... Admito que entré a tu perfil, miré y dije: 'Tiene cara de menor de edad', jajaja.
   `,
   publishedAt: new Date("2023-08-15").toISOString(),
   updatedAt: new Date("2023-08-15").toISOString(),
@@ -37,4 +37,4 @@ y te empese a ver distinto... admito que entre a tu perfil mire y dije tiene car
     { id: "19", name: "descubrimientos" }
   ],
   featured: true
-}; 
+};

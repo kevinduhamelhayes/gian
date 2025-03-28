@@ -14,22 +14,21 @@ export const miSorpresa: LocalPost = {
   content: `
 # Mi sorpresa
 
-me la tome ligth y dije esto no va a ir para ningun lado 
+Me la tomé light y dije: 'Esto no va a ir para ningún lado'.
 
-y mierda que estaba equivocado me resultaste cautivante me empezo a gustar mas de lo que pensaba
+Y mierda, qué equivocado estaba. Me resultaste cautivante, me empezó a gustar más de lo que pensaba.
 
-me entendias o tratabas de hacerlo, yo me estaba yendo acarreando con algunas cosas del año anterior y temas familiares mi abue se cayo y las cosas se complicaban pero a su vez un amor que se asomaba.
+Me entendías o tratabas de hacerlo. Yo me estaba yendo, acarreando con algunas cosas del año anterior y temas familiares (mi abue se cayó y las cosas se complicaban), pero a su vez, un amor que se asomaba.
 
-desgarraba tus miedos me empezaba a sentir tuyo y vos miradas esas ganas de darte lo que no pedias de ser quien yo no era de crecer pero sin herramientas en ese momento pero por sobre todo de hacerte feliz. 
+Desgarraba tus miedos, me empezaba a sentir tuyo, y vos mirabas esas ganas de darte lo que no pedías; de ser quien yo no era, de crecer pero sin herramientas en ese momento, pero por sobre todo, de hacerte feliz.
 
-por que el amor hace sentir la felicidad del otro propia... no lo se
+¿Por qué el amor hace sentir la felicidad del otro propia?... No lo sé.
 
-esto para mi que pensaba irme fue una sorpresa y me llevo a errores que estan en otras secciones pero nos llevo a cosas hermosas de muchas no hay fotos por que al vivir uno no saca la camara... fui muy feliz en tus brazos y vos en los mios.
+Esto, para mí que pensaba irme, fue una sorpresa y me llevó a errores que están en otras secciones, pero nos llevó a cosas hermosas. De muchas no hay fotos porque, al vivir, uno no saca la cámara... Fui muy feliz en tus brazos y vos en los míos.
 
-por aca salieron los primeros "te amo"
+Por acá salieron los primeros 'te amo'.
 
-y la entrega se fue acrecentando las barreras se nos caian a pedazos...
-
+Y la entrega se fue acrecentando, las barreras se nos caían a pedazos...
   `,
   publishedAt: new Date("2024-06-29").toISOString(),
   updatedAt: new Date("2024-06-29").toISOString(),
@@ -45,4 +44,4 @@ y la entrega se fue acrecentando las barreras se nos caian a pedazos...
     { id: "18", name: "sorpresas" }
   ],
   featured: true
-}; 
+};

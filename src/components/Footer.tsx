@@ -19,11 +19,7 @@ export const Footer: FunctionComponent = () => {
           </span>
         </div>
         <div>
-          <Link href="/rss">
-            <Button variant="ghost" className="p-2 text-bronze-600 hover:text-bronze-800">
-              <Rss className="w-4 h-4" />
-            </Button>
-          </Link>
+        
           <DarkModeToggle />
         </div>
       </div>

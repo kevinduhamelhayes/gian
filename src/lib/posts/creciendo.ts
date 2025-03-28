@@ -14,28 +14,28 @@ export const creciendo: LocalPost = {
   content: `
 # Creciendo juntos
 
-Peleabamos, somos dos tercos que no aceptan menos de lo que consideran que valen
+Peleábamos. Somos dos tercos que no aceptan menos de lo que consideran que valen.
 
-nos exigimos y le exigimos al otro... nos empujamos a los limites...
+Nos exigimos y le exigimos al otro... nos empujamos a los límites...
 
-yo te exigi desde lo que yo entendia que era lo que yo queria y lo que vos querias pero aun la experiencia no te habia mostrado (se que aca pensas re distinto pero es lo que yo pensaba)
+Yo te exigí desde lo que yo entendía que era lo que yo quería y lo que vos querías, pero aún la experiencia no te lo había mostrado (sé que acá pensás re distinto, pero es lo que yo pensaba).
 
-por estos tiempos yo tendria que haber ido al psicologo en vez de tirarme a montar una empresa para pagar nuestros temas, queria darte una buena vida que nada nos falte.
+Por estos tiempos, yo tendría que haber ido al psicólogo en vez de tirarme a montar una empresa para pagar nuestros temas. Quería darte una buena vida, que nada nos falte.
 
-queria salir de los quilombos que arrastraba por vender el kraken y por arreglar la casa de mi abuela queria montar una vida en rosario para poder estar mas cerca de vos y de tu familia, una vida que despues nos deje viajar y mas adelante tener hijos.
+Quería salir de los quilombos que arrastraba por vender el Kraken y por arreglar la casa de mi abuela. Quería montar una vida en Rosario para poder estar más cerca de vos y de tu familia; una vida que después nos deje viajar y, más adelante, tener hijos.
 
-pero vos sos mas joven no necesitabas de mi semejante sacrificio, para nosotros en el futuro me necesitabas a mi en el presente y es algo que hoy entiendo pero en ese momento no.
+Pero vos sos más joven, no necesitabas de mí semejante sacrificio. Para nosotros en el futuro, me necesitabas a mí en el presente, y es algo que hoy entiendo, pero en ese momento no.
 
-yo queria ir a toda maquina y te enseñe y te exigi asi y vos estabas para ir mas despacio terminar la facu ver que onda el tenis y que onda la vida.
+Yo quería ir a toda máquina, y te enseñé y te exigí así, y vos estabas para ir más despacio, terminar la facu, ver qué onda el tenis y qué onda la vida.
 
-yo nos meti en una voragine que nos olbligaba a crecer pero tambien nos llevaba puestos...
+Yo nos metí en una vorágine que nos obligaba a crecer, pero también nos llevaba puestos...
 
-hoy se siente culpa pero tambien se que crecimos que vimos hasta adonde podemos llegar y nuestros limites.
+Hoy se siente culpa, pero también sé que crecimos, que vimos hasta adónde podemos llegar y nuestros límites.
 
-yo queria abordar tanto a la vez.... obviamente no podia...
+Yo quería abordar tanto a la vez... obviamente no podía...
 
-lo que te vi crecer y lo rapido que te superabas es algo que no te reconoci de forma adecuada pero espero que aqui quede plasmado por siempre por que no fui justo en su momento... ahora que quizas el final este cerca...
-no voy a cometer ese error.
+Lo que te vi crecer y lo rápido que te superabas es algo que no te reconocí de forma adecuada, pero espero que aquí quede plasmado por siempre, porque no fui justo en su momento... Ahora que quizás el final esté cerca...
+No voy a cometer ese error.
   `,
   publishedAt: new Date("2023-07-10").toISOString(),
   updatedAt: new Date("2023-07-10").toISOString(),
@@ -52,4 +52,4 @@ no voy a cometer ese error.
     { id: "10", name: "crecimiento" }
   ],
   featured: true
-}; 
+};

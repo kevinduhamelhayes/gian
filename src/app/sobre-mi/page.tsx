@@ -6,30 +6,30 @@ import Markdown from "react-markdown";
 import Image from "next/image";
 import { ImageCarousel } from "./carousel";
 
-// Contenido de Markdown sin las imágenes
+// Contenido de Markdown corregido
 const content = `# Sobre Mí
 
-Hola, soy Yo, naci en una familia pequña fui el unico hijo y nieto 8 años, mi familia era pobre pero yo creia que me ocultaban la verdad y era millonario... jaja
+Hola, soy yo. Nací en una familia pequeña; fui el único hijo y nieto por 8 años. Mi familia era pobre, pero yo creía que me ocultaban la verdad y era millonario... Jaja.
 
-pobre de mi al entender que realmente no habia nada oculto y el piso y las paredes eran rusticos y mi madre se enojaba por que decia que en el techo de madera caian arañas y polvo en la comida.... muy mañatica con eso pero nunca fue alguien limpia, en ese ambiente se crio un niño que hoy escribe este blog ya grande.
+Pobre de mí al entender que realmente no había nada oculto, y el piso y las paredes eran rústicos. Mi madre se enojaba porque decía que del techo de madera caían arañas y polvo en la comida... Muy maniática con eso, pero nunca fue alguien limpia. En ese ambiente se crio un niño que hoy, ya grande, escribe este blog.
 
-mi familia siempre fue orgullosa y pensaba en que opara salir adelante no necesitaban ayuda de los demas y asi fue nunca se acepto ayuda de nadie.
+Mi familia siempre fue orgullosa y pensaba que para salir adelante no necesitaban ayuda de los demás, y así fue: nunca se aceptó ayuda de nadie.
 
-fui el mas exigido de la familia cargando los sueños de mis padres, ser bueno en ajedres matematicas , ser bueno en basquet y por supuesto la obligacion de ser bueno en la escuela.
+Fui el más exigido de la familia, cargando los sueños de mis padres: ser bueno en ajedrez, matemáticas, ser bueno en básquet y, por supuesto, la obligación de ser bueno en la escuela.
 
-por supuesto recuerdo al dormir la siesta esconderme bajo la mesa para jugar con legos pensando en no hacer ruido por que mis padres dormian siesta y yo no y hasta el dia de hoy no la duermo.
+Por supuesto, recuerdo al dormir la siesta esconderme bajo la mesa para jugar con legos, pensando en no hacer ruido porque mis padres dormían siesta y yo no, y hasta el día de hoy no la duermo.
 
-bueno esas son anecdotas realmente lo que importa es que logre por otro camino el del sentido comun y el tacto el de la experiencia y el tiempo la los valores que hoy tengo. y que coinciden con los tuyos.
+Bueno, esas son anécdotas. Realmente lo que importa es que logré, por otro camino (el del sentido común y el tacto, el de la experiencia y el tiempo), los valores que hoy tengo, y que coinciden con los tuyos.
 
-aunque la experiencia y el tiempo no vienen solos vienen acompañados de dolor y te curten, como un soldado que ya vio mucha sangre correr y estuvo en muchas batallas y ahora se encuentra en una guerra que no puede ganar.
+Aunque la experiencia y el tiempo no vienen solos: vienen acompañados de dolor y te curten, como un soldado que ya vio mucha sangre correr, estuvo en muchas batallas y ahora se encuentra en una guerra que no puede ganar.
 
-Esta batalla la doy por perdida o suspendida, bajare mis armas y ire a lugares mas tranquilos donde pueda recuperarme,  sanar aprender sentir y crecer.
+Esta batalla la doy por perdida o suspendida. Bajaré mis armas e iré a lugares más tranquilos donde pueda recuperarme, sanar, aprender, sentir y crecer.
 
-hoy me encuentro con cosas nuevas como curiosidad por viajar por ser feliz pero con menos expectativas y mas libertad de ser yo mismo.
+Hoy me encuentro con cosas nuevas, como curiosidad por viajar, por ser feliz, pero con menos expectativas y más libertad de ser yo mismo.
 
-el tiempo pasara y la esperanza de volver a luchar por nosotros seguira en mi corazon. si alguna vez decides volver a mi lado, sabes que estare aqui, con los brazos abiertos y el corazon lleno de amor.
+El tiempo pasará y la esperanza de volver a luchar por nosotros seguirá en mi corazón. Si alguna vez decides volver a mi lado, sabés que estaré aquí, con los brazos abiertos y el corazón lleno de amor.
 
-no te prometo que sera facil por que el futuro es incierto pero idealmente estare listo para volver a luchar por nosotros. y si yo dejo de creer o la cosa se ve dificil lucha por esto convenceme, rompete el orto! pelea! aprendiste de mi que nada es imposible anda por ello.
+No te prometo que será fácil, porque el futuro es incierto, pero idealmente estaré listo para volver a luchar por nosotros. Y si yo dejo de creer o la cosa se ve difícil, ¡luchá por esto, convenceme, rompete el orto, peleá! Aprendiste de mí que nada es imposible: andá por ello.
 
 Esta página es mi forma de compartir mi historia, mis pensamientos y mis sentimientos. Pero más que nada, es mi manera de honrar a alguien muy especial que ha dejado una huella indeleble en mi corazón.
 
@@ -85,4 +85,4 @@ const Page = async () => {
   );
 };
 
-export default Page; 
+export default Page;
