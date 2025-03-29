@@ -103,8 +103,7 @@ export default function TerminosPage() {
               </h2>
               <p>
                 Este blog ha sido creado como un espacio personal y privado para compartir 
-                momentos, pensamientos y sentimientos. No está destinado al público general, 
-                sino a un círculo cercano y específico de personas.
+                momentos, pensamientos y sentimientos. 
               </p>
             </section>
             
@@ -113,7 +112,7 @@ export default function TerminosPage() {
                 Contenido y perspectiva personal
               </h2>
               <p>
-                El contenido de este blog representa experiencias, opiniones y emociones personales.
+                El contenido de este blog representa experiencias, opiniones y emociones personales Mias.
                 Es importante tener en cuenta que lo expresado aquí:
               </p>
               <ul className="list-disc pl-6 space-y-2">
@@ -121,11 +120,11 @@ export default function TerminosPage() {
                 <li>Está compartido desde una perspectiva personal y subjetiva</li>
                 <li>No pretende representar verdades absolutas ni universales</li>
                 <li>Ha sido creado y escrito con amor y honestidad</li>
+                <li>Esta escrito cada cosa pensada en su momento pero desde el presente</li>
               </ul>
               <p>
-                Si en algún momento encuentras contenido que no comprendes o con el que no estás de acuerdo,
-                te invito a reflexionar sobre la diversidad de experiencias y perspectivas que existen
-                en nuestras relaciones humanas.
+                Si en algún momento encuentras contenido que no compartes o no piensas igual es totalmente normal 
+                es una invitación a reflexionar sobre la diversidad de experiencias y perspectivas de nuestra relación.
               </p>
             </section>
             
@@ -137,32 +136,22 @@ export default function TerminosPage() {
                 La creación de este blog ha requerido un esfuerzo significativo:
               </p>
               <ul className="list-disc pl-6 space-y-2">
-                <li>Cada post ha sido cuidadosamente redactado para expresar sentimientos auténticos</li>
-                <li>Las imágenes han sido seleccionadas y organizadas con dedicación</li>
-                <li>El diseño y la estructura han sido pensados para ofrecer una experiencia agradable</li>
+                <li>yo pensaba escribir a mano unas hojitas de papel pero me di cuenta que tengo fea letra... </li>
+                <li> despues pense y si hago algo con unas fotos que tengo de ti</li>
+                <li>despues empese con esto despues me di cuentade mil detalles tecnicos como proteger la privacidad</li>
+                <li>tambien el sistema de ordenamiento etiquetas sistema de ruteo nose pero era unas 4 paginas a mano que pensaba escribir</li>
+                <li>7.000 lineas de codigo despues y 200 imagenes seleccionadas dan este resultado</li>
+                <li>tenemos modo claro y oscuro y funciona en telefonos estara online para poder acceder en cualquier momento cuando mas nos amemos estara aqui y cuando menos tambien</li>
                 <li>Todo ha sido creado con el objetivo de compartir algo especial y significativo</li>
               </ul>
               <p>
                 Te pido que valores este esfuerzo y que respetes la naturaleza personal e íntima
                 de lo que aquí se comparte.
+                por que podemos y seguramente pase que en cada cosa tengamos distintos puntos de vista pero no olvides que te amo y te estare esperando
               </p>
             </section>
             
-            <section className="space-y-3">
-              <h2 className="text-xl font-handwritten text-bronze-800 dark:text-bronze-100">
-                Privacidad y confidencialidad
-              </h2>
-              <p>
-                Al tener acceso a este blog, te comprometes a:
-              </p>
-              <ul className="list-disc pl-6 space-y-2">
-                <li>No compartir las credenciales de acceso con otras personas</li>
-                <li>No reproducir o distribuir el contenido sin autorización</li>
-                <li>Respetar la privacidad y la intención personal de este espacio</li>
-                <li>Tratar el contenido con respeto y consideración</li>
-              </ul>
-            </section>
-            
+       
             <section className="space-y-3 pt-4">
               <p className="italic text-bronze-600 dark:text-bronze-400">
                 "Este blog ha sido creado con amor, dedicación y honestidad. Es un pedazo de mi mundo
