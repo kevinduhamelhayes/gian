@@ -3,15 +3,16 @@
 import React, { createContext, useState, useContext, useEffect, ReactNode } from 'react';
 import Cookies from 'js-cookie';
 
-// Datos de usuario simulados (solo para demo)
-const VALID_USERS = {
-  'admin': 'gianina',
-  'gian': 'kevin'
+// Datos de usuario simulados (usando variables de entorno)
+const VALID_USERS: Record<string, string> = {
+  [process.env.NEXT_PUBLIC_USER1_USERNAME?.toLowerCase() || '']: process.env.NEXT_PUBLIC_USER1_PASSWORD || '',
+  [process.env.NEXT_PUBLIC_USER2_USERNAME?.toLowerCase() || '']: process.env.NEXT_PUBLIC_USER2_PASSWORD || ''
 };
 
 // Tipo para los usuarios
 type User = {
   id: string;
+  name?: string;
 };
 
 // Interface para el contexto de autenticación
@@ -47,8 +48,16 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
     
     if (authUser) {
       try {
-        // Simulando que restauramos los datos del usuario
-        setUser({ id: authUser });
+        // Recuperar el nombre del usuario basado en su ID
+        const name = authUser.toLowerCase() === process.env.NEXT_PUBLIC_USER1_USERNAME?.toLowerCase() 
+          ? process.env.NEXT_PUBLIC_USER1_NAME 
+          : process.env.NEXT_PUBLIC_USER2_NAME;
+          
+        // Establecer usuario con id y nombre
+        setUser({ 
+          id: authUser,
+          name: name
+        });
       } catch (error) {
         console.error('Error parsing auth cookie:', error);
         Cookies.remove('authUser');
@@ -60,28 +69,49 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
 
   // Función de login
   const login = (username: string, password: string): boolean => {
-    // Simulación simple de autenticación
-    if (VALID_USERS[username.toLowerCase()] === password.toLowerCase()) {
+    // Normalizar el username a minúsculas para la comparación
+    const normalizedUsername = username.toLowerCase();
+    
+    // Verificar si existe el usuario y si la contraseña coincide
+    if (
+      Object.prototype.hasOwnProperty.call(VALID_USERS, normalizedUsername) &&
+      VALID_USERS[normalizedUsername] === password
+    ) {
+      // Determinar el nombre del usuario basado en su username
+      const name = normalizedUsername === process.env.NEXT_PUBLIC_USER1_USERNAME?.toLowerCase() 
+        ? process.env.NEXT_PUBLIC_USER1_NAME 
+        : process.env.NEXT_PUBLIC_USER2_NAME;
+      
       // Crear usuario y guardar en estado
-      const user = { id: username.toLowerCase() };
+      const user = { 
+        id: normalizedUsername,
+        name: name
+      };
       setUser(user);
       
       // Guardar en cookies para persistencia
-      Cookies.set('authUser', username.toLowerCase(), { 
+      Cookies.set('authUser', normalizedUsername, { 
         expires: 7, // 7 días
         path: '/',
         secure: window.location.protocol === 'https:',
         sameSite: 'strict'
       });
       
-      // Enviar evento de inicio de sesión a GA4
-      if (typeof window !== 'undefined' && window.gtag) {
-        window.gtag('event', 'login', {
-          method: 'credentials',
-          user_type: username.toLowerCase() === 'admin' ? 'usuario_1' : 'usuario_2'
-        });
-        
-        console.log('Evento de login enviado a GA4', username.toLowerCase());
+      // Enviar evento de inicio de sesión a GA4 - Con manejo de errores mejorado
+      try {
+        if (typeof window !== 'undefined' && window.gtag && typeof window.gtag === 'function') {
+          window.gtag('event', 'login', {
+            method: 'credentials',
+            user_type: normalizedUsername === process.env.NEXT_PUBLIC_USER1_USERNAME?.toLowerCase() ? 'usuario_1' : 'usuario_2',
+            user_name: name
+          });
+          
+          console.log('Evento de login enviado a GA4', normalizedUsername);
+        }
+      } catch (error) {
+        // Capturar cualquier error de GA4 para evitar que bloquee el login
+        console.error('Error al enviar evento a GA4:', error);
+        // No retornamos false aquí - el login debe continuar aunque GA4 falle
       }
       
       return true;
@@ -93,10 +123,16 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
   // Función de logout
   const logout = () => {
     // Enviar evento de cierre de sesión a GA4
-    if (typeof window !== 'undefined' && window.gtag && user) {
-      window.gtag('event', 'logout', {
-        user_type: user.id === 'admin' ? 'usuario_1' : 'usuario_2'
-      });
+    try {
+      if (typeof window !== 'undefined' && window.gtag && typeof window.gtag === 'function' && user) {
+        window.gtag('event', 'logout', {
+          user_type: user.id === process.env.NEXT_PUBLIC_USER1_USERNAME?.toLowerCase() ? 'usuario_1' : 'usuario_2',
+          user_name: user.name
+        });
+      }
+    } catch (error) {
+      console.error('Error al enviar evento de logout a GA4:', error);
+      // No bloqueamos el logout si hay un error en GA4
     }
     
     setUser(null);
