@@ -44,11 +44,22 @@ export default function TerminosPage() {
       
       console.log('Terms accepted, saved in cookie:', Cookies.get('termsAccepted'));
       
-      // Enviar evento de aceptación de términos a GA4
-      if (typeof window !== 'undefined' && window.gtag) {
-        window.gtag('event', 'accept_terms', {
-          user_type: user?.id === 'admin' ? 'usuario_1' : 'usuario_2'
-        });
+      // Enviar evento de aceptación de términos a GA4 con manejo de errores
+      try {
+        if (typeof window !== 'undefined' && window.gtag && typeof window.gtag === 'function' && user) {
+          // Determinar el tipo de usuario basado en las variables de entorno
+          const isUser1 = user.id === process.env.NEXT_PUBLIC_USER1_USERNAME?.toLowerCase();
+          const userType = isUser1 ? 'usuario_1' : 'usuario_2';
+          const userName = isUser1 ? process.env.NEXT_PUBLIC_USER1_NAME : process.env.NEXT_PUBLIC_USER2_NAME;
+          
+          window.gtag('event', 'accept_terms', {
+            user_type: userType,
+            user_name: userName
+          });
+        }
+      } catch (error) {
+        console.error('Error al enviar evento de aceptación de términos a GA4:', error);
+        // No bloqueamos la navegación si hay un error en GA4
       }
       
       // Esperar un momento para asegurar que la cookie se guarde
