@@ -17,9 +17,11 @@ export default function GoogleAnalytics() {
     const url = pathname + (searchParams?.toString() ? `?${searchParams.toString()}` : "");
     
     // Envía un pageview cuando la URL cambia
-    window.gtag?.("config", GA_MEASUREMENT_ID, {
-      page_path: url,
-    });
+    if (typeof window !== 'undefined' && window.gtag) {
+      window.gtag("config", GA_MEASUREMENT_ID, {
+        page_path: url,
+      });
+    }
   }, [pathname, searchParams]);
 
   return (

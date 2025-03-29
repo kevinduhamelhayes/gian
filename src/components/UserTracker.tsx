@@ -4,16 +4,9 @@ import { useEffect } from "react";
 import { usePathname } from "next/navigation";
 import { useAuth } from "@/lib/auth-context";
 
-// Declarar el tipo global para gtag
-declare global {
-  interface Window {
-    gtag: (
-      command: string,
-      action: string,
-      params?: Record<string, any>
-    ) => void;
-  }
-}
+// Declarar el tipo global para gtag (asegurándonos de que sea consistente)
+// Eliminamos la declaración global aquí ya que ya existe en otros archivos
+// y podría estar causando conflictos
 
 /**
  * Componente para rastrear eventos específicos de usuario
@@ -25,7 +18,9 @@ export default function UserTracker() {
 
   // Rastrear inicios de sesión y navegación del usuario
   useEffect(() => {
-    if (typeof window !== "undefined" && window.gtag) {
+    if (typeof window === "undefined" || !window.gtag) return;
+    
+    try {
       // Identificar al usuario (de forma anónima)
       if (isAuthenticated && user) {
         // Solo rastreamos un ID anónimo para saber cuál de los dos usuarios está navegando
@@ -58,6 +53,8 @@ export default function UserTracker() {
           });
         }
       }
+    } catch (error) {
+      console.error("Error tracking user activity:", error);
     }
   }, [pathname, isAuthenticated, user]);
 

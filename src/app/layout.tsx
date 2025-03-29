@@ -6,11 +6,10 @@ import type { Metadata, Viewport } from "next";
 import { Dancing_Script, Indie_Flower, Inter } from "next/font/google";
 import "./globals.css";
 import { Providers } from "./providers";
-import dynamic from 'next/dynamic';
 
-// Importar GoogleAnalytics y UserTracker con carga dinámica para evitar SSR
-const GoogleAnalytics = dynamic(() => import('@/components/GoogleAnalytics'), { ssr: false });
-const UserTracker = dynamic(() => import('@/components/UserTracker'), { ssr: false });
+// Importar directamente los componentes (serán renderizados en el cliente debido a su "use client" directive)
+import GoogleAnalytics from '@/components/GoogleAnalytics';
+import UserTracker from '@/components/UserTracker';
 
 const fontSans = Inter({ subsets: ["latin"], variable: "--font-sans" });
 const fontScript = Dancing_Script({ subsets: ["latin"], variable: "--font-script" });
@@ -87,6 +86,7 @@ export default function RootLayout({
       >
         <Providers>
           <main>{children}</main>
+          {/* Los componentes ya tienen "use client" directive, por lo que se ejecutarán solo en el cliente */}
           <GoogleAnalytics />
           <UserTracker />
           <Analytics />

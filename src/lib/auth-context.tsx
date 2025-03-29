@@ -9,17 +9,6 @@ const VALID_USERS = {
   'gian': 'kevin'
 };
 
-// Declarar el tipo global para gtag
-declare global {
-  interface Window {
-    gtag: (
-      command: string,
-      action: string,
-      params?: Record<string, any>
-    ) => void;
-  }
-}
-
 // Tipo para los usuarios
 type User = {
   id: string;

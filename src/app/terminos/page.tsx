@@ -8,17 +8,6 @@ import { useAuth } from "@/lib/auth-context";
 import Cookies from 'js-cookie';
 import Image from 'next/image';
 
-// Declarar el tipo global para gtag
-declare global {
-  interface Window {
-    gtag: (
-      command: string,
-      action: string,
-      params?: Record<string, any>
-    ) => void;
-  }
-}
-
 export default function TerminosPage() {
   const router = useRouter();
   const { isAuthenticated, isLoading, user } = useAuth();
