@@ -55,7 +55,7 @@ export async function generateMetadata() {
   };
 }
 
-const Page = async () => {
+export default async function Page() {
   return (
     <div className="container mx-auto px-5">
       <Header />
@@ -63,7 +63,7 @@ const Page = async () => {
         <div className="w-full flex items-center bg-bronze-50 justify-center pb-12">
           <div className="w-[700px] h-[700px] relative overflow-hidden">
             <Image 
-              src="/images/sobre-mi/perfil/IMG_20241225_015614.jpg" 
+              src="/images/sobre-mi/perfil/1.jpg" 
               alt="Kevin" 
               fill
               sizes="700px"
@@ -83,6 +83,4 @@ const Page = async () => {
       <Footer />
     </div>
   );
-};
-
-export default Page;
+}

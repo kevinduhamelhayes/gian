@@ -6,9 +6,17 @@ import { FunctionComponent } from "react";
 import { DarkModeToggle } from "./DarkModeToggle";
 import { Button } from "./ui/button";
 import { useAuth } from "@/lib/auth-context";
+import { useRouter } from "next/navigation";
 
 export const Footer: FunctionComponent = () => {
   const { logout, user } = useAuth();
+  const router = useRouter();
+
+  const handleLogout = () => {
+    logout();
+    // Redirigir a la página de login después de cerrar sesión
+    router.push('/login');
+  };
 
   return (
     <section className="mt-12 md:mt-20 mb-16 border-t border-bronze-300 pt-8">
@@ -26,7 +34,7 @@ export const Footer: FunctionComponent = () => {
             <Button 
               variant="outline" 
               size="icon" 
-              onClick={logout}
+              onClick={handleLogout}
               className="text-bronze-600 border-bronze-300 hover:bg-bronze-100 dark:text-bronze-300 dark:border-bronze-700 dark:hover:bg-bronze-800" 
               title="Cerrar sesión"
             >

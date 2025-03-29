@@ -8,24 +8,10 @@ import { signOgImageUrl } from "@/lib/og-image";
 import { Metadata } from "next";
 
 /**
- * Props para la página de artículo de blog individual
- * @property {Object} params - Parámetros de la ruta
- * @property {string} params.slug - Identificador único del artículo en la URL
- */
-interface Props {
-  params: {
-    slug: string;
-  };
-}
-
-/**
  * Genera los metadatos para la página de blog individual
  * Incluye título, descripción y configuración Open Graph para compartir en redes sociales
- * 
- * @param param0 - Props con el slug del artículo
- * @returns Metadatos para la página
  */
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
+export async function generateMetadata({ params }: any): Promise<Metadata> {
   const { post } = await localPostsApi.getPost({ slug: params.slug });
 
   return {
@@ -48,11 +34,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 /**
  * Página de visualización de artículo individual
  * Muestra el contenido completo del post y un carrusel de imágenes si están disponibles
- * 
- * @param param0 - Props con el slug del artículo
- * @returns Componente de página de artículo
  */
-const Page = async ({ params }: Props) => {
+export default async function Page({ params }: any) {
   const { post, relatedPosts } = await localPostsApi.getPost({ slug: params.slug });
 
   return (
@@ -71,6 +54,4 @@ const Page = async ({ params }: Props) => {
       <Footer />
     </div>
   );
-};
-
-export default Page;
+}

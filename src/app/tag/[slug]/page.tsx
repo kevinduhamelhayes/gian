@@ -6,21 +6,13 @@ import { Badge } from "@/components/ui/badge";
 import { localPostsApi } from "@/lib/local-posts";
 import { CircleX } from "lucide-react";
 import Link from "next/link";
+import { Metadata } from "next";
 
-interface Params {
-  slug: string;
-}
-
-export async function generateMetadata(
-  props: {
-    params: Promise<Params>;
-  }
-) {
-  const params = await props.params;
-
-  const {
-    slug
-  } = params;
+/**
+ * Genera los metadatos para la página de etiquetas
+ */
+export async function generateMetadata({ params }: any): Promise<Metadata> {
+  const { slug } = params;
 
   return {
     title: `#${slug}`,
@@ -28,18 +20,11 @@ export async function generateMetadata(
   };
 }
 
-const Page = async (
-  props: {
-    params: Promise<Params>;
-    searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
-  }
-) => {
-  const searchParams = await props.searchParams;
-  const params = await props.params;
-
-  const {
-    slug
-  } = params;
+/**
+ * Página para mostrar posts filtrados por etiqueta
+ */
+export default async function Page({ params, searchParams }: any) {
+  const { slug } = params;
 
   const page = searchParams.page ? parseInt(searchParams.page as string) : 1;
   const result = await localPostsApi.getPostByTag({ tag: slug, limit: 10, page });
@@ -61,6 +46,4 @@ const Page = async (
       <Footer />
     </div>
   );
-};
-
-export default Page;
+}
