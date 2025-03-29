@@ -172,9 +172,9 @@ export default function TerminosPage() {
        
             <section className="space-y-3 pt-4">
               <p className="italic text-bronze-600 dark:text-bronze-400">
-                "Este blog ha sido creado con amor, dedicación y honestidad. Es un pedazo de mi mundo
+                &ldquo;Este blog ha sido creado con amor, dedicación y honestidad. Es un pedazo de mi mundo
                 interior que he decidido compartir contigo. Gracias por estar aquí y por formar parte
-                de esta historia."
+                de esta historia.&rdquo;
               </p>
             </section>
           </div>

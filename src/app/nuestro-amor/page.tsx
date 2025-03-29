@@ -61,7 +61,7 @@ export async function generateMetadata() {
   };
 }
 
-const Page = async () => {
+export default async function Page() {
   return (
     <div className="container mx-auto px-5">
    
@@ -96,6 +96,4 @@ const Page = async () => {
       <Footer />
     </div>
   );
-};
-
-export default Page; 
+} 

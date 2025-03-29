@@ -7,12 +7,7 @@ import { config } from "@/config";
 import { localPostsApi } from "@/lib/local-posts";
 import Link from "next/link";
 
-const Page = async (
-  props: {
-    searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
-  }
-) => {
-  const searchParams = await props.searchParams;
+export default async function Page({ searchParams }: any) {
   const page = searchParams.page ? parseInt(searchParams.page as string) : 1;
   const result = await localPostsApi.getPosts({ limit: 10, page });
   
@@ -48,7 +43,7 @@ const Page = async (
       {/* Inspirational Quote */}
       <div className="my-16 bg-bronze-100 p-8 rounded-lg text-center">
         <blockquote className="text-2xl md:text-3xl font-script text-bronze-700 italic">
-          "El dolor al principio no me dejaba hacer esto ahora puedo por que siento amor pero espero que esto no quede en el recuerdo y sigamos escribiendo nuestra historia juntos"
+          &ldquo;El dolor al principio no me dejaba hacer esto ahora puedo por que siento amor pero espero que esto no quede en el recuerdo y sigamos escribiendo nuestra historia juntos&rdquo;
         </blockquote>
         <p className="mt-4 font-handwritten text-bronze-600">— con amor YO</p>
       </div>
@@ -59,6 +54,4 @@ const Page = async (
       <Footer />
     </div>
   );
-};
-
-export default Page;
+}
