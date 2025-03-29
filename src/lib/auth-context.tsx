@@ -3,79 +3,96 @@
 import React, { createContext, useState, useContext, useEffect, ReactNode } from 'react';
 import Cookies from 'js-cookie';
 
+// Datos de usuario simulados (solo para demo)
+const VALID_USERS = {
+  'admin': 'gianina',
+  'gian': 'kevin'
+};
+
+// Declarar el tipo global para gtag
+declare global {
+  interface Window {
+    gtag: (
+      command: string,
+      action: string,
+      params?: Record<string, any>
+    ) => void;
+  }
+}
+
 // Tipo para los usuarios
 type User = {
-  username: string;
-  name: string;
+  id: string;
 };
 
 // Interface para el contexto de autenticación
 interface AuthContextType {
   user: User | null;
   isAuthenticated: boolean;
+  isLoading: boolean;
   login: (username: string, password: string) => boolean;
   logout: () => void;
-  isLoading: boolean;
 }
 
-// Valores por defecto para el contexto
-const defaultContextValue: AuthContextType = {
-  user: null,
-  isAuthenticated: false,
-  login: () => false,
-  logout: () => {},
-  isLoading: true,
-};
-
 // Crear el contexto
-const AuthContext = createContext<AuthContextType>(defaultContextValue);
+const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
 // Hook personalizado para usar el contexto
-export const useAuth = () => useContext(AuthContext);
+export const useAuth = () => {
+  const context = useContext(AuthContext);
+  if (context === undefined) {
+    throw new Error('useAuth must be used within an AuthProvider');
+  }
+  return context;
+};
 
 // Proveedor del contexto de autenticación
 export const AuthProvider = ({ children }: { children: ReactNode }) => {
   const [user, setUser] = useState<User | null>(null);
-  const [isLoading, setIsLoading] = useState(true);
-  const [mounted, setMounted] = useState(false);
+  const [isLoading, setIsLoading] = useState<boolean>(true);
 
-  // Usuarios hardcodeados (en producción deberían estar en .env)
-  const validUsers = [
-    { username: 'usuario1', password: 'clave1', name: 'Usuario Uno' },
-    { username: 'usuario2', password: 'clave2', name: 'Usuario Dos' },
-  ];
+  // Verificar autenticación al cargar la página
+  useEffect(() => {
+    // Intentar leer las cookies de autenticación
+    const authUser = Cookies.get('authUser');
+    
+    if (authUser) {
+      try {
+        // Simulando que restauramos los datos del usuario
+        setUser({ id: authUser });
+      } catch (error) {
+        console.error('Error parsing auth cookie:', error);
+        Cookies.remove('authUser');
+      }
+    }
+    
+    setIsLoading(false);
+  }, []);
 
-  // Función para iniciar sesión
+  // Función de login
   const login = (username: string, password: string): boolean => {
-    const foundUser = validUsers.find(
-      (u) => u.username === username && u.password === password
-    );
-
-    if (foundUser) {
-      const userInfo: User = {
-        username: foundUser.username,
-        name: foundUser.name,
-      };
-      setUser(userInfo);
+    // Simulación simple de autenticación
+    if (VALID_USERS[username.toLowerCase()] === password.toLowerCase()) {
+      // Crear usuario y guardar en estado
+      const user = { id: username.toLowerCase() };
+      setUser(user);
       
-      // Solo guardar en localStorage y cookie si estamos en el cliente
-      if (typeof window !== 'undefined') {
-        try {
-          // Guardar en localStorage
-          localStorage.setItem('authUser', JSON.stringify(userInfo));
-          
-          // Guardar en cookie para el middleware
-          Cookies.set('authUser', JSON.stringify(userInfo), { 
-            expires: 30, // 30 días
-            path: '/',
-            secure: window.location.protocol === 'https:',
-            sameSite: 'strict'
-          });
-          
-          console.log('User logged in:', userInfo.username);
-        } catch (error) {
-          console.error('Error saving auth data:', error);
-        }
+      // Guardar en cookies para persistencia
+      Cookies.set('authUser', username.toLowerCase(), { 
+        expires: 7, // 7 días
+        path: '/',
+        secure: window.location.protocol === 'https:',
+        sameSite: 'strict'
+      });
+      
+      // Enviar evento de inicio de sesión a GA4
+      if (typeof window !== 'undefined' && window.gtag) {
+        window.gtag('event', 'login', {
+          method: 'credentials',
+          user_type: username.toLowerCase() === 'admin' ? 'usuario_1' : 'usuario_2'
+        });
+        
+        console.log('Evento de login enviado a GA4', username.toLowerCase());
       }
       
       return true;
@@ -84,79 +101,24 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
     return false;
   };
 
-  // Función para cerrar sesión
+  // Función de logout
   const logout = () => {
+    // Enviar evento de cierre de sesión a GA4
+    if (typeof window !== 'undefined' && window.gtag && user) {
+      window.gtag('event', 'logout', {
+        user_type: user.id === 'admin' ? 'usuario_1' : 'usuario_2'
+      });
+    }
+    
     setUser(null);
+    Cookies.remove('authUser', { path: '/' });
+    Cookies.remove('termsAccepted', { path: '/' });
     
-    // Solo eliminar de localStorage y cookie si estamos en el cliente
-    if (typeof window !== 'undefined') {
-      try {
-        // Eliminar de localStorage
-        localStorage.removeItem('authUser');
-        localStorage.removeItem('termsAccepted');
-        
-        // Eliminar cookies
-        Cookies.remove('authUser', { path: '/' });
-        Cookies.remove('termsAccepted', { path: '/' });
-        
-        console.log('User logged out');
-      } catch (error) {
-        console.error('Error clearing auth data:', error);
-      }
-      
-      // Redirigir a login después de cerrar sesión
-      window.location.href = '/login';
-    }
-  };
-
-  // Comprobar si ya hay una sesión guardada al cargar la página
-  useEffect(() => {
-    // Marcar el componente como montado en el cliente
-    setMounted(true);
-    
-    // Recuperar usuario del localStorage y/o cookie solo en el cliente
-    if (typeof window !== 'undefined') {
-      try {
-        // Intentar recuperar de localStorage
-        const storedUser = localStorage.getItem('authUser');
-        
-        if (storedUser) {
-          const parsedUser = JSON.parse(storedUser) as User;
-          setUser(parsedUser);
-          console.log('Auth restored from localStorage:', parsedUser.username);
-        } else {
-          // Si no está en localStorage, intentar recuperar de cookie
-          const cookieUser = Cookies.get('authUser');
-          if (cookieUser) {
-            const parsedCookieUser = JSON.parse(cookieUser) as User;
-            setUser(parsedCookieUser);
-            
-            // Guardar también en localStorage para coherencia
-            localStorage.setItem('authUser', cookieUser);
-            console.log('Auth restored from cookie:', parsedCookieUser.username);
-          }
-        }
-      } catch (error) {
-        console.error('Error parsing stored user:', error);
-        localStorage.removeItem('authUser');
-        Cookies.remove('authUser', { path: '/' });
-      }
-      
-      setIsLoading(false);
-    }
-  }, []);
-
-  // Valores del contexto
-  const value = {
-    user,
-    isAuthenticated: !!user,
-    login,
-    logout,
-    isLoading: !mounted || isLoading,
+    // Redirigir a login (se maneja en el componente que llama a logout)
   };
 
   return (
-    <AuthContext.Provider value={value}>
+    <AuthContext.Provider value={{ user, isAuthenticated: !!user, isLoading, login, logout }}>
       {children}
     </AuthContext.Provider>
   );

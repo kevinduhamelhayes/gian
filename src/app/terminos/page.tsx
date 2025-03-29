@@ -8,9 +8,20 @@ import { useAuth } from "@/lib/auth-context";
 import Cookies from 'js-cookie';
 import Image from 'next/image';
 
+// Declarar el tipo global para gtag
+declare global {
+  interface Window {
+    gtag: (
+      command: string,
+      action: string,
+      params?: Record<string, any>
+    ) => void;
+  }
+}
+
 export default function TerminosPage() {
   const router = useRouter();
-  const { isAuthenticated, isLoading } = useAuth();
+  const { isAuthenticated, isLoading, user } = useAuth();
   const [mounted, setMounted] = useState(false);
   
   // Evitar errores de hidratación
@@ -43,6 +54,13 @@ export default function TerminosPage() {
       });
       
       console.log('Terms accepted, saved in cookie:', Cookies.get('termsAccepted'));
+      
+      // Enviar evento de aceptación de términos a GA4
+      if (typeof window !== 'undefined' && window.gtag) {
+        window.gtag('event', 'accept_terms', {
+          user_type: user?.id === 'admin' ? 'usuario_1' : 'usuario_2'
+        });
+      }
       
       // Esperar un momento para asegurar que la cookie se guarde
       setTimeout(() => {
