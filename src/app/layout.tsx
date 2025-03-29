@@ -1,10 +1,16 @@
 import { config } from "@/config";
+import { Analytics } from '@vercel/analytics/react';
 import { signOgImageUrl } from "@/lib/og-image";
 import { cn } from "@/lib/utils";
 import type { Metadata, Viewport } from "next";
 import { Dancing_Script, Indie_Flower, Inter } from "next/font/google";
 import "./globals.css";
 import { Providers } from "./providers";
+import dynamic from 'next/dynamic';
+
+// Importar GoogleAnalytics y UserTracker con carga dinámica para evitar SSR
+const GoogleAnalytics = dynamic(() => import('@/components/GoogleAnalytics'), { ssr: false });
+const UserTracker = dynamic(() => import('@/components/UserTracker'), { ssr: false });
 
 const fontSans = Inter({ subsets: ["latin"], variable: "--font-sans" });
 const fontScript = Dancing_Script({ subsets: ["latin"], variable: "--font-script" });
@@ -81,6 +87,9 @@ export default function RootLayout({
       >
         <Providers>
           <main>{children}</main>
+          <GoogleAnalytics />
+          <UserTracker />
+          <Analytics />
         </Providers>
       </body>
     </html>
