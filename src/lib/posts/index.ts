@@ -3,12 +3,12 @@ import { generateId } from '../utils/id-utils';
 
 // Import individual post data
 import { elDiaQueTeConoci } from './el-dia-que-te-conoci';
-import { pequenosMomentos } from './pequenos-momentos';
-import { lugaresEspeciales } from './lugares-especiales';
+import { elFin } from './el-fin';
+import { palabrasAntesDePartir } from './palabrasAntesDePartir';
 import { vertefeliz } from './verte-feliz';
 import { creciendo } from './creciendo';
 import { nuestroPrimerViaje } from './nuestro-primer-viaje';
-import { nuestroPrimer } from './nuestro-primer';
+import { crujiamos } from './crujiamos';
 import { loQueNoTienePalabras } from './lo-que-no-tiene-palabras';
 import { perderloTodo } from './perderlo-todo';
 import { queriendoLoQueNoPediste } from './queriendo-lo-que-no-pediste';
@@ -27,15 +27,16 @@ const allPosts: LocalPost[] = [
   miSorpresa,
   vertefeliz,
   nuestroPrimerViaje,
-  pequenosMomentos,
-  lugaresEspeciales,
+  elFin,
+  palabrasAntesDePartir,
+  crujiamos,
   quedarmePorAmor,
   creciendo,
-  nuestroPrimer,
   queriendoLoQueNoPediste,
   diciembreYDisfrutar,
   perderloTodo,
   loQueNoTienePalabras
+  
 ];
 
 /**
@@ -54,15 +55,15 @@ const customOrder: Record<string, number> = {
   "mi-sorpresa": 3,
   "verte-feliz": 4,
   "nuestro-primer-viaje": 5,
-  "pequenos-momentos": 6,
-  "lugares-especiales": 7,
-  "quedarme-por-amor": 8,
-  "creciendo": 9,
-  "nuestro-primer": 10,
-  "queriendo-lo-que-no-pediste": 11,
-  "diciembre-y-disfrutar": 12,
-  "perderlo-todo": 13,
-  "lo-que-no-tiene-palabras": 14
+  "quedarme-por-amor": 6,
+  "creciendo": 7,
+  "crujiamos": 8,
+  "queriendo-lo-que-no-pediste": 9,
+  "diciembre-y-disfrutar": 10,
+  "perderlo-todo": 11,
+  "lo-que-no-tiene-palabras": 12,
+  "palabras-antes-de-partir": 13,
+  "el-fin": 14,
   // Añade más posts aquí para controlar su orden
 };
 

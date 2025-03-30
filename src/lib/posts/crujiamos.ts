@@ -3,10 +3,10 @@ import { generateId } from '../utils/id-utils';
 import { getPostImagePath } from '../image-utils';
 
 // Slug for this post
-const SLUG = 'nuestro-primer'; // Slug mantenido como 'nuestro-primer'
+const SLUG = 'crujiamos'; // Slug mantenido como 'nuestro-primer'
 
 // Define post data
-export const nuestroPrimer: LocalPost = {
+export const crujiamos: LocalPost = {
   id: generateId(),
   // Título ajustado para mayor coherencia con el contenido y el encabezado H1
   title: "Crujíamos",
@@ -59,10 +59,6 @@ Bueno en fin crujiamos sabiamos que algo no estaba bien pero que era... habiamos
     getPostImagePath(SLUG, '3.jpg'),
     getPostImagePath(SLUG, '4.jpg'),
     getPostImagePath(SLUG, '5.jpg'),
-    getPostImagePath(SLUG, '6.jpg'),
-    getPostImagePath(SLUG, '7.jpg'),
-
-
   ],
   // Etiquetas ajustadas para reflejar mejor el contenido
   tags: [
