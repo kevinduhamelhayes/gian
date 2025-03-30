@@ -57,8 +57,8 @@ Aquí no creo que haya muchas fotos, porque tampoco eran momentos para retratar:
 Lo perdía todo: el dinero, el tiempo, la empresa, mi psiquis... y te había perdido a vos.
 
   `,
-  publishedAt: new Date("2024-12-27").toISOString(), // Manteniendo fecha original
-  updatedAt: new Date("2024-12-27").toISOString(), // Manteniendo fecha original
+  publishedAt: new Date("2025-01-25").toISOString(),
+  updatedAt: new Date("2025-01-25").toISOString(),
   image: getPostImagePath(SLUG, '1.jpg'), // Primera imagen para la preview
   carouselImages: [
     getPostImagePath(SLUG, '2.jpg'),

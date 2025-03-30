@@ -32,8 +32,8 @@ Intento dejarte un recuerdo al que puedas volver. El futuro es incierto. Hoy sie
 
 Pero, como dije antes, no hay palabras certeras para nuestro amor. Estoy agradecido y, al escribir esto, aún sigo lleno de amor y sé por qué lo siento cada vez que te abrazo, cada vez que te aprieto, cada vez que te beso: que vos también.
   `,
-  publishedAt: new Date("2023-03-01").toISOString(),
-  updatedAt: new Date("2023-03-01").toISOString(),
+  publishedAt: new Date("2024-07-01").toISOString(),
+  updatedAt: new Date("2024-07-01").toISOString(),
   image: "/images/blog/palabras-antes-de-partir/1.jpg",
   carouselImages: [
     "/images/blog/palabras-antes-de-partir/1.jpg",

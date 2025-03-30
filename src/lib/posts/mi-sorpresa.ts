@@ -30,8 +30,8 @@ Por acá salieron los primeros 'te amo'.
 
 Y la entrega se fue acrecentando, las barreras se nos caían a pedazos...
   `,
-  publishedAt: new Date("2024-06-29").toISOString(),
-  updatedAt: new Date("2024-06-29").toISOString(),
+  publishedAt: new Date("2024-01-05").toISOString(),
+  updatedAt: new Date("2024-01-05").toISOString(),
   image: getPostImagePath(SLUG, '4.jpg'), // Primera imagen para la preview
   carouselImages: [
     getPostImagePath(SLUG, '1.jpg'),

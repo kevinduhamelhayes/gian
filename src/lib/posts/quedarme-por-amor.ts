@@ -34,8 +34,8 @@ Pero especialmente acá empezó ese no sé qué que no podemos explicar, que aú
 
 Aunque ya no sé qué pasará con nosotros...
   `,
-  publishedAt: new Date("2024-12-01").toISOString(),
-  updatedAt: new Date("2024-12-01").toISOString(),
+  publishedAt: new Date("2024-09-30").toISOString(),
+  updatedAt: new Date("2024-09-30").toISOString(),
   image: getPostImagePath(SLUG, '1.jpg'), // Primera imagen para la preview
   carouselImages: [
     getPostImagePath(SLUG, '1.jpg'),

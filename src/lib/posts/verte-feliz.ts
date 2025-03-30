@@ -26,8 +26,8 @@ Por ahí, poniéndote por delante de mi bienestar y dando o tratando de dar lo q
 
 Pero vamos, las risas no faltaban; la comida y el heladito, espero, tampoco.
   `,
-  publishedAt: new Date("2023-05-20").toISOString(),
-  updatedAt: new Date("2023-05-20").toISOString(),
+  publishedAt: new Date("2024-02-15").toISOString(),
+  updatedAt: new Date("2024-02-15").toISOString(),
   image: getPostImagePath(SLUG, '3.jpg'), // Primera imagen para la preview
   carouselImages: [
     getPostImagePath(SLUG, '2.jpg'),

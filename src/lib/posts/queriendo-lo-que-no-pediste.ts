@@ -20,8 +20,8 @@ Pensaba que tenía claras mis prioridades y mis deseos, pero tu aparición en mi
 
 Hoy, agradezco que el destino me haya dado lo que no pedí, porque resultó ser exactamente lo que mi corazón necesitaba.
   `,
-  publishedAt: new Date("2025-03-10").toISOString(),
-  updatedAt: new Date("2025-03-10").toISOString(),
+  publishedAt: new Date("2024-11-28").toISOString(),
+  updatedAt: new Date("2024-11-28").toISOString(),
   image: getPostImagePath(SLUG, '2.jpg'), // Primera imagen para la preview
   carouselImages: [
     getPostImagePath(SLUG, '1.jpg'),

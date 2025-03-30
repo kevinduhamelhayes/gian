@@ -33,8 +33,8 @@ Si ves la galeria de imagenes mas abajo como van cambiando nuestros rostros... c
 
   `,
 
-  publishedAt: new Date("2024-12-05").toISOString(), // Manteniendo fecha original
-  updatedAt: new Date("2024-12-05").toISOString(), // Manteniendo fecha original
+  publishedAt: new Date("2024-12-15").toISOString(),
+  updatedAt: new Date("2024-12-15").toISOString(),
   image: getPostImagePath(SLUG, '1.jpg'), // Primera imagen para la preview
   carouselImages: [
     getPostImagePath(SLUG, '1.jpg'),

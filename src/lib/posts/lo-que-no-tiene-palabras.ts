@@ -28,8 +28,8 @@ cada dia llore mas hasta que la culpa fue dando lugar a ese amor que aun nos que
 
 aun hoy que escribo esto y es un tipo de despedida y recuento de memorias estoy agradecido y lleno de amor por poder seguir viviendo esto y ambos seguimos aprendiendo y superandonos.
   `,
-  publishedAt: new Date("2025-03-16").toISOString(),
-  updatedAt: new Date("2025-03-16").toISOString(),
+  publishedAt: new Date("2025-02-28").toISOString(),
+  updatedAt: new Date("2025-02-28").toISOString(),
   image: getPostImagePath(SLUG, '1.jpg'), // Primera imagen para la preview
   carouselImages: [
     getPostImagePath(SLUG, '1.jpg'),

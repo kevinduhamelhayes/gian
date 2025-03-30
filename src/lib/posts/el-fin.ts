@@ -30,8 +30,8 @@ Por mi parte, trataré de sanar primero porque esto me va a dejar dolor. Amar es
 
 Así como en tu vida hay cosas que te marcaron en la mía, hay un preconcepto de amor imperecedero que en mi caso no viene de la religión, viene de Will y Lyra, viene de Snape y Lily, así que la esperanza llameara en mi corazón y así la vida nunca te vuelva a traer a mi camino al alba de cada quito día seguire mirando al Este.
   `,
-  publishedAt: new Date("2023-02-15").toISOString(),
-  updatedAt: new Date("2023-02-15").toISOString(),
+  publishedAt: new Date("2024-05-20").toISOString(),
+  updatedAt: new Date("2024-05-20").toISOString(),
   image: getPostImagePath(SLUG, '1.jpg'),
   carouselImages: [
     getPostImagePath(SLUG, '2.jpg'),
@@ -43,7 +43,7 @@ Así como en tu vida hay cosas que te marcaron en la mía, hay un preconcepto de
   ],
   tags: [
     { id: "2", name: "amor" },
-    { id: "4", name: "cotidiano" }
+    { id: "4", name: "esperanza" }
   ],
   featured: true
 }; 

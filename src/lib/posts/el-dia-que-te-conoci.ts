@@ -24,8 +24,8 @@ Tu forma de hablar coincidía en valores. Solo una foto me quedó de ese día, y
 
 Ese día marcó el inicio de nuestra historia.
   `,
-  publishedAt: new Date("2023-01-15").toISOString(),
-  updatedAt: new Date("2023-01-15").toISOString(),
+  publishedAt: new Date("2023-11-25").toISOString(),
+  updatedAt: new Date("2023-11-25").toISOString(),
   image: getPostImagePath(SLUG, '1.jpg'),
   carouselImages: [
     getPostImagePath(SLUG, '1.jpg')

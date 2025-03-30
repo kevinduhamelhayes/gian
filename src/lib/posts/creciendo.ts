@@ -37,8 +37,8 @@ Yo quería abordar tanto a la vez... obviamente no podía...
 Lo que te vi crecer y lo rápido que te superabas es algo que no te reconocí de forma adecuada, pero espero que aquí quede plasmado por siempre, porque no fui justo en su momento... Ahora que quizás el final esté cerca...
 No voy a cometer ese error.
   `,
-  publishedAt: new Date("2023-07-10").toISOString(),
-  updatedAt: new Date("2023-07-10").toISOString(),
+  publishedAt: new Date("2024-11-05").toISOString(),
+  updatedAt: new Date("2024-11-05").toISOString(),
   image: getPostImagePath(SLUG, '3.jpg'), // Primera imagen para la preview
   carouselImages: [
     getPostImagePath(SLUG, '2.jpg'),

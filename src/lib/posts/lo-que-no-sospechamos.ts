@@ -22,8 +22,8 @@ Te saqué a bailar un par de veces, siempre rebotando, pero más allá de eso no
 
 Y te empecé a ver distinto... Admito que entré a tu perfil, miré y dije: 'Tiene cara de menor de edad', jajaja.
   `,
-  publishedAt: new Date("2023-08-15").toISOString(),
-  updatedAt: new Date("2023-08-15").toISOString(),
+  publishedAt: new Date("2023-10-20").toISOString(),
+  updatedAt: new Date("2023-10-20").toISOString(),
   image: getPostImagePath(SLUG, '1.jpeg'), // Primera imagen para la preview
   carouselImages: [
     getPostImagePath(SLUG, '2.jpeg'),

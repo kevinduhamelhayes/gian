@@ -34,8 +34,8 @@ Algún entredicho menor tuvimos, pero traigo este viaje aquí porque es fácil o
 
 Dios, cuánto amor...
   `,
-  publishedAt: new Date("2024-07-12").toISOString(),
-  updatedAt: new Date("2024-07-12").toISOString(),
+  publishedAt: new Date("2024-04-01").toISOString(),
+  updatedAt: new Date("2024-04-01").toISOString(),
   image: getPostImagePath(SLUG, '1.jpg'), // Primera imagen para la preview
   carouselImages: [
     getPostImagePath(SLUG, '2.jpg'),
