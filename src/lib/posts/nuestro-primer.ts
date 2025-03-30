@@ -45,6 +45,10 @@ Uno lleva tal dinámica que solo podés ver lo que está mal y no reconocer sufi
 Igualmente, el amor se hacía ver, pero bueno... 'Con amor no basta', me dijiste hace poco...
 
 En este post, las fotos no sé si representarán todo bien... Hay una en particular: el día que te fui a ver dar el final, pusieron el inodoro 10 cm más alto que la descarga... ¿Me entendés por qué no podía darte más de mí?...
+
+Bueno en fin crujiamos sabiamos que algo no estaba bien pero que era... habiamos metido mucho de nosotros en cumplirnos y cumplirle al otro lo que nos parecia que necesitaba y se veian avances con el auto fuimos a avellaneda y la ida fue un poco accidentada pero el regreso fue genial. aunque en medio esperabamos el deposito del smartfit para llegar al mes y el srtes nos peso...
+
+
   `,
   publishedAt: new Date("2023-05-20").toISOString(),
   updatedAt: new Date("2023-05-20").toISOString(),
@@ -53,7 +57,12 @@ En este post, las fotos no sé si representarán todo bien... Hay una en particu
     getPostImagePath(SLUG, '1.jpg'),
     getPostImagePath(SLUG, '2.jpg'),
     getPostImagePath(SLUG, '3.jpg'),
-    getPostImagePath(SLUG, '4.jpg')
+    getPostImagePath(SLUG, '4.jpg'),
+    getPostImagePath(SLUG, '5.jpg'),
+    getPostImagePath(SLUG, '6.jpg'),
+    getPostImagePath(SLUG, '7.jpg'),
+
+
   ],
   // Etiquetas ajustadas para reflejar mejor el contenido
   tags: [

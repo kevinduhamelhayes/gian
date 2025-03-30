@@ -39,10 +39,10 @@ No voy a cometer ese error.
   `,
   publishedAt: new Date("2023-07-10").toISOString(),
   updatedAt: new Date("2023-07-10").toISOString(),
-  image: getPostImagePath(SLUG, '1.jpg'), // Primera imagen para la preview
+  image: getPostImagePath(SLUG, '3.jpg'), // Primera imagen para la preview
   carouselImages: [
     getPostImagePath(SLUG, '2.jpg'),
-    getPostImagePath(SLUG, '3.jpg'),
+    getPostImagePath(SLUG, '1.jpg'),
     getPostImagePath(SLUG, '4.jpg'),
     getPostImagePath(SLUG, '5.jpg'),
     getPostImagePath(SLUG, '7.jpg')
