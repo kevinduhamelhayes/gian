@@ -1,10 +1,16 @@
+"use client"; // Necesario para hooks
+
+import { useEffect, useRef } from "react";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import Image from "next/image";
 import { config } from "@/config";
 import { signOgImageUrl } from "@/lib/og-image";
 import Markdown from "react-markdown";
+import { BlogCarousel } from "@/components/BlogCarousel";
 import { NosotrosCarousel, MomentosCarousel } from "./carousel";
+import { sendGAEvent } from "@/lib/ga-utils";
+import { useAuth } from "@/lib/auth-context";
 
 // Dividiendo el contenido en partes para poder insertar los carruseles en el medio
 const content1 = `# Nuestro Amor
@@ -61,13 +67,56 @@ export async function generateMetadata() {
   };
 }
 
-export default async function Page() {
+export default function Page() {
+  const { user } = useAuth();
+  const scrollTrackedRef = useRef({ 25: false, 50: false, 75: false, 90: false });
+  const pageLocation = "/nuestro-amor"; // Definir la ubicación de la página
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollableHeight = document.documentElement.scrollHeight - window.innerHeight;
+      if (scrollableHeight <= 0) return;
+
+      const currentScroll = window.scrollY;
+      const scrollPercentage = (currentScroll / scrollableHeight) * 100;
+
+      [25, 50, 75, 90].forEach((threshold) => {
+        if (scrollPercentage >= threshold && !scrollTrackedRef.current[threshold as keyof typeof scrollTrackedRef.current]) {
+          scrollTrackedRef.current[threshold as keyof typeof scrollTrackedRef.current] = true;
+
+          const isUser1 = user?.id === process.env.NEXT_PUBLIC_USER1_USERNAME?.toLowerCase();
+          const userType = user ? (isUser1 ? 'usuario_1' : 'usuario_2') : undefined;
+          const userName = user ? (isUser1 ? process.env.NEXT_PUBLIC_USER1_NAME : process.env.NEXT_PUBLIC_USER2_NAME) : undefined;
+
+          sendGAEvent('scroll_depth_section', {
+            page_location: pageLocation,
+            scroll_percentage: threshold,
+            ...(user && { user_type: userType, user_name: userName })
+          });
+        }
+      });
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [user]); // Depender de user
+
+  // Definir arrays de imágenes
+  const nosotrosImages = [
+    "/images/nuestro-amor/nosotros/1.jpg", 
+    "/images/nuestro-amor/nosotros/2.jpg", 
+  ];
+  const momentosImages = [
+    "/images/nuestro-amor/momentos/1.jpg", 
+    "/images/nuestro-amor/momentos/2.jpg",
+  ];
+
   return (
     <div className="container mx-auto px-5">
-   
       <Header />
       <div className="prose lg:prose-lg dark:prose-invert m-auto mt-20 pb-10 blog-content">
-        {/* Primera parte del contenido */}
         <div className="w-[700px] h-[700px] relative overflow-hidden mb-4">
             <Image 
               src="/images/sobre-mi/perfil/2.jpg" 
@@ -82,16 +131,13 @@ export default async function Page() {
           </div>
         <Markdown>{content1}</Markdown>
         
-        {/* Primer carrusel - Nosotros */}
         <h2 className="text-center text-2xl font-script text-bronze-700 mt-10 mb-4">Nosotros</h2>
-        <NosotrosCarousel />
+        <BlogCarousel images={nosotrosImages} carouselLocation="page:nuestro-amor:nosotros" />
         
-        {/* Segunda parte del contenido */}
         <Markdown>{content2}</Markdown>
         
-        {/* Segundo carrusel - Momentos */}
         <h2 className="text-center text-2xl font-script text-bronze-700 mt-10 mb-4">Momentos Juntos</h2>
-        <MomentosCarousel />
+        <BlogCarousel images={momentosImages} carouselLocation="page:nuestro-amor:momentos" />
       </div>
       <Footer />
     </div>

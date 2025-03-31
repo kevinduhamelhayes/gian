@@ -38,7 +38,7 @@ export default async function Page({ params, searchParams }: any) {
           Posts tagged with <strong className="mx-2">#{slug}</strong>{" "}
         </Badge>
       </Link>
-      <BlogPostsPreview posts={result.posts} />
+      <BlogPostsPreview posts={result.posts} linkLocation={`tag_page_preview:${slug}`} />
       <BlogPostsPagination
         pagination={result.pagination}
         basePath={`/tag/${slug}/?page=`}

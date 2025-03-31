@@ -49,7 +49,7 @@ export default async function Page({ searchParams }: any) {
       </div>
       
       <h3 className="text-2xl md:text-3xl font-script text-bronze-700 mb-8 text-center">Nuestras Historias</h3>
-      <BlogPostsPreview posts={result.posts} />
+      <BlogPostsPreview posts={result.posts} linkLocation="home_preview" />
       <BlogPostsPagination pagination={result.pagination} />
       <Footer />
     </div>

@@ -14,6 +14,8 @@ import {
 import { validateImage } from "@/lib/image-utils";
 import { cn } from "@/lib/utils";
 import { useMediaQuery } from "@/hooks/use-media-query";
+import { sendGAEvent } from "@/lib/ga-utils";
+import { useAuth } from "@/lib/auth-context";
 
 /**
  * Props for the BlogCarousel component
@@ -21,12 +23,14 @@ import { useMediaQuery } from "@/hooks/use-media-query";
  * @property {string[]} altTexts - Optional array of alt texts for each image
  * @property {boolean} autoplay - Whether the carousel should automatically rotate (default: true)
  * @property {number} autoplayInterval - Interval in milliseconds between slides (default: 5000)
+ * @property {string} carouselLocation - Identifier for where the carousel is used (e.g., post slug or page name)
  */
 interface BlogCarouselProps {
   images: string[];
   altTexts?: string[];
   autoplay?: boolean;
   autoplayInterval?: number;
+  carouselLocation: string;
 }
 
 /**
@@ -41,7 +45,8 @@ export const BlogCarousel = ({
   images, 
   altTexts = [],
   autoplay = true,
-  autoplayInterval = 5000
+  autoplayInterval = 5000,
+  carouselLocation
 }: BlogCarouselProps) => {
   const [api, setApi] = React.useState<CarouselApi>();
   const [current, setCurrent] = React.useState(0);
@@ -50,6 +55,7 @@ export const BlogCarousel = ({
   const [isLoading, setIsLoading] = React.useState<Record<number, boolean>>({});
   const [isPaused, setIsPaused] = React.useState(false);
   const [imageDimensions, setImageDimensions] = React.useState<Record<number, { width: number, height: number }>>({});
+  const { user } = useAuth();
   
   // Memoize validated images to prevent unnecessary recalculations
   const validatedImages = React.useMemo(
@@ -74,10 +80,21 @@ export const BlogCarousel = ({
     setCount(api.scrollSnapList().length);
     setCurrent(api.selectedScrollSnap() + 1);
 
-    api.on("select", () => {
-      setCurrent(api.selectedScrollSnap() + 1);
-    });
-  }, [api]);
+    // Evento GA cuando cambia el slide
+    const handleSelect = () => {
+      const newIndex = api.selectedScrollSnap();
+      setCurrent(newIndex + 1);
+      sendInteractionEvent('select_dot', newIndex);
+    }
+
+    api.on("select", handleSelect);
+
+    // Limpiar el listener al desmontar
+    return () => {
+      api.off("select", handleSelect);
+    }
+
+  }, [api, carouselLocation, user]);
   
   // Set up autoplay functionality with pause/resume capability
   React.useEffect(() => {
@@ -125,6 +142,20 @@ export const BlogCarousel = ({
   const isPortrait = (index: number) => {
     if (!imageDimensions[index]) return false;
     return imageDimensions[index].height > imageDimensions[index].width;
+  };
+
+  // Función para enviar evento de interacción
+  const sendInteractionEvent = (interactionType: string, imageIndex?: number) => {
+    const isUser1 = user?.id === process.env.NEXT_PUBLIC_USER1_USERNAME?.toLowerCase();
+    const userType = user ? (isUser1 ? 'usuario_1' : 'usuario_2') : undefined;
+    const userName = user ? (isUser1 ? process.env.NEXT_PUBLIC_USER1_NAME : process.env.NEXT_PUBLIC_USER2_NAME) : undefined;
+
+    sendGAEvent('carousel_interaction', {
+      carousel_location: carouselLocation,
+      interaction_type: interactionType,
+      ...(imageIndex !== undefined && { image_index_viewed: imageIndex }),
+      ...(user && { user_type: userType, user_name: userName })
+    });
   };
 
   // Return null if no images are provided
@@ -192,8 +223,16 @@ export const BlogCarousel = ({
             </CarouselItem>
           ))}
         </CarouselContent>
-        <CarouselPrevious className="bg-bronze-100 hover:bg-bronze-200 text-bronze-900 -left-4 md:-left-5 lg:-left-6" aria-label="Imagen anterior" />
-        <CarouselNext className="bg-bronze-100 hover:bg-bronze-200 text-bronze-900 -right-4 md:-right-5 lg:-right-6" aria-label="Siguiente imagen" />
+        <CarouselPrevious 
+          onClick={() => sendInteractionEvent('prev_arrow', api?.selectedScrollSnap() ? api.selectedScrollSnap() - 1 : count -1)} 
+          className="bg-bronze-100 hover:bg-bronze-200 text-bronze-900 -left-4 md:-left-5 lg:-left-6" 
+          aria-label="Imagen anterior" 
+        />
+        <CarouselNext 
+          onClick={() => sendInteractionEvent('next_arrow', api?.selectedScrollSnap() !== undefined ? (api.selectedScrollSnap() + 1) % count : 0)} 
+          className="bg-bronze-100 hover:bg-bronze-200 text-bronze-900 -right-4 md:-right-5 lg:-right-6" 
+          aria-label="Siguiente imagen" 
+        />
       </Carousel>
 
       <div className="py-2 text-center text-sm text-bronze-600 font-handwritten">

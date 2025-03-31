@@ -1,10 +1,16 @@
+"use client"; // Necesario para hooks
+
+import { useEffect, useRef } from "react";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { config } from "@/config";
 import { signOgImageUrl } from "@/lib/og-image";
 import Markdown from "react-markdown";
 import Image from "next/image";
+import { BlogCarousel } from "@/components/BlogCarousel";
 import { ImageCarousel } from "./carousel";
+import { sendGAEvent } from "@/lib/ga-utils";
+import { useAuth } from "@/lib/auth-context";
 
 // Texto corregido dentro de la constante content
 const content = `# Sobre Ti
@@ -47,7 +53,47 @@ export async function generateMetadata() {
   };
 }
 
-export default async function Page() {
+export default function Page() {
+  const { user } = useAuth();
+  const scrollTrackedRef = useRef({ 25: false, 50: false, 75: false, 90: false });
+  const pageLocation = "/sobre-ti";
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollableHeight = document.documentElement.scrollHeight - window.innerHeight;
+      if (scrollableHeight <= 0) return;
+
+      const currentScroll = window.scrollY;
+      const scrollPercentage = (currentScroll / scrollableHeight) * 100;
+
+      [25, 50, 75, 90].forEach((threshold) => {
+        if (scrollPercentage >= threshold && !scrollTrackedRef.current[threshold as keyof typeof scrollTrackedRef.current]) {
+          scrollTrackedRef.current[threshold as keyof typeof scrollTrackedRef.current] = true;
+
+          const isUser1 = user?.id === process.env.NEXT_PUBLIC_USER1_USERNAME?.toLowerCase();
+          const userType = user ? (isUser1 ? 'usuario_1' : 'usuario_2') : undefined;
+          const userName = user ? (isUser1 ? process.env.NEXT_PUBLIC_USER1_NAME : process.env.NEXT_PUBLIC_USER2_NAME) : undefined;
+
+          sendGAEvent('scroll_depth_section', {
+            page_location: pageLocation,
+            scroll_percentage: threshold,
+            ...(user && { user_type: userType, user_name: userName })
+          });
+        }
+      });
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [user]); 
+
+  const tuVidaImages = [
+    "/images/sobre-ti/vida/1.jpg",
+    "/images/sobre-ti/vida/2.jpg",
+  ];
+
   return (
     <div className="container mx-auto px-5">
       <Header />
@@ -71,7 +117,7 @@ export default async function Page() {
         <Markdown>{content}</Markdown>
         
         <h2 className="text-center text-2xl font-script text-bronze-700 mt-10 mb-4">Tu vida</h2>
-        <ImageCarousel />
+        <BlogCarousel images={tuVidaImages} carouselLocation="page:sobre-ti" />
       </div>
       <Footer />
     </div>

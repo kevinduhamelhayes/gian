@@ -7,6 +7,7 @@ import { DarkModeToggle } from "./DarkModeToggle";
 import { Button } from "./ui/button";
 import { useAuth } from "@/lib/auth-context";
 import { useRouter } from "next/navigation";
+import { sendGAEvent } from "@/lib/ga-utils";
 
 export const Footer: FunctionComponent = () => {
   const { logout, user } = useAuth();
