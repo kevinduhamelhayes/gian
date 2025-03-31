@@ -52,7 +52,7 @@ Bueno en fin crujiamos sabiamos que algo no estaba bien pero que era... habiamos
   `,
   publishedAt: new Date("2024-08-15").toISOString(),
   updatedAt: new Date("2024-08-15").toISOString(),
-  image: getPostImagePath(SLUG, '1.jpg'), // Primera imagen para la preview
+  image: getPostImagePath(SLUG, '5.jpg'), // Primera imagen para la preview
   carouselImages: [
     getPostImagePath(SLUG, '1.jpg'),
     getPostImagePath(SLUG, '2.jpg'),
