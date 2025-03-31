@@ -29,7 +29,6 @@ export default function TerminosPage() {
 
   // Función para aceptar términos
   const handleAcceptTerms = () => {
-    let redirected = false; // Flag para evitar doble redirección
     try {
       // Guardar en localStorage que el usuario ha aceptado los términos
       localStorage.setItem('termsAccepted', 'true');
@@ -63,16 +62,18 @@ export default function TerminosPage() {
         // No bloqueamos la navegación si hay un error en GA4
       }
       
-      // Redirigir inmediatamente después de establecer la cookie
-      router.push('/');
-      redirected = true;
+      // Pequeño delay para asegurar que la cookie se establezca correctamente
+      // antes de la navegación, especialmente importante en producción
+      setTimeout(() => {
+        // Usar window.location.href para forzar una navegación "dura" (full page reload)
+        // en lugar de router.push que hace una navegación SPA
+        window.location.href = '/';
+      }, 100); // 100ms de delay debería ser suficiente
 
     } catch (error) {
       console.error('Error saving acceptance or during GA4 event:', error);
-      // Intentar redirigir solo si no se hizo ya
-      if (!redirected) {
-        router.push('/');
-      }
+      // Fallback directo a window.location en caso de error
+      window.location.href = '/';
     }
   };
 
