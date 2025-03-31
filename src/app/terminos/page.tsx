@@ -29,6 +29,7 @@ export default function TerminosPage() {
 
   // Función para aceptar términos
   const handleAcceptTerms = () => {
+    let redirected = false; // Flag para evitar doble redirección
     try {
       // Guardar en localStorage que el usuario ha aceptado los términos
       localStorage.setItem('termsAccepted', 'true');
@@ -62,14 +63,16 @@ export default function TerminosPage() {
         // No bloqueamos la navegación si hay un error en GA4
       }
       
-      // Esperar un momento para asegurar que la cookie se guarde
-      setTimeout(() => {
-        router.push('/');
-      }, 100);
-    } catch (error) {
-      console.error('Error saving acceptance:', error);
-      // Intentar redirigir de todos modos
+      // Redirigir inmediatamente después de establecer la cookie
       router.push('/');
+      redirected = true;
+
+    } catch (error) {
+      console.error('Error saving acceptance or during GA4 event:', error);
+      // Intentar redirigir solo si no se hizo ya
+      if (!redirected) {
+        router.push('/');
+      }
     }
   };
 
