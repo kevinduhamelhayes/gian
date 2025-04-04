@@ -27,17 +27,8 @@ const isPublicRoute = (path: string) => {
 function logRequestInfo(request: NextRequest, message: string) {
   console.log(`Middleware | ${message}`);
   console.log(`- Path: ${request.nextUrl.pathname}`);
-  
-  // Obtener y loggear la cookie de auth con su valor exacto
-  const authCookie = request.cookies.get('authUser');
-  console.log(`- Auth Cookie: ${authCookie ? `${authCookie.value} (expires: ${authCookie.expires || 'unknown'})` : 'Not Present'}`);
-  
-  // Obtener y loggear la cookie de términos con su valor exacto
-  const termsCookie = request.cookies.get('termsAccepted');
-  console.log(`- Terms Cookie: ${termsCookie ? `${termsCookie.value} (expires: ${termsCookie.expires || 'unknown'})` : 'Not Present'}`);
-  
-  // Loggear todos los encabezados de cookies para debugging
-  console.log(`- All Cookies Header: ${request.headers.get('cookie') || 'No cookies header'}`);
+  console.log(`- Auth Cookie: ${request.cookies.get('authUser')?.value ? 'Present' : 'Not Present'}`);
+  console.log(`- Terms Cookie: ${request.cookies.get('termsAccepted')?.value ? 'Accepted' : 'Not Accepted'}`);
 }
 
 export function middleware(request: NextRequest) {

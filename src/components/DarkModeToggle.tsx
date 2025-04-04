@@ -2,13 +2,10 @@ import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Moon, Sun } from "lucide-react";
 import { useTheme } from "next-themes";
-import { sendGAEvent } from "@/lib/ga-utils";
-import { useAuth } from "@/lib/auth-context";
 
 export const DarkModeToggle = () => {
   const { setTheme, resolvedTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
-  const { user } = useAuth();
 
   useEffect(() => {
     // When the component mounts on the client, update the state to indicate it is mounted
@@ -16,18 +13,7 @@ export const DarkModeToggle = () => {
   }, []);
 
   const toggleDarkMode = () => {
-    const newTheme = resolvedTheme === "dark" ? "light" : "dark";
-    setTheme(newTheme);
-
-    // Enviar evento GA
-    const isUser1 = user?.id === process.env.NEXT_PUBLIC_USER1_USERNAME?.toLowerCase();
-    const userType = user ? (isUser1 ? 'usuario_1' : 'usuario_2') : undefined;
-    const userName = user ? (isUser1 ? process.env.NEXT_PUBLIC_USER1_NAME : process.env.NEXT_PUBLIC_USER2_NAME) : undefined;
-
-    sendGAEvent('theme_toggle', {
-      selected_theme: newTheme,
-      ...(user && { user_type: userType, user_name: userName })
-    });
+    setTheme(resolvedTheme === "dark" ? "light" : "dark");
   };
 
   // Render nothing on the server

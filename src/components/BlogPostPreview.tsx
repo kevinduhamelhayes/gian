@@ -6,17 +6,13 @@ import Image from "next/image";
 import Link from "next/link";
 import { FunctionComponent, useState, useEffect } from "react";
 import { validateImage, DEFAULT_FALLBACK_IMAGE } from "@/lib/image-utils";
-import { sendGAEvent } from "@/lib/ga-utils";
-import { useAuth } from "@/lib/auth-context";
 
 export const BlogPostPreview: FunctionComponent<{
   post: LocalPost;
-  linkLocation: string;
-}> = ({ post, linkLocation }) => {
+}> = ({ post }) => {
   const [imageError, setImageError] = useState(false);
   const [imageSrc, setImageSrc] = useState(post.image || DEFAULT_FALLBACK_IMAGE);
   const [isLoading, setIsLoading] = useState(true);
-  const { user } = useAuth();
 
   useEffect(() => {
     // Validate the image when the component mounts or post changes
@@ -35,22 +31,9 @@ export const BlogPostPreview: FunctionComponent<{
     setImageSrc(DEFAULT_FALLBACK_IMAGE);
   };
 
-  const handlePostLinkClick = () => {
-    const isUser1 = user?.id === process.env.NEXT_PUBLIC_USER1_USERNAME?.toLowerCase();
-    const userType = user ? (isUser1 ? 'usuario_1' : 'usuario_2') : undefined;
-    const userName = user ? (isUser1 ? process.env.NEXT_PUBLIC_USER1_NAME : process.env.NEXT_PUBLIC_USER2_NAME) : undefined;
-
-    sendGAEvent('click_post_link', {
-      post_slug: post.slug,
-      post_title: post.title,
-      link_location: linkLocation,
-      ...(user && { user_type: userType, user_name: userName })
-    });
-  };
-
   return (
     <div className="break-words group">
-      <Link href={`/blog/${post.slug}`} onClick={handlePostLinkClick} className="block overflow-hidden rounded-lg">
+      <Link href={`/blog/${post.slug}`} className="block overflow-hidden rounded-lg">
         <div className="aspect-[16/12] relative bg-bronze-50 min-h-[380px]">
           {isLoading && (
             <div className="absolute inset-0 flex items-center justify-center z-10">
@@ -85,7 +68,7 @@ export const BlogPostPreview: FunctionComponent<{
       </Link>
       <div className="grid grid-cols-1 gap-3 md:col-span-2 mt-4">
         <h2 className="font-script font-semibold tracking-tighter text-bronze-700 text-2xl md:text-3xl">
-          <Link href={`/blog/${post.slug}`} onClick={handlePostLinkClick} className="hover:text-bronze-600 transition-colors">{post.title}</Link>
+          <Link href={`/blog/${post.slug}`} className="hover:text-bronze-600 transition-colors">{post.title}</Link>
         </h2>
         <div className="font-handwritten italic tracking-tighter text-bronze-500">
           {formatDate(new Date(post.publishedAt), "dd MMMM yyyy")}
@@ -96,23 +79,7 @@ export const BlogPostPreview: FunctionComponent<{
         <div className="text-sm text-bronze-500 font-handwritten">
           {post.tags.map((tag) => (
             <div key={tag.id} className="mr-2 inline-block">
-              <Link 
-                href={`/tag/${tag.name}`} 
-                onClick={() => {
-                  const isUser1 = user?.id === process.env.NEXT_PUBLIC_USER1_USERNAME?.toLowerCase();
-                  const userType = user ? (isUser1 ? 'usuario_1' : 'usuario_2') : undefined;
-                  const userName = user ? (isUser1 ? process.env.NEXT_PUBLIC_USER1_NAME : process.env.NEXT_PUBLIC_USER2_NAME) : undefined;
-                  sendGAEvent('click_tag_link', {
-                    tag_name: tag.name,
-                    link_location: 'post_preview', // Diferenciar de la lista de tags
-                    post_slug: post.slug,
-                    ...(user && { user_type: userType, user_name: userName })
-                  });
-                }}
-                className="hover:text-bronze-700 transition-colors"
-              >
-                #{tag.name}
-              </Link>
+              <Link href={`/tag/${tag.name}`} className="hover:text-bronze-700 transition-colors">#{tag.name}</Link>
             </div>
           ))}
         </div>
@@ -124,8 +91,7 @@ export const BlogPostPreview: FunctionComponent<{
 export const BlogPostsPreview: FunctionComponent<{
   posts: LocalPost[];
   className?: string;
-  linkLocation: string;
-}> = ({ posts, className, linkLocation }) => {
+}> = ({ posts, className }) => {
   return (
     <div
       className={cn(
@@ -134,7 +100,7 @@ export const BlogPostsPreview: FunctionComponent<{
       )}
     >
       {posts.map((post) => (
-        <BlogPostPreview key={post.id} post={post} linkLocation={linkLocation} />
+        <BlogPostPreview key={post.id} post={post} />
       ))}
     </div>
   );

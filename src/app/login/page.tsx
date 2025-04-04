@@ -108,7 +108,7 @@ export default function LoginPage() {
             Bienvenida
           </CardTitle>
           <CardDescription className="text-bronze-600 dark:text-bronze-300 pb-2">
-            Ingresá tus credenciales para acceder
+            Solo se te permite ingresar llena de amor
           </CardDescription>
         </CardHeader>
         {/* Ajustes de padding y estilos de input/botón */}
