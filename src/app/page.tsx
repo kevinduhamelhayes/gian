@@ -7,8 +7,15 @@ import { config } from "@/config";
 import { localPostsApi } from "@/lib/local-posts";
 import Link from "next/link";
 
-export default async function Page({ searchParams }: any) {
-  const page = searchParams.page ? parseInt(searchParams.page as string) : 1;
+// Definiendo el tipo esperado para las props de la página principal
+type HomePageProps = {
+  searchParams: { [key: string]: string | string[] | undefined };
+};
+
+export default async function Page({ searchParams }: HomePageProps) {
+  // Asegurarse de que searchParams exista y sea un objeto antes de acceder a .page
+  const pageParam = searchParams?.page;
+  const page = pageParam ? parseInt(Array.isArray(pageParam) ? pageParam[0] : pageParam) : 1;
   const result = await localPostsApi.getPosts({ limit: 10, page });
   
   return (
@@ -49,7 +56,7 @@ export default async function Page({ searchParams }: any) {
       </div>
       
       <h3 className="text-2xl md:text-3xl font-script text-bronze-700 mb-8 text-center">Nuestras Historias</h3>
-      <BlogPostsPreview posts={result.posts} linkLocation="home_preview" />
+      <BlogPostsPreview posts={result.posts} />
       <BlogPostsPagination pagination={result.pagination} />
       <Footer />
     </div>
