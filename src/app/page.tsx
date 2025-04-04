@@ -12,10 +12,11 @@ type HomePageProps = {
   searchParams: { [key: string]: string | string[] | undefined };
 };
 
-export default async function Page({ searchParams }: HomePageProps) {
-  // Asegurarse de que searchParams exista y sea un objeto antes de acceder a .page
-  const pageParam = searchParams?.page;
-  const page = pageParam ? parseInt(Array.isArray(pageParam) ? pageParam[0] : pageParam) : 1;
+export default async function Page({ searchParams = {} }: HomePageProps) {
+  // Garantizar que searchParams nunca sea undefined y manejar todos los casos posibles
+  const pageParam = searchParams && typeof searchParams === 'object' ? searchParams.page : undefined;
+  const pageString = Array.isArray(pageParam) ? pageParam[0] : pageParam;
+  const page = pageString && !isNaN(Number(pageString)) ? parseInt(pageString) : 1;
   const result = await localPostsApi.getPosts({ limit: 10, page });
   
   return (
