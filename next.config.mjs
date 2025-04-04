@@ -15,6 +15,9 @@ const nextConfig = {
     contentDispositionType: 'attachment',
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
   },
+  output: 'standalone',
+  poweredByHeader: false,
+  reactStrictMode: true,
   redirects: async () => {
     return [];
   },

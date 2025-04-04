@@ -24,10 +24,10 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
+  metadataBase: new URL(config.url),
   title: {
-    absolute: config.blog.metadata.title.absolute,
     default: config.blog.metadata.title.default,
-    template: config.blog.metadata.title.template,
+    template: `%s - ${config.blog.metadata.title.default}`,
   },
   description: config.blog.metadata.description,
   keywords: ["amor", "recuerdos", "blog personal", "historias de amor", "momentos especiales"],
@@ -35,37 +35,54 @@ export const metadata: Metadata = {
   creator: "Kevin",
   publisher: "Kevin",
   robots: {
-    index: true,
     follow: true,
+    index: true,
   },
   icons: {
     icon: [
-      { url: "/icons/favicon-16x16.png", sizes: "16x16", type: "image/png" },
-      { url: "/icons/favicon-32x32.png", sizes: "32x32", type: "image/png" },
-      { url: "/icons/favicon.ico", sizes: "48x48", type: "image/x-icon" }
+      {
+        url: '/icons/favicon-16x16.png',
+        sizes: '16x16',
+        type: 'image/png',
+      },
+      {
+        url: '/icons/favicon-32x32.png',
+        sizes: '32x32',
+        type: 'image/png',
+      },
     ],
-    apple: [
-      { url: "/icons/apple-touch-icon.png", sizes: "180x180", type: "image/png" }
-    ],
+    apple: {
+      url: '/icons/apple-touch-icon.png',
+      sizes: '180x180',
+    },
+    shortcut: '/favicon.ico',
   },
-  manifest: "/manifest.json",
+  manifest: '/manifest.json',
   openGraph: {
+    type: "website",
     title: config.blog.metadata.title.default,
     description: config.blog.metadata.description,
-    type: "website",
-    locale: "es_ES",
+    url: config.url,
+    siteName: config.blog.metadata.title.default,
     images: [
-      signOgImageUrl({
-        title: config.blog.name,
-      }),
+      {
+        url: signOgImageUrl({
+          title: config.blog.metadata.title.default,
+        }),
+        width: 1200,
+        height: 630,
+      },
     ],
-    siteName: config.blog.name,
   },
   twitter: {
     card: "summary_large_image",
     title: config.blog.metadata.title.default,
     description: config.blog.metadata.description,
-    images: [signOgImageUrl({ title: config.blog.name })],
+    images: [
+      signOgImageUrl({
+        title: config.blog.metadata.title.default,
+      }),
+    ],
   },
 };
 

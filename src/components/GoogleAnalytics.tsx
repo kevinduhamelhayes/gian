@@ -11,16 +11,30 @@ export default function GoogleAnalytics() {
   const pathname = usePathname();
   const searchParams = useSearchParams();
   const [isGAInitialized, setIsGAInitialized] = useState(false);
+  const [isGABlocked, setIsGABlocked] = useState(false);
 
   // Verificar si GA está inicializado correctamente
   useEffect(() => {
-    if (typeof window !== 'undefined' && window.gtag && typeof window.gtag === 'function') {
-      setIsGAInitialized(true);
+    if (typeof window !== 'undefined') {
+      // Detectar si el usuario tiene bloqueadores de anuncios
+      const checkBlockers = () => {
+        // Si después de 2 segundos gtag no está disponible, probablemente esté bloqueado
+        if (!window.gtag || typeof window.gtag !== 'function') {
+          setIsGABlocked(true);
+          console.log("Google Analytics está probablemente bloqueado por un ad-blocker");
+        } else {
+          setIsGAInitialized(true);
+        }
+      };
+      
+      // Dar tiempo para que se cargue GA
+      const timer = setTimeout(checkBlockers, 2000);
+      return () => clearTimeout(timer);
     }
   }, []);
 
   useEffect(() => {
-    if (!GA_MEASUREMENT_ID || !isGAInitialized) return;
+    if (!GA_MEASUREMENT_ID || !isGAInitialized || isGABlocked) return;
     
     try {
       const url = pathname + (searchParams?.toString() ? `?${searchParams.toString()}` : "");
@@ -32,7 +46,12 @@ export default function GoogleAnalytics() {
     } catch (error) {
       console.error("Error al enviar pageview a GA4:", error);
     }
-  }, [pathname, searchParams, isGAInitialized]);
+  }, [pathname, searchParams, isGAInitialized, isGABlocked]);
+
+  // Si detectamos que GA está bloqueado, no intentamos cargar los scripts
+  if (isGABlocked) {
+    return null;
+  }
 
   return (
     <>
@@ -44,6 +63,7 @@ export default function GoogleAnalytics() {
         }}
         onError={(e) => {
           console.error("Error al cargar Google Analytics:", e);
+          setIsGABlocked(true);
         }}
       />
       <Script
@@ -57,6 +77,16 @@ export default function GoogleAnalytics() {
             gtag('config', '${GA_MEASUREMENT_ID}', {
               page_path: window.location.pathname,
             });
+            
+            // Controlar errores de GA cuando está bloqueado
+            window.addEventListener('error', function(e) {
+              if (e.filename && (e.filename.includes('googletagmanager') || e.filename.includes('analytics.google'))) {
+                console.log('Google Analytics bloqueado por el navegador o extensión');
+                // No necesitamos hacer nada más, solo evitar errores en consola
+                e.stopPropagation();
+                e.preventDefault();
+              }
+            }, true);
           `,
         }}
         onLoad={() => {
@@ -67,6 +97,7 @@ export default function GoogleAnalytics() {
         }}
         onError={(e) => {
           console.error("Error al inicializar Google Analytics:", e);
+          setIsGABlocked(true);
         }}
       />
     </>
@@ -76,7 +107,7 @@ export default function GoogleAnalytics() {
 // Función de utilidad para enviar eventos personalizados
 export function sendGAEvent(action: string, category?: string, label?: string, value?: number) {
   if (typeof window === "undefined" || !window.gtag || typeof window.gtag !== 'function') {
-    console.warn("No se pudo enviar evento a GA4: gtag no disponible");
+    // No mostrar advertencias en consola si GA está bloqueado
     return;
   }
   
@@ -87,6 +118,6 @@ export function sendGAEvent(action: string, category?: string, label?: string, v
       value: value,
     });
   } catch (error) {
-    console.error("Error al enviar evento a GA4:", error);
+    // Capturar errores silenciosamente sin mostrar en consola
   }
 } 
