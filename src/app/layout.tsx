@@ -24,7 +24,7 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  metadataBase: new URL(config.url),
+  metadataBase: new URL(config.baseUrl),
   title: {
     default: config.blog.metadata.title.default,
     template: `%s - ${config.blog.metadata.title.default}`,
@@ -62,7 +62,7 @@ export const metadata: Metadata = {
     type: "website",
     title: config.blog.metadata.title.default,
     description: config.blog.metadata.description,
-    url: config.url,
+    url: config.baseUrl,
     siteName: config.blog.metadata.title.default,
     images: [
       {
