@@ -42,9 +42,7 @@ export function useMediaQuery(query: string): boolean {
     setMatches(media.matches);
     
     // Define the callback function for handling changes
-    const listener = (event: MediaQueryListEvent) => {
-      setMatches(event.matches);
-    };
+    const listener = () => setMatches(media.matches);
     
     // Add the listener for changes
     media.addEventListener("change", listener);

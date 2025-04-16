@@ -2,7 +2,7 @@
 import { config } from "@/config";
 import { Heart, LogOut } from "lucide-react";
 import Link from "next/link";
-import { FunctionComponent } from "react";
+import { FunctionComponent, useEffect, useState } from "react";
 import { DarkModeToggle } from "./DarkModeToggle";
 import { Button } from "./ui/button";
 import { useAuth } from "@/lib/auth-context";
@@ -11,6 +11,8 @@ import { useRouter } from "next/navigation";
 export const Footer: FunctionComponent = () => {
   const { logout, user } = useAuth();
   const router = useRouter();
+  const [year, setYear] = useState<number | null>(null);
+  useEffect(() => setYear(new Date().getFullYear()), []);
 
   const handleLogout = () => {
     logout();
@@ -22,7 +24,7 @@ export const Footer: FunctionComponent = () => {
     <section className="mt-12 md:mt-20 mb-16 border-t border-bronze-300 pt-8">
       <div className="flex items-center justify-between">
         <div className="text-base md:text-lg text-bronze-700 font-handwritten">
-          © {config.blog.copyright} {new Date().getFullYear()}
+          © {config.blog.copyright} {year ?? ''}
         </div>
         <div className="text-sm text-bronze-600 hidden lg:block font-handwritten">
           <span className="flex items-center gap-2">

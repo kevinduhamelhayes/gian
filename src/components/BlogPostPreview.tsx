@@ -13,13 +13,21 @@ export const BlogPostPreview: FunctionComponent<{
   const [imageError, setImageError] = useState(false);
   const [imageSrc, setImageSrc] = useState(post.image || DEFAULT_FALLBACK_IMAGE);
   const [isLoading, setIsLoading] = useState(true);
+  const [formattedDate, setFormattedDate] = useState<string>("");
 
   useEffect(() => {
     // Validate the image when the component mounts or post changes
     setImageSrc(validateImage(post.image));
     setIsLoading(true);
     setImageError(false);
-  }, [post.image]);
+    setFormattedDate(
+      new Date(post.publishedAt).toLocaleDateString("es-ES", {
+        year: "numeric",
+        month: "long",
+        day: "numeric",
+      })
+    );
+  }, [post.image, post.publishedAt]);
 
   const handleImageLoad = () => {
     setIsLoading(false);
@@ -71,7 +79,7 @@ export const BlogPostPreview: FunctionComponent<{
           <Link href={`/blog/${post.slug}`} className="hover:text-bronze-600 transition-colors">{post.title}</Link>
         </h2>
         <div className="font-handwritten italic tracking-tighter text-bronze-500">
-          {formatDate(new Date(post.publishedAt), "dd MMMM yyyy")}
+          {formattedDate}
         </div>
         <div className="leading-relaxed md:text-lg line-clamp-4 text-bronze-700 font-sans">
           {post.description}

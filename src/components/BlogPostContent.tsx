@@ -4,7 +4,8 @@ import Link from "next/link";
 import sanitize, { defaults } from "sanitize-html";
 import Image from "next/image";
 import Markdown from "react-markdown";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { FunctionComponent } from "react";
 
 /**
  * Componente que renderiza contenido HTML sanitizado
@@ -81,15 +82,24 @@ interface BlogPostContentProps {
  * @param post - Objeto con los datos del post
  * @returns Componente con el artículo completo
  */
-export const BlogPostContent = ({ post }: BlogPostContentProps) => {
+export const BlogPostContent: FunctionComponent<BlogPostContentProps> = ({ post }) => {
   // Estado para controlar errores de carga de imagen
   const [imageError, setImageError] = useState(false);
+  const [formattedDate, setFormattedDate] = useState<string>("");
 
   // Si no hay post, no renderizar nada
   if (!post) return null;
   
   const { title, publishedAt, content, tags } = post;
   
+  useEffect(() => {
+    setFormattedDate(new Date(publishedAt).toLocaleDateString("es-ES", {
+      year: "numeric",
+      month: "long",
+      day: "numeric",
+    }));
+  }, [publishedAt]);
+
   return (
     <article className="blog-post">
       {/* Encabezado del post */}
@@ -136,14 +146,8 @@ export const BlogPostContent = ({ post }: BlogPostContentProps) => {
       </div>
       
       {/* Fecha de publicación */}
-      <div className="mt-4 text-sm text-bronze-600">
-        <time dateTime={publishedAt}>
-          Publicado el {new Date(publishedAt).toLocaleDateString("es-ES", {
-            year: "numeric",
-            month: "long",
-            day: "numeric",
-          })}
-        </time>
+      <div className="text-sm text-bronze-500 font-handwritten mb-4">
+        Publicado el {formattedDate}
       </div>
     </article>
   );
