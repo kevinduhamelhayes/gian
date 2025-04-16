@@ -79,9 +79,9 @@ export const Navigation: FunctionComponent = () => {
 
 export const Header: FunctionComponent = () => {
   return (
-    <section className="flex items-center justify-between mt-8 md:mt-16 mb-12 border-b border-bronze-300 pb-4">
+    <section className="flex flex-col xs:flex-row items-center justify-between mt-4 sm:mt-8 md:mt-16 mb-8 sm:mb-12 border-b border-bronze-300 pb-3 sm:pb-4 gap-2 xs:gap-0">
       <Link href="/">
-        <h1 className="text-4xl md:text-6xl font-bold tracking-tighter leading-tight font-script text-bronze-700 hover:text-bronze-600 transition-colors">
+        <h1 className="text-2xl sm:text-4xl md:text-6xl font-bold tracking-tighter leading-tight font-script text-bronze-700 hover:text-bronze-600 transition-colors">
           {config.blog.name}
         </h1>
       </Link>

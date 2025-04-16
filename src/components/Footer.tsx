@@ -21,9 +21,9 @@ export const Footer: FunctionComponent = () => {
   };
 
   return (
-    <section className="mt-12 md:mt-20 mb-16 border-t border-bronze-300 pt-8">
-      <div className="flex items-center justify-between">
-        <div className="text-base md:text-lg text-bronze-700 font-handwritten">
+    <section className="mt-8 sm:mt-12 md:mt-20 mb-10 sm:mb-16 border-t border-bronze-300 pt-6 sm:pt-8">
+      <div className="flex flex-col sm:flex-row items-center justify-between gap-4 sm:gap-0">
+        <div className="text-base md:text-lg text-bronze-700 font-handwritten text-center sm:text-left">
           © {config.blog.copyright} {year ?? ''}
         </div>
         <div className="text-sm text-bronze-600 hidden lg:block font-handwritten">
@@ -31,7 +31,7 @@ export const Footer: FunctionComponent = () => {
             Hecho con <Heart className="w-4 h-4 text-red-500 fill-red-500" /> para {config.blog.name}
           </span>
         </div>
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-2 sm:gap-3">
           {user && (
             <Button 
               variant="outline" 

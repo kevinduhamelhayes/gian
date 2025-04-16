@@ -42,7 +42,7 @@ export const BlogPostPreview: FunctionComponent<{
   return (
     <div className="break-words group">
       <Link href={`/blog/${post.slug}`} className="block overflow-hidden rounded-lg">
-        <div className="aspect-[16/12] relative bg-bronze-50 min-h-[380px]">
+        <div className="aspect-[16/10] sm:aspect-[16/12] relative bg-bronze-50 min-h-[200px] sm:min-h-[320px] md:min-h-[380px]">
           {isLoading && (
             <div className="absolute inset-0 flex items-center justify-center z-10">
               <div className="w-8 h-8 border-4 border-bronze-300 border-t-bronze-600 rounded-full animate-spin"></div>
@@ -50,7 +50,7 @@ export const BlogPostPreview: FunctionComponent<{
           )}
           
           {imageError ? (
-            <div className="w-full h-full  flex items-center justify-center">
+            <div className="w-full h-full flex items-center justify-center">
               <p className="text-center font-handwritten text-bronze-700">Imagen no disponible</p>
             </div>
           ) : (
@@ -58,7 +58,7 @@ export const BlogPostPreview: FunctionComponent<{
               <Image
                 alt={post.title}
                 className={cn(
-                  "object-contain max-h-[580px] max-w-full transition-all duration-300",
+                  "object-contain max-h-[220px] sm:max-h-[380px] max-w-full transition-all duration-300",
                   "hover:scale-105 aspect-video",
                   isLoading ? "opacity-0" : "opacity-100"
                 )}
@@ -74,17 +74,17 @@ export const BlogPostPreview: FunctionComponent<{
           <div className="absolute inset-0 bg-bronze-800/10 group-hover:bg-bronze-800/0 transition-colors"></div>
         </div>
       </Link>
-      <div className="grid grid-cols-1 gap-3 md:col-span-2 mt-4">
-        <h2 className="font-script font-semibold tracking-tighter text-bronze-700 text-2xl md:text-3xl">
+      <div className="grid grid-cols-1 gap-2 sm:gap-3 md:col-span-2 mt-3 sm:mt-4">
+        <h2 className="font-script font-semibold tracking-tighter text-bronze-700 text-xl sm:text-2xl md:text-3xl">
           <Link href={`/blog/${post.slug}`} className="hover:text-bronze-600 transition-colors">{post.title}</Link>
         </h2>
-        <div className="font-handwritten italic tracking-tighter text-bronze-500">
+        <div className="font-handwritten italic tracking-tighter text-bronze-500 text-sm sm:text-base">
           {formattedDate}
         </div>
-        <div className="leading-relaxed md:text-lg line-clamp-4 text-bronze-700 font-sans">
+        <div className="leading-relaxed text-base sm:text-lg line-clamp-4 text-bronze-700 font-sans">
           {post.description}
         </div>
-        <div className="text-sm text-bronze-500 font-handwritten">
+        <div className="text-xs sm:text-sm text-bronze-500 font-handwritten flex flex-wrap gap-1">
           {post.tags.map((tag) => (
             <div key={tag.id} className="mr-2 inline-block">
               <Link href={`/tag/${tag.name}`} className="hover:text-bronze-700 transition-colors">#{tag.name}</Link>
@@ -103,7 +103,7 @@ export const BlogPostsPreview: FunctionComponent<{
   return (
     <div
       className={cn(
-        "grid grid-cols-1 gap-16 lg:gap-20 md:grid-cols-2 md:my-16 my-8",
+        "grid grid-cols-1 gap-8 sm:gap-12 md:gap-16 lg:gap-20 md:grid-cols-2 md:my-16 my-6 sm:my-8",
         className
       )}
     >
