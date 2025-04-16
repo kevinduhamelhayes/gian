@@ -1,6 +1,6 @@
 import { LocalPost } from '../local-posts';
 import { generateClientId } from '../utils/id-utils';
-import { getPostImagePath } from '../image-utils';
+import { getPostImagePath, findFirstExistingImage } from '../image-utils';
 
 // Slug for this post
 const SLUG = 'diciembre-y-disfrutar';
@@ -35,7 +35,7 @@ Si ves la galeria de imagenes mas abajo como van cambiando nuestros rostros... c
 
   publishedAt: new Date("2024-12-15").toISOString(),
   updatedAt: new Date("2024-12-15").toISOString(),
-  image: getPostImagePath(SLUG, '1.jpg'), // Primera imagen para la preview
+  image: findFirstExistingImage(SLUG), // Preview robusta
   carouselImages: [
     getPostImagePath(SLUG, '1.jpg'),
     getPostImagePath(SLUG, '2.jpg'),

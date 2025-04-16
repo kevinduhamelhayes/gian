@@ -1,6 +1,6 @@
 import { LocalPost } from '../local-posts';
 import { generateClientId } from '../utils/id-utils';
-import { getPostImagePath } from '../image-utils';
+import { getPostImagePath, findFirstExistingImage } from '../image-utils';
 
 // Slug for this post
 const SLUG = 'lo-que-no-sospechamos';
@@ -24,7 +24,7 @@ Y te empecé a ver distinto... Admito que entré a tu perfil, miré y dije: 'Tie
   `,
   publishedAt: new Date("2023-10-20").toISOString(),
   updatedAt: new Date("2023-10-20").toISOString(),
-  image: getPostImagePath(SLUG, '1.jpeg'), // Primera imagen para la preview
+  image: findFirstExistingImage(SLUG), // Preview robusta
   carouselImages: [
     getPostImagePath(SLUG, '2.jpeg'),
     getPostImagePath(SLUG, '3.jpeg'),
