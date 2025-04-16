@@ -1,6 +1,6 @@
 import { LocalPost } from '../local-posts';
 import { generateClientId } from '../utils/id-utils';
-import { getPostImagePath } from '../image-utils';
+import { getPostImagePath, findFirstExistingImage } from '../image-utils';
 
 // Slug for this post
 const SLUG = 'nuestro-primer-viaje';
@@ -36,7 +36,7 @@ Dios, cuánto amor...
   `,
   publishedAt: new Date("2024-04-01").toISOString(),
   updatedAt: new Date("2024-04-01").toISOString(),
-  image: getPostImagePath(SLUG, '1.jpg'), // Primera imagen para la preview
+  image: findFirstExistingImage(SLUG), // Preview robusta
   carouselImages: [
     getPostImagePath(SLUG, '2.jpg'),
     getPostImagePath(SLUG, '3.jpg'),

@@ -1,6 +1,6 @@
 import { LocalPost } from '../local-posts';
 import { generateClientId } from '../utils/id-utils';
-import { getPostImagePath } from '../image-utils';
+import { getPostImagePath, findFirstExistingImage } from '../image-utils';
 
 // Slug for this post
 const SLUG = 'quedarme-por-amor';
@@ -36,7 +36,7 @@ Aunque ya no sé qué pasará con nosotros...
   `,
   publishedAt: new Date("2024-09-30").toISOString(),
   updatedAt: new Date("2024-09-30").toISOString(),
-  image: getPostImagePath(SLUG, '1.jpg'), // Primera imagen para la preview
+  image: findFirstExistingImage(SLUG), // Preview robusta
   carouselImages: [
     getPostImagePath(SLUG, '1.jpg'),
     getPostImagePath(SLUG, '2.jpg'),

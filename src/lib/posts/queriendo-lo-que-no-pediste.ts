@@ -1,6 +1,6 @@
 import { LocalPost } from '../local-posts';
 import { generateClientId } from '../utils/id-utils';
-import { getPostImagePath } from '../image-utils';
+import { getPostImagePath, findFirstExistingImage } from '../image-utils';
 
 // Slug for this post
 const SLUG = 'queriendo-lo-que-no-pediste';
@@ -22,7 +22,7 @@ Hoy, agradezco que el destino me haya dado lo que no pedí, porque resultó ser 
   `,
   publishedAt: new Date("2024-11-28").toISOString(),
   updatedAt: new Date("2024-11-28").toISOString(),
-  image: getPostImagePath(SLUG, '2.jpg'), // Primera imagen para la preview
+  image: findFirstExistingImage(SLUG), // Preview robusta
   carouselImages: [
     getPostImagePath(SLUG, '1.jpg'),
     getPostImagePath(SLUG, '3.jpg'),

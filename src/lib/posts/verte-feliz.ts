@@ -1,6 +1,6 @@
 import { LocalPost } from '../local-posts';
 import { generateClientId } from '../utils/id-utils';
-import { getPostImagePath } from '../image-utils';
+import { getPostImagePath, findFirstExistingImage } from '../image-utils';
 
 // Slug for this post
 const SLUG = 'verte-feliz';
@@ -28,7 +28,7 @@ Pero vamos, las risas no faltaban; la comida y el heladito, espero, tampoco.
   `,
   publishedAt: new Date("2024-02-15").toISOString(),
   updatedAt: new Date("2024-02-15").toISOString(),
-  image: getPostImagePath(SLUG, '3.jpg'), // Primera imagen para la preview
+  image: findFirstExistingImage(SLUG), // Preview robusta
   carouselImages: [
     getPostImagePath(SLUG, '2.jpg'),
     getPostImagePath(SLUG, '1.jpg'),

@@ -1,6 +1,6 @@
 import { LocalPost } from '../local-posts';
 import { generateClientId } from '../utils/id-utils';
-import { getPostImagePath } from '../image-utils';
+import { getPostImagePath, findFirstExistingImage } from '../image-utils';
 
 // Slug for this post
 const SLUG = 'el-dia-que-te-conoci';
@@ -26,7 +26,7 @@ Ese día marcó el inicio de nuestra historia.
   `,
   publishedAt: new Date("2023-11-25").toISOString(),
   updatedAt: new Date("2023-11-25").toISOString(),
-  image: getPostImagePath(SLUG, '1.jpg'),
+  image: findFirstExistingImage(SLUG),
   carouselImages: [
     getPostImagePath(SLUG, '1.jpg')
   ],
