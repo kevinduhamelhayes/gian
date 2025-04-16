@@ -7,7 +7,7 @@ const SLUG = 'crujiamos'; // Slug mantenido como 'nuestro-primer'
 
 // Define post data
 export const crujiamos: LocalPost = {
-  id: generateClientId(),
+  id: SLUG,
   // Título ajustado para mayor coherencia con el contenido y el encabezado H1
   title: "Crujíamos",
   slug: SLUG,
@@ -62,9 +62,9 @@ Bueno en fin crujiamos sabiamos que algo no estaba bien pero que era... habiamos
   ],
   // Etiquetas ajustadas para reflejar mejor el contenido
   tags: [
-    { id: "1", name: "recuerdos" },
-    { id: "2", name: "amor" },
-    { id: "15", name: "dificultades" } // Reemplazando 'inicios' por 'dificultades'
+    { id: "recuerdos", name: "recuerdos" },
+    { id: "amor", name: "amor" },
+    { id: "dificultades", name: "dificultades" }
   ],
   featured: true
 };

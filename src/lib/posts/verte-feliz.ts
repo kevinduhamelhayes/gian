@@ -7,7 +7,7 @@ const SLUG = 'verte-feliz';
 
 // Define post data
 export const vertefeliz: LocalPost = {
-  id: generateClientId(),
+  id: SLUG,
   title: "Verte Feliz",
   slug: SLUG,
   description: "Los pequeños momentos en que tu sonrisa ilumina mi mundo.",
@@ -37,9 +37,9 @@ Pero vamos, las risas no faltaban; la comida y el heladito, espero, tampoco.
   ],
   // Tags corregidos para consistencia (ID de 'amor') y relevancia
   tags: [
-    { id: "2", name: "amor" }, // ID normalizado a '2'
-    { id: "11", name: "felicidad" },
-    { id: "12", name: "momentos" }
+    { id: "amor", name: "amor" },
+    { id: "felicidad", name: "felicidad" },
+    { id: "momentos", name: "momentos" }
   ],
   featured: true
 };

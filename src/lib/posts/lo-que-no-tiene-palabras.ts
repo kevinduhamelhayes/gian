@@ -7,7 +7,7 @@ const SLUG = 'lo-que-no-tiene-palabras';
 
 // Define post data
 export const loQueNoTienePalabras: LocalPost = {
-  id: generateClientId(),
+  id: SLUG,
   title: "Lo que no tiene palabras",
   slug: SLUG,
   description: "Esos sentimientos tan profundos que las palabras no logran capturar.",
@@ -40,8 +40,8 @@ aun hoy que escribo esto y es un tipo de despedida y recuento de memorias estoy 
 
   ],
   tags: [
-    { id: "2", name: "amor" },
-    { id: "13", name: "sentimientos" }
+    { id: "amor", name: "amor" },
+    { id: "sentimientos", name: "sentimientos" }
   ],
   featured: true
 }; 

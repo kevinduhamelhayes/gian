@@ -7,7 +7,7 @@ const SLUG = 'el-fin';
 
 // Define post data
 export const elFin: LocalPost = {
-  id: generateClientId(),
+  id: SLUG,
   title: "El fin?",
   slug: SLUG,
   description: "El dia llegara, y con el, el fin de esta etapa de mi vida. o no?",
@@ -42,8 +42,8 @@ Así como en tu vida hay cosas que te marcaron en la mía, hay un preconcepto de
 
   ],
   tags: [
-    { id: "2", name: "amor" },
-    { id: "4", name: "esperanza" }
+    { id: "amor", name: "amor" },
+    { id: "esperanza", name: "esperanza" }
   ],
   featured: true
 }; 

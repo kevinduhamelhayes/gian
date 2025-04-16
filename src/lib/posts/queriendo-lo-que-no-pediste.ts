@@ -7,7 +7,7 @@ const SLUG = 'queriendo-lo-que-no-pediste';
 
 // Define post data
 export const queriendoLoQueNoPediste: LocalPost = {
-  id: generateClientId(),
+  id: SLUG,
   title: "Queriendo lo que no pediste",
   slug: SLUG,
   description: "A veces, la vida nos regala lo que necesitábamos, no lo que buscábamos.",
@@ -33,8 +33,8 @@ Hoy, agradezco que el destino me haya dado lo que no pedí, porque resultó ser 
     
   ],
   tags: [
-    { id: "2", name: "amor" },
-    { id: "16", name: "destino" }
+    { id: "amor", name: "amor" },
+    { id: "destino", name: "destino" }
   ],
   featured: true
 }; 

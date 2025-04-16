@@ -7,7 +7,7 @@ const SLUG = 'quedarme-por-amor';
 
 // Define post data
 export const quedarmePorAmor: LocalPost = {
-  id: generateClientId(),
+  id: SLUG,
   title: "Quedarme por amor",
   slug: SLUG,
   description: "Cuando decidí que el amor vale cada sacrificio.",
@@ -46,8 +46,8 @@ Aunque ya no sé qué pasará con nosotros...
     
   ],
   tags: [
-    { id: "2", name: "amor" },
-    { id: "17", name: "decisiones" }
+    { id: "amor", name: "amor" },
+    { id: "decisiones", name: "decisiones" }
   ],
   featured: true
 };

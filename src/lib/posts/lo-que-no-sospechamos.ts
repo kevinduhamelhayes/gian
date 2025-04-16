@@ -7,7 +7,7 @@ const SLUG = 'lo-que-no-sospechamos';
 
 // Define post data
 export const loQueNoSospechamos: LocalPost = {
-  id: generateClientId(),
+  id: SLUG,
   title: "Lo que no sospechamos",
   slug: SLUG,
   description: "Descubriendo sorpresas en nuestro camino juntos.",
@@ -33,8 +33,8 @@ Y te empecé a ver distinto... Admito que entré a tu perfil, miré y dije: 'Tie
     
   ],
   tags: [
-    { id: "2", name: "amor" },
-    { id: "19", name: "descubrimientos" }
+    { id: "amor", name: "amor" },
+    { id: "descubrimientos", name: "descubrimientos" }
   ],
   featured: true
 };

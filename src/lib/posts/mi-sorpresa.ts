@@ -7,7 +7,7 @@ const SLUG = 'mi-sorpresa';
 
 // Define post data
 export const miSorpresa: LocalPost = {
-  id: generateClientId(),
+  id: SLUG,
   title: "Mi sorpresa",
   slug: SLUG,
   description: "Cuando el amor se manifiesta de la forma más inesperada.",
@@ -40,8 +40,8 @@ Y la entrega se fue acrecentando, las barreras se nos caían a pedazos...
     getPostImagePath(SLUG, '5.jpg'),
   ],
   tags: [
-    { id: "2", name: "amor" },
-    { id: "18", name: "sorpresas" }
+    { id: "amor", name: "amor" },
+    { id: "sorpresas", name: "sorpresas" }
   ],
   featured: true
 };

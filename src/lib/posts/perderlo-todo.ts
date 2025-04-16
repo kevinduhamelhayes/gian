@@ -7,7 +7,7 @@ const SLUG = 'perderlo-todo';
 
 // Define post data
 export const perderloTodo: LocalPost = {
-  id: generateClientId(),
+  id: SLUG,
   title: "Perderlo todo",
   slug: SLUG,
   description: "Momentos difíciles que pusieron a prueba nuestra relación.",
@@ -69,8 +69,8 @@ Lo perdía todo: el dinero, el tiempo, la empresa, mi psiquis... y te había per
   ],
   // Etiquetas ajustadas para reflejar el sentimiento de pérdida y dificultad
   tags: [
-    { id: "15", name: "dificultades" },
-    { id: "25", name: "pérdida" } // Nueva etiqueta (ID de ejemplo)
+    { id: "dificultades", name: "dificultades" },
+    { id: "perdida", name: "pérdida" }
   ],
   featured: false // Mantenido como false
 };

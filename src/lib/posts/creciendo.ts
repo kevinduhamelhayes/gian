@@ -7,7 +7,7 @@ const SLUG = 'creciendo';
 
 // Define post data
 export const creciendo: LocalPost = {
-  id: generateClientId(),
+  id: SLUG,
   title: "Creciendo juntos",
   slug: SLUG,
   description: "La historia de cómo crecemos y evolucionamos juntos día a día.",
@@ -48,8 +48,8 @@ No voy a cometer ese error.
     getPostImagePath(SLUG, '7.jpg')
   ],
   tags: [
-    { id: "2", name: "amor" },
-    { id: "10", name: "crecimiento" }
+    { id: "amor", name: "amor" },
+    { id: "crecimiento", name: "crecimiento" }
   ],
   featured: true
 };

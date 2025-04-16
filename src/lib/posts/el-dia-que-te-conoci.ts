@@ -7,7 +7,7 @@ const SLUG = 'el-dia-que-te-conoci';
 
 // Define post data
 export const elDiaQueTeConoci: LocalPost = {
-  id: generateClientId(),
+  id: SLUG,
   title: "El día que te conocí",
   slug: SLUG,
   description: "La historia de nuestro primer encuentro y cómo cambió todo.",
@@ -31,8 +31,8 @@ Ese día marcó el inicio de nuestra historia.
     getPostImagePath(SLUG, '1.jpg')
   ],
   tags: [
-    { id: "1", name: "recuerdos" },
-    { id: "2", name: "amor" }
+    { id: "recuerdos", name: "recuerdos" },
+    { id: "amor", name: "amor" }
   ],
   featured: true
 };

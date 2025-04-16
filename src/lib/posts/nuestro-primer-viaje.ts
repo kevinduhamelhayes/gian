@@ -7,7 +7,7 @@ const SLUG = 'nuestro-primer-viaje';
 
 // Define post data
 export const nuestroPrimerViaje: LocalPost = {
-  id: generateClientId(),
+  id: SLUG,
   title: "Nuestro primer viaje juntos",
   slug: SLUG,
   description: "Recuerdos inolvidables de un viaje accidentado",
@@ -47,9 +47,9 @@ Dios, cuánto amor...
     getPostImagePath(SLUG, '9.jpg'),
   ],
   tags: [
-    { id: "1", name: "recuerdos" },
-    { id: "5", name: "lugares" },
-    { id: "11", name: "viajes" }
+    { id: "recuerdos", name: "recuerdos" },
+    { id: "lugares", name: "lugares" },
+    { id: "viajes", name: "viajes" }
   ],
   featured: true
 };

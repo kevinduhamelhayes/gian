@@ -7,7 +7,7 @@ const SLUG = 'diciembre-y-disfrutar';
 
 // Define post data
 export const diciembreYDisfrutar: LocalPost = {
-  id: generateClientId(),
+  id: SLUG,
   title: "Diciembre y disfrutar",
   slug: SLUG,
   // Descripción ajustada para reflejar mejor el contenido agridulce
@@ -62,10 +62,10 @@ Si ves la galeria de imagenes mas abajo como van cambiando nuestros rostros... c
   ],
   // Etiquetas ajustadas para reflejar mejor los temas del texto
   tags: [
-    { id: "2", name: "amor" }, // Mantenido de ejemplo anterior si aplica, o usar un ID adecuado
-    { id: "22", name: "viajes" }, // ID de ejemplo
-    { id: "23", name: "familia" }, // ID de ejemplo
-    { id: "24", name: "desafíos personales" } // ID de ejemplo
+    { id: "amor", name: "amor" },
+    { id: "viajes", name: "viajes" },
+    { id: "familia", name: "familia" },
+    { id: "desafios-personales", name: "desafíos personales" }
   ],
   featured: true
 };
