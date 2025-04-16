@@ -34,7 +34,7 @@ Este documento describe las convenciones para crear y mantener posts en el blog,
 
 ```typescript
 import { LocalPost } from '../local-posts';
-import { generateId } from '../utils/id-utils';
+import { generateClientId } from '../utils/id-utils';
 import { getPostImagePath, getNumberedImagePaths } from '../image-utils';
 
 // Slug for this post
@@ -42,7 +42,7 @@ const SLUG = 'nombre-del-slug';
 
 // Define post data
 export const nombreExportacion: LocalPost = {
-  id: generateId(),
+  id: generateClientId(),
   title: "Título del post",
   slug: SLUG,
   description: "Descripción corta del post",
@@ -62,8 +62,8 @@ Contenido del post en formato Markdown...
   //   getPostImagePath(SLUG, 'imagen-especial.jpg')
   // ],
   tags: [
-    { id: generateId(), name: "amor" },
-    { id: generateId(), name: "categoria" }
+    { id: generateClientId(), name: "amor" },
+    { id: generateClientId(), name: "categoria" }
   ],
   featured: true
 };

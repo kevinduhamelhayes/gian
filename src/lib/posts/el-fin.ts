@@ -1,5 +1,5 @@
 import { LocalPost } from '../local-posts';
-import { generateId } from '../utils/id-utils';
+import { generateClientId } from '../utils/id-utils';
 import { getPostImagePath } from '../image-utils';
 
 // Slug for this post
@@ -7,7 +7,7 @@ const SLUG = 'el-fin';
 
 // Define post data
 export const elFin: LocalPost = {
-  id: generateId(),
+  id: generateClientId(),
   title: "El fin?",
   slug: SLUG,
   description: "El dia llegara, y con el, el fin de esta etapa de mi vida. o no?",

@@ -1,5 +1,5 @@
 import { LocalPost } from '../local-posts';
-import { generateId } from '../utils/id-utils';
+import { generateClientId } from '../utils/id-utils';
 import { getPostImagePath } from '../image-utils';
 
 // Slug for this post
@@ -7,7 +7,7 @@ const SLUG = 'mi-sorpresa';
 
 // Define post data
 export const miSorpresa: LocalPost = {
-  id: generateId(),
+  id: generateClientId(),
   title: "Mi sorpresa",
   slug: SLUG,
   description: "Cuando el amor se manifiesta de la forma más inesperada.",

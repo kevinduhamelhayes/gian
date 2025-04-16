@@ -1,5 +1,5 @@
 import { LocalPost } from '../local-posts';
-import { generateId } from '../utils/id-utils';
+import { generateClientId } from '../utils/id-utils';
 import { getPostImagePath } from '../image-utils';
 
 // Slug for this post
@@ -7,7 +7,7 @@ const SLUG = 'creciendo';
 
 // Define post data
 export const creciendo: LocalPost = {
-  id: generateId(),
+  id: generateClientId(),
   title: "Creciendo juntos",
   slug: SLUG,
   description: "La historia de cómo crecemos y evolucionamos juntos día a día.",

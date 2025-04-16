@@ -1,5 +1,5 @@
 import { LocalPost } from '../local-posts';
-import { generateId } from '../utils/id-utils';
+import { generateClientId } from '../utils/id-utils';
 import { getPostImagePath } from '../image-utils';
 
 // Slug for this post
@@ -7,7 +7,7 @@ const SLUG = 'palabras-antes-de-partir';
 
 // Define post data
 export const palabrasAntesDePartir: LocalPost = {
-  id: generateId(),
+  id: generateClientId(),
   title: "Palabras Antes de Partir",
   slug: SLUG,
   description: "Ultimas reflecciones.",

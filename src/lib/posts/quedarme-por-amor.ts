@@ -1,5 +1,5 @@
 import { LocalPost } from '../local-posts';
-import { generateId } from '../utils/id-utils';
+import { generateClientId } from '../utils/id-utils';
 import { getPostImagePath } from '../image-utils';
 
 // Slug for this post
@@ -7,7 +7,7 @@ const SLUG = 'quedarme-por-amor';
 
 // Define post data
 export const quedarmePorAmor: LocalPost = {
-  id: generateId(),
+  id: generateClientId(),
   title: "Quedarme por amor",
   slug: SLUG,
   description: "Cuando decidí que el amor vale cada sacrificio.",

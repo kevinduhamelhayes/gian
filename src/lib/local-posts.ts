@@ -4,7 +4,7 @@
  */
 
 // Import necessary utilities
-import { generateId } from './utils/id-utils';
+import { generateClientId } from './utils/id-utils';
 
 /**
  * Estructura de datos para un post individual del blog
@@ -60,7 +60,7 @@ export interface LocalPostResult {
 }
 
 // Export the generate ID function for convenience
-export { generateId };
+export { generateClientId };
 
 // Importar los posts desde archivos individuales
 // This needs to be after all exports to avoid circular dependencies

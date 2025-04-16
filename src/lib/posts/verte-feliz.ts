@@ -1,5 +1,5 @@
 import { LocalPost } from '../local-posts';
-import { generateId } from '../utils/id-utils';
+import { generateClientId } from '../utils/id-utils';
 import { getPostImagePath } from '../image-utils';
 
 // Slug for this post
@@ -7,7 +7,7 @@ const SLUG = 'verte-feliz';
 
 // Define post data
 export const vertefeliz: LocalPost = {
-  id: generateId(),
+  id: generateClientId(),
   title: "Verte Feliz",
   slug: SLUG,
   description: "Los pequeños momentos en que tu sonrisa ilumina mi mundo.",

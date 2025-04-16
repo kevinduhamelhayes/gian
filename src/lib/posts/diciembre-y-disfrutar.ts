@@ -1,5 +1,5 @@
 import { LocalPost } from '../local-posts';
-import { generateId } from '../utils/id-utils';
+import { generateClientId } from '../utils/id-utils';
 import { getPostImagePath } from '../image-utils';
 
 // Slug for this post
@@ -7,7 +7,7 @@ const SLUG = 'diciembre-y-disfrutar';
 
 // Define post data
 export const diciembreYDisfrutar: LocalPost = {
-  id: generateId(),
+  id: generateClientId(),
   title: "Diciembre y disfrutar",
   slug: SLUG,
   // Descripción ajustada para reflejar mejor el contenido agridulce

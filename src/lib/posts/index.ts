@@ -1,5 +1,5 @@
 import { LocalPost } from '../local-posts';
-import { generateId } from '../utils/id-utils';
+import { generateClientId } from '../utils/id-utils';
 
 // Import individual post data
 import { elDiaQueTeConoci } from './el-dia-que-te-conoci';

@@ -1,5 +1,5 @@
 import { LocalPost } from '../local-posts';
-import { generateId } from '../utils/id-utils';
+import { generateClientId } from '../utils/id-utils';
 import { getPostImagePath } from '../image-utils';
 
 // Slug for this post
@@ -7,7 +7,7 @@ const SLUG = 'crujiamos'; // Slug mantenido como 'nuestro-primer'
 
 // Define post data
 export const crujiamos: LocalPost = {
-  id: generateId(),
+  id: generateClientId(),
   // Título ajustado para mayor coherencia con el contenido y el encabezado H1
   title: "Crujíamos",
   slug: SLUG,

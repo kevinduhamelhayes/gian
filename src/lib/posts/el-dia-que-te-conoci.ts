@@ -1,5 +1,5 @@
 import { LocalPost } from '../local-posts';
-import { generateId } from '../utils/id-utils';
+import { generateClientId } from '../utils/id-utils';
 import { getPostImagePath } from '../image-utils';
 
 // Slug for this post
@@ -7,7 +7,7 @@ const SLUG = 'el-dia-que-te-conoci';
 
 // Define post data
 export const elDiaQueTeConoci: LocalPost = {
-  id: generateId(),
+  id: generateClientId(),
   title: "El día que te conocí",
   slug: SLUG,
   description: "La historia de nuestro primer encuentro y cómo cambió todo.",

@@ -1,5 +1,5 @@
 import { LocalPost } from '../local-posts';
-import { generateId } from '../utils/id-utils';
+import { generateClientId } from '../utils/id-utils';
 import { getPostImagePath } from '../image-utils';
 
 // Slug for this post
@@ -7,7 +7,7 @@ const SLUG = 'queriendo-lo-que-no-pediste';
 
 // Define post data
 export const queriendoLoQueNoPediste: LocalPost = {
-  id: generateId(),
+  id: generateClientId(),
   title: "Queriendo lo que no pediste",
   slug: SLUG,
   description: "A veces, la vida nos regala lo que necesitábamos, no lo que buscábamos.",

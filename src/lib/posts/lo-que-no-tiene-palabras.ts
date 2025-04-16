@@ -1,5 +1,5 @@
 import { LocalPost } from '../local-posts';
-import { generateId } from '../utils/id-utils';
+import { generateClientId } from '../utils/id-utils';
 import { getPostImagePath } from '../image-utils';
 
 // Slug for this post
@@ -7,7 +7,7 @@ const SLUG = 'lo-que-no-tiene-palabras';
 
 // Define post data
 export const loQueNoTienePalabras: LocalPost = {
-  id: generateId(),
+  id: generateClientId(),
   title: "Lo que no tiene palabras",
   slug: SLUG,
   description: "Esos sentimientos tan profundos que las palabras no logran capturar.",

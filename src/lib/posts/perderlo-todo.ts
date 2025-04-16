@@ -1,5 +1,5 @@
 import { LocalPost } from '../local-posts';
-import { generateId } from '../utils/id-utils';
+import { generateClientId } from '../utils/id-utils';
 import { getPostImagePath } from '../image-utils';
 
 // Slug for this post
@@ -7,7 +7,7 @@ const SLUG = 'perderlo-todo';
 
 // Define post data
 export const perderloTodo: LocalPost = {
-  id: generateId(),
+  id: generateClientId(),
   title: "Perderlo todo",
   slug: SLUG,
   description: "Momentos difíciles que pusieron a prueba nuestra relación.",
