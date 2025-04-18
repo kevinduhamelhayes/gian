@@ -26,7 +26,7 @@ Ese día marcó el inicio de nuestra historia.
   `,
   publishedAt: new Date("2023-11-25").toISOString(),
   updatedAt: new Date("2023-11-25").toISOString(),
-  image: findFirstExistingImage(SLUG),
+  image: getPostImagePath(SLUG, '1.jpg'),
   carouselImages: [
     getPostImagePath(SLUG, '1.jpg')
   ],

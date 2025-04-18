@@ -58,7 +58,7 @@ export const BlogPostPreview: FunctionComponent<{
               <Image
                 alt={post.title}
                 className={cn(
-                  "object-contain max-h-[220px] sm:max-h-[380px] max-w-full transition-all duration-300",
+                  "object-cover sm:object-contain max-h-[220px] sm:max-h-[380px] max-w-full transition-all duration-300",
                   "hover:scale-105 aspect-video",
                   isLoading ? "opacity-0" : "opacity-100"
                 )}

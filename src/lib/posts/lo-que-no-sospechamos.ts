@@ -24,13 +24,12 @@ Y te empecé a ver distinto... Admito que entré a tu perfil, miré y dije: 'Tie
   `,
   publishedAt: new Date("2023-10-20").toISOString(),
   updatedAt: new Date("2023-10-20").toISOString(),
-  image: findFirstExistingImage(SLUG), // Preview robusta
+  image: getPostImagePath(SLUG, '1.jpeg'),
   carouselImages: [
     getPostImagePath(SLUG, '2.jpeg'),
     getPostImagePath(SLUG, '3.jpeg'),
     getPostImagePath(SLUG, '4.jpeg'),
     getPostImagePath(SLUG, '5.jpeg')
-    
   ],
   tags: [
     { id: "amor", name: "amor" },
