@@ -68,18 +68,18 @@ export default async function Page() {
       <Header />
       <div className="prose lg:prose-lg dark:prose-invert m-auto mt-20 pb-10 blog-content">
         {/* Primera parte del contenido */}
-        <div className="w-full max-w-[400px] sm:max-w-[700px] h-[300px] sm:h-[700px] relative overflow-hidden mb-4">
-            <Image 
-              src="/images/sobre-mi/perfil/2.jpg" 
-              alt="Kevin" 
-              fill
-              sizes="(max-width: 640px) 100vw, 700px"
-              className="object-cover border-2 border-bronze-400 rounded-xl shadow-xl h-full w-full max-h-[700px] min-h-[300px] sm:min-h-[700px]"
-              priority
-              quality={95}
-              unoptimized={true}
-            />
-          </div>
+        <div className="w-full max-w-[400px] sm:max-w-[700px] aspect-[4/3] mx-auto relative overflow-hidden rounded-xl border-4 border-bronze-400 shadow-lg mb-6">
+          <Image 
+            src="/images/sobre-mi/perfil/2.jpg" 
+            alt="Kevin" 
+            fill
+            sizes="(max-width: 640px) 100vw, 700px"
+            className="object-cover"
+            priority
+            quality={95}
+            unoptimized={true}
+          />
+        </div>
         <Markdown>{content1}</Markdown>
         
         {/* Primer carrusel - Nosotros */}
