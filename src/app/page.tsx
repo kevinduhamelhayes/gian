@@ -13,10 +13,15 @@ type HomePageProps = {
 };
 
 export default async function Page(props: any) {
-  const searchParams = props?.searchParams ?? {};
-  // Garantizar que searchParams nunca sea undefined y manejar todos los casos posibles
-  const pageParam = searchParams && typeof searchParams === 'object' ? searchParams.page : undefined;
-  const pageString = Array.isArray(pageParam) ? pageParam[0] : pageParam;
+  // Convertir searchParams a URLSearchParams para acceso seguro
+  const params = new URLSearchParams(
+    props?.searchParams
+      ? Object.entries(props.searchParams).flatMap(([k, v]) =>
+          Array.isArray(v) ? v.map(val => [k, val]) : [[k, v]]
+        )
+      : []
+  );
+  const pageString = params.get('page');
   const page = pageString && !isNaN(Number(pageString)) ? parseInt(pageString) : 1;
   const result = await localPostsApi.getPosts({ limit: 10, page });
   
@@ -25,14 +30,14 @@ export default async function Page(props: any) {
       <Header />
       
       {/* Hero Section */}
-      <div className="mb-10 sm:mb-16 text-center">
+      <div className="mb-10 sm:mb-16 text-center ">
         <h2 className="text-3xl sm:text-4xl md:text-6xl font-script text-bronze-700 mb-3 sm:mb-4 leading-tight">
           {config.blog.metadata.title.default}
         </h2>
         <p className="text-base sm:text-lg md:text-xl font-handwritten text-bronze-600 mb-4 sm:mb-6 max-w-3xl mx-auto">
           {config.blog.metadata.description}
         </p>
-        <div className="flex flex-col xs:flex-row flex-wrap justify-center gap-3 sm:gap-4 w-full max-w-xs mx-auto sm:max-w-none">
+        <div className="flex flex-col xs:flex-row flex-wrap justify-center gap-3 sm:gap-4 w-full max-w-xs mx-auto sm:max-w-none md:flex md:flex-row md:justify-center md:items-center">
           <Link href="/sobre-mi">
             <Button variant="default" className="bg-bronze-600 hover:bg-bronze-700 font-handwritten text-white w-full xs:w-auto">
               Sobre Mí
