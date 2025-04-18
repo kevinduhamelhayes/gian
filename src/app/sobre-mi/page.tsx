@@ -61,13 +61,13 @@ export default async function Page() {
       <Header />
       <div className="prose lg:prose-lg dark:prose-invert m-auto mt-20 pb-10 blog-content">
         <div className="w-full flex items-center bg-bronze-50 justify-center pb-12">
-          <div className="w-[700px] h-[700px] relative overflow-hidden">
+          <div className="w-full max-w-[400px] sm:max-w-[700px] h-[300px] sm:h-[700px] relative overflow-hidden">
             <Image 
               src="/images/sobre-mi/perfil/1.jpg" 
               alt="Kevin" 
               fill
-              sizes="700px"
-              className="object-cover border-2 border-bronze-400 rounded-xl shadow-xl h-full w-full max-h-[700px] min-h-[700px]"
+              sizes="(max-width: 640px) 100vw, 700px"
+              className="object-cover border-2 border-bronze-400 rounded-xl shadow-xl h-full w-full max-h-[700px] min-h-[300px] sm:min-h-[700px]"
               priority
               quality={95}
               unoptimized={false}
