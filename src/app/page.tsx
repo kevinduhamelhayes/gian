@@ -14,12 +14,13 @@ type HomePageProps = {
 
 export default async function Page(props: any) {
   // Convertir searchParams a URLSearchParams para acceso seguro
+  const rawParams = props?.searchParams && typeof props.searchParams === 'object'
+    ? props.searchParams
+    : {};
   const params = new URLSearchParams(
-    props?.searchParams
-      ? Object.entries(props.searchParams).flatMap(([k, v]) =>
-          Array.isArray(v) ? v.map(val => [k, val]) : [[k, v]]
-        )
-      : []
+    Object.entries(rawParams).flatMap(([k, v]) =>
+      Array.isArray(v) ? v.map(val => [k, val]) : [[k, v]]
+    )
   );
   const pageString = params.get('page');
   const page = pageString && !isNaN(Number(pageString)) ? parseInt(pageString) : 1;
