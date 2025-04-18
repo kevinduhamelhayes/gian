@@ -66,7 +66,7 @@ export const NosotrosCarousel = () => {
               <div className="p-1">
                 <Card className="border-2 border-bronze-300 shadow-lg overflow-hidden">
                   <CardContent className="p-2">
-                    <div className="relative w-full h-[180px] sm:h-[320px] overflow-hidden rounded-lg bg-bronze-50">
+                    <div className="relative w-full h-[240px] sm:h-[400px] overflow-hidden rounded-lg bg-bronze-50">
                       {imageErrors[index] ? (
                         <div className="w-full h-full flex items-center justify-center text-bronze-700">
                           <p className="text-center font-handwritten">Imagen no disponible</p>
@@ -134,7 +134,7 @@ export const MomentosCarousel = () => {
               <div className="p-1">
                 <Card className="border-2 border-bronze-300 shadow-lg overflow-hidden">
                   <CardContent className="p-2">
-                    <div className="relative w-full h-[180px] sm:h-[320px] overflow-hidden rounded-lg bg-bronze-50">
+                    <div className="relative w-full h-[240px] sm:h-[400px] overflow-hidden rounded-lg bg-bronze-50">
                       {imageErrors[index] ? (
                         <div className="w-full h-full flex items-center justify-center text-bronze-700">
                           <p className="text-center font-handwritten">Imagen no disponible</p>
