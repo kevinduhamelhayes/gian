@@ -62,11 +62,11 @@ export const NosotrosCarousel = () => {
       <Carousel setApi={setApi} className="w-full" opts={{ loop: true }}>
         <CarouselContent>
           {carouselImagesNosotros.map((src, index) => (
-            <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
+            <CarouselItem key={index} className="basis-full lg:basis-1/3">
               <div className="p-1">
                 <Card className="border-2 border-bronze-300 shadow-lg overflow-hidden">
                   <CardContent className="p-2">
-                    <div className="relative w-full h-[240px] sm:h-[400px] overflow-hidden rounded-lg bg-bronze-50">
+                    <div className="relative w-full h-[320px] sm:h-[400px] overflow-hidden rounded-lg bg-bronze-50">
                       {imageErrors[index] ? (
                         <div className="w-full h-full flex items-center justify-center text-bronze-700">
                           <p className="text-center font-handwritten">Imagen no disponible</p>
@@ -130,11 +130,11 @@ export const MomentosCarousel = () => {
       <Carousel setApi={setApi} className="w-full" opts={{ loop: true }}>
         <CarouselContent>
           {carouselImagesMomentos.map((src, index) => (
-            <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
+            <CarouselItem key={index} className="basis-full  lg:basis-1/3">
               <div className="p-1">
                 <Card className="border-2 border-bronze-300 shadow-lg overflow-hidden">
                   <CardContent className="p-2">
-                    <div className="relative w-full h-[240px] sm:h-[400px] overflow-hidden rounded-lg bg-bronze-50">
+                    <div className="relative w-full h-[320px] sm:h-[400px] overflow-hidden rounded-lg bg-bronze-50">
                       {imageErrors[index] ? (
                         <div className="w-full h-full flex items-center justify-center text-bronze-700">
                           <p className="text-center font-handwritten">Imagen no disponible</p>
